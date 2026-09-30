@@ -3,8 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
     images: {
     unoptimized: true},
-  // basePath: '/raumpotenzial-website',
-  // output: 'export',
+  output: 'export',
+  trailingSlash: true,
 };
 
 export default nextConfig;
