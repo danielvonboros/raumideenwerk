@@ -1,9 +1,13 @@
 "use client";
 
+import { legalDe } from "@/content/legal.de";
+import { legalEn } from "@/content/legal.en";
 import { createContext, useContext, useState, type ReactNode } from "react";
-import { translations } from "@/content/legal";
+// import { translations } from "@/content/legal";
 
 type Language = "en" | "de";
+
+const translations = { de: legalDe, en: legalEn };
 
 interface LanguageContextType {
   language: Language;

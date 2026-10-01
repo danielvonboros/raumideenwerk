@@ -8,16 +8,16 @@ import { LegalPage } from "@/components/LegalPage";
 const content = legal.de;
 
 export const metadata: Metadata = {
-  title: content.meta.imprint.title,
-  description: content.meta.imprint.description,
-  alternates: { canonical: "/impressum/" },
+  title: content.meta.privacy.title,
+  description: content.meta.privacy.description,
+  alternates: { canonical: "/datenschutz/" },
 };
 
-export default function ImpressumPage() {
+export default function DatenschutzPage() {
   return (
     <>
       <Header nav={de.nav} cta={de.headerCta} menu={de.menu} />
-      <LegalPage doc={content.imprint} />
+      <LegalPage doc={content.privacy} />
       <Footer c={de.footer} />
     </>
   );

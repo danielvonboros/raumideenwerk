@@ -14,5 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     })),
     { url: `${base}/impressum/`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${base}/datenschutz`, changeFrequency: "yearly", priority: 0.2 },
   ];
 }

@@ -3,7 +3,6 @@ export type FrameColor = "gelb" | "tinte" | "petrol";
 export interface ImageRef {
   src: string;
   alt: string;
-  /** CSS object-position für den Bildausschnitt, z. B. "50% 40%" */
   position?: string;
 }
 
@@ -19,25 +18,18 @@ export interface TextItem {
 
 export interface Project {
   slug: string;
-  /** Katalognummer, identisch mit der Nummer auf Instagram */
   number: string;
   year: string;
   color: FrameColor;
-  /** Anzeigetitel, lowercase */
   title: string;
-  /** Kursive Unterzeile, lowercase */
   subtitle: string;
-  /** Titel für <title> und Suchergebnisse */
   metaTitle: string;
-  /** Kurzbeschreibung für Meta-Description und Vorschauen */
   description: string;
   story: string;
   goal?: string;
   materials: string;
   dimensions: string;
-  /** Hauptbild (nachher) */
   cover: ImageRef;
-  /** Zweites Fenster im Cover (vorher, Entwurf oder Detail) */
   detail: ImageRef;
   gallery: ImageRef[];
 }
@@ -137,5 +129,27 @@ export interface SiteContent {
     ctaButton: NavLink;
     prev: string;
     next: string;
+  };
+}
+
+export type Locale = "de" | "en";
+
+export interface LegalSection {
+  heading: string;
+  lines: string[];
+}
+
+export interface LegalDocument {
+  title: string;
+  sections: LegalSection[];
+  lastUpdated?: string;
+}
+
+export interface LegalContent {
+  imprint: LegalDocument;
+  privacy: LegalDocument;
+  meta: {
+    imprint: { title: string; description: string };
+    privacy: { title: string; description: string };
   };
 }

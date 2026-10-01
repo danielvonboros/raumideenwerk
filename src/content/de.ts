@@ -514,7 +514,7 @@ export const de: SiteContent = {
     address: "Kolonnenstraße 8, 10827 Berlin",
     legal: [
       { href: "/impressum", label: "impressum" },
-      { href: "/impressum#datenschutz", label: "datenschutz" },
+      { href: "/datenschutz", label: "datenschutz" },
     ],
     homeLabel: "raumideenwerk, zur Startseite",
   },
