@@ -491,16 +491,16 @@ export const de: SiteContent = {
       message: "nachricht",
       submit: "nachricht senden",
       sending: "wird gesendet …",
-      success:
-        "Danke, deine Nachricht ist angekommen. Ich melde mich in der Regel innerhalb von 24 bis 48 Stunden an Werktagen.",
-      error:
-        "Das hat nicht geklappt. Versuch es bitte später noch einmal oder schreib direkt an hallo@raumideenwerk.com.",
+      success: "Danke, deine Nachricht ist angekommen. Ich melde mich in der Regel innerhalb von 24 bis 48 Stunden an Werktagen.",
       captchaRequired: "Bitte löse zuerst die kleine Rechenaufgabe.",
-      consentTitle: "Zustimmung erforderlich",
-      consentText:
-        "Um das Kontaktformular nutzen zu können, ist deine Zustimmung zur Datenverarbeitung nötig. Alternativ erreichst du mich direkt per E-Mail.",
-      consentButton: "einstellungen öffnen",
-    },
+      error:"Das hat nicht geklappt. Versuch es bitte später noch einmal oder schreib direkt an hallo@raumideenwerk.com.",
+      captchaLabel: "sicherheitsfrage",
+      captchaNew: "neue aufgabe",
+      captchaLoading: "wird geladen …",
+      rateLimited:
+        "Es sind gerade viele Nachrichten von deinem Anschluss gekommen. Bitte versuch es in einer Stunde noch einmal oder schreib direkt an hallo@raumideenwerk.com.",
+     },
+    
   },
 
   footer: {

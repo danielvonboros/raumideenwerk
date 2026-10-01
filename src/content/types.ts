@@ -57,9 +57,10 @@ export interface ContactFormContent {
   success: string;
   error: string;
   captchaRequired: string;
-  consentTitle: string;
-  consentText: string;
-  consentButton: string;
+  captchaLabel: string;
+  captchaNew: string;
+  captchaLoading: string;
+  rateLimited: string;
 }
 
 export interface SiteContent {
