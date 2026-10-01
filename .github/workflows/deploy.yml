@@ -1,0 +1,52 @@
+name: deploy to all-inkl
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Trockenlauf: zeigt nur, was übertragen und gelöscht würde"
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-all-inkl
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+
+      - name: Build (statischer Export nach out/)
+        run: yarn build
+
+      - name: Prüfen, dass der Export vollständig ist
+        run: |
+          test -f out/index.html
+          test -f out/api/contact.php
+          test -f out/impressum/index.html
+          test -f out/datenschutz/index.html
+          echo "Export enthält $(find out -name '*.html' | wc -l) HTML-Seiten"
+
+      - name: Upload via rsync
+        uses: easingthemes/ssh-deploy@v5
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          SOURCE: out/
+          TARGET: ${{ secrets.SSH_TARGET }}
+          # -O lässt Ordner-Zeitstempel in Ruhe, das mag all-inkl lieber.
+          # --delete räumt gelöschte Dateien ab. contact-config.php liegt
+          # oberhalb des Ziels und ist davon nicht betroffen.
+          ARGS: ${{ inputs.dry_run && '-rltgoDzvO --delete --dry-run' || '-rltgoDzvO --delete' }}
