@@ -46,7 +46,6 @@ export function ContactSection({ c }: { c: SiteContent["contact"] }) {
           </dl>
         </div>
 
-        {/* Fenster im Rahmen */}
         <div className="mx-4 mb-4 bg-leinen p-6 md:mx-6 md:mb-6 md:p-9 lg:mt-6 lg:ml-0">
           <ContactIsland c={c.form} />
         </div>
