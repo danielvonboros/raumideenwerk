@@ -28,7 +28,7 @@ export function Packages({
               <div className="flex items-center justify-between gap-3">
                 <p className="text-lg leading-tight italic">{item.kind}</p>
                 {item.popular && (
-                  <span className="bg-tinte px-2.5 pt-[5px] pb-[7px] text-sm leading-none font-semibold text-leinen">
+                  <span className="bg-ink px-2.5 pt-[5px] pb-[7px] text-sm leading-none font-semibold text-linen">
                     {c.popularLabel}
                   </span>
                 )}
@@ -42,14 +42,14 @@ export function Packages({
               <p className="text-base leading-snug">{item.surcharge}</p>
             </div>
 
-            <div className="mx-5 flex grow flex-col gap-[18px] bg-leinen p-6 text-tinte">
+            <div className="mx-5 flex grow flex-col gap-[18px] bg-linen p-6 text-ink">
               <p className="text-[17px] leading-[1.45]">{item.description}</p>
               <ul className="flex flex-col gap-2 text-base leading-[1.35]">
                 {item.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <span
                       aria-hidden="true"
-                      className="mt-[7px] size-2 shrink-0 bg-tinte"
+                      className="mt-[7px] size-2 shrink-0 bg-ink"
                     />
                     <span>{feature}</span>
                   </li>
@@ -81,7 +81,7 @@ export function Packages({
 
       <div className="mt-11 flex max-w-[900px] flex-col gap-1.5">
         {c.notes.map((note) => (
-          <p key={note} className="text-[17px] leading-[1.5] text-schiefer">
+          <p key={note} className="text-[17px] leading-[1.5] text-graphite">
             {note}
           </p>
         ))}

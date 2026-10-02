@@ -1,4 +1,4 @@
-export type FrameColor = "gelb" | "tinte" | "petrol";
+export type FrameColor = "yellow" | "ink" | "petrol";
 
 export interface ImageRef {
   src: string;

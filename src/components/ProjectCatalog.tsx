@@ -8,7 +8,6 @@ interface ProjectCatalogProps {
   subtitle: string;
   prevLabel: string;
   nextLabel: string;
-  /** Die Karten werden auf dem Server gerendert und hier nur hineingereicht */
   children: ReactNode;
 }
 
@@ -40,8 +39,13 @@ export function ProjectCatalog({
     const card = row.firstElementChild as HTMLElement | null;
     const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
     const step = card ? card.offsetWidth + gap : row.clientWidth * 0.8;
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    row.scrollBy({ left: direction * step, behavior: reduceMotion ? "auto" : "smooth" });
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    row.scrollBy({
+      left: direction * step,
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
   };
 
   return (
@@ -57,7 +61,7 @@ export function ProjectCatalog({
             type="button"
             onClick={() => scrollByCard(-1)}
             aria-label={prevLabel}
-            className="flex size-14 items-center justify-center border-2 border-tinte bg-leinen text-tinte hover:bg-sand"
+            className="flex size-14 items-center justify-center border-2 border-ink bg-linen text-ink hover:bg-sand"
           >
             <Chevron direction="left" />
           </button>
@@ -65,17 +69,16 @@ export function ProjectCatalog({
             type="button"
             onClick={() => scrollByCard(1)}
             aria-label={nextLabel}
-            className="flex size-14 items-center justify-center border-2 border-tinte bg-tinte text-leinen hover:border-petrol hover:bg-petrol"
+            className="flex size-14 items-center justify-center border-2 border-ink bg-ink text-linen hover:border-petrol hover:bg-petrol dark:border-linen"
           >
             <Chevron direction="right" />
           </button>
         </div>
       </div>
 
-      {/* Reicht bis an den rechten Rand, damit die nächste Karte anschneidet */}
       <div
         ref={scroller}
-        className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pr-5 pb-5 [scrollbar-color:var(--color-tinte)_var(--color-sand)] [scrollbar-width:thin] md:pr-14"
+        className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pr-5 pb-5 [scrollbar-color:var(--color-ink)_var(--color-sand)] [scrollbar-width:thin] md:pr-14"
       >
         {children}
       </div>

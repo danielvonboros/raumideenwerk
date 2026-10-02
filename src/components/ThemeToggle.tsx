@@ -34,9 +34,9 @@ export function ThemeToggle({ label, toDark, toLight }: ThemeToggleProps) {
       aria-label={label}
       title={dark ? toLight : toDark}
       onClick={toggle}
-      className="relative h-8 w-14 shrink-0 cursor-pointer rounded-full border-2 border-tinte dark:border-gelb"
+      className="relative h-8 w-14 shrink-0 cursor-pointer rounded-full border-2 border-ink dark:border-yellow"
     >
-      <span className="absolute top-1/2 left-1 flex size-5 -translate-y-1/2 items-center justify-center rounded-full bg-tinte text-leinen transition-transform duration-200 motion-reduce:transition-none dark:translate-x-6 dark:bg-gelb dark:text-tinte">
+      <span className="absolute top-1/2 left-1 flex size-5 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-linen transition-transform duration-200 motion-reduce:transition-none dark:translate-x-6 dark:bg-yellow dark:text-ink">
         <svg
           viewBox="0 0 16 16"
           width="13"

@@ -21,7 +21,7 @@ export function Document({
         <StructuredData />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="bg-leinen font-sans text-tinte antialiased dark:bg-tinte dark:text-leinen">
+      <body className="bg-linen font-sans text-ink antialiased dark:bg-ink dark:text-linen">
         {children}
       </body>
     </html>

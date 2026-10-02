@@ -100,7 +100,7 @@ export function ProjectPage({
             </div>
           </div>
 
-          <dl className="grid h-fit grid-cols-[130px_minmax(0,1fr)] gap-x-4 gap-y-3 border-t-2 border-tinte pt-5 text-lg leading-snug">
+          <dl className="grid h-fit grid-cols-[130px_minmax(0,1fr)] gap-x-4 gap-y-3 border-t-2 border-ink pt-5 text-lg leading-snug">
             <dt className="italic">{t.materials}</dt>
             <dd>{project.materials}</dd>
             <dt className="italic">{t.dimensions}</dt>
@@ -136,7 +136,7 @@ export function ProjectPage({
         </section>
 
         <section className="px-5 pb-16 md:px-14 md:pb-[72px]">
-          <div className="flex flex-col items-start gap-6 bg-gelb p-7 text-tinte md:p-12">
+          <div className="flex flex-col items-start gap-6 bg-yellow p-7 text-ink md:p-12">
             <h2 className="text-[32px] leading-[0.95] font-bold tracking-[-0.045em] md:text-[56px]">
               {t.ctaTitle}
             </h2>
@@ -145,7 +145,7 @@ export function ProjectPage({
             </p>
             <Link
               href={t.ctaButton.href}
-              className="bg-tinte px-6 py-4 text-lg font-semibold text-leinen hover:bg-petrol"
+              className="bg-ink px-6 py-4 text-lg font-semibold text-linen hover:bg-petrol"
             >
               {t.ctaButton.label}
             </Link>
@@ -158,7 +158,7 @@ export function ProjectPage({
         >
           <Link
             href={pathFor(locale, { kind: "project", index: previousIndex })}
-            className="border-2 border-tinte p-5 hover:bg-sand"
+            className="border-2 border-ink p-5 hover:bg-sand"
           >
             <span className="text-base italic">{t.prev}</span>
             <span className="mt-1 block text-2xl leading-tight font-bold tracking-[-0.03em]">
@@ -167,7 +167,7 @@ export function ProjectPage({
           </Link>
           <Link
             href={pathFor(locale, { kind: "project", index: nextIndex })}
-            className="border-2 border-tinte p-5 hover:bg-sand sm:text-right"
+            className="border-2 border-ink p-5 hover:bg-sand sm:text-right"
           >
             <span className="text-base italic">{t.next}</span>
             <span className="mt-1 block text-2xl leading-tight font-bold tracking-[-0.03em]">

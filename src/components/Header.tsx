@@ -27,7 +27,7 @@ export function Header({
   const close = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-leinen dark:bg-tinte">
+    <header className="sticky top-0 z-40 bg-linen dark:bg-ink">
       <div className="flex h-16 items-center justify-between gap-6 px-5 md:h-24 md:px-14">
         <Link href={homeHref} aria-label="raumideenwerk" className="shrink-0">
           <Logo priority className="h-9 w-auto md:h-11" />
@@ -38,7 +38,7 @@ export function Header({
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="hover:text-petrol dark:hover:text-gelb"
+                  className="hover:text-petrol dark:hover:text-yellow"
                 >
                   {item.label}
                 </Link>
@@ -51,7 +51,7 @@ export function Header({
             href={languageSwitch.href}
             hrefLang={languageSwitch.label}
             title={languageSwitch.title}
-            className="px-1 text-lg font-medium hover:text-petrol dark:hover:text-gelb"
+            className="px-1 text-lg font-medium hover:text-petrol dark:hover:text-yellow"
           >
             {languageSwitch.label}
           </Link>
@@ -62,7 +62,7 @@ export function Header({
           />
           <Link
             href={cta.href}
-            className="hidden bg-tinte px-5 py-3.5 text-[17px] font-semibold text-leinen hover:bg-petrol sm:inline-block dark:bg-gelb dark:text-tinte dark:hover:bg-leinen"
+            className="hidden bg-ink px-5 py-3.5 text-[17px] font-semibold text-linen hover:bg-petrol sm:inline-block dark:bg-yellow dark:text-ink dark:hover:bg-linen"
           >
             {cta.label}
           </Link>
@@ -70,9 +70,9 @@ export function Header({
             type="button"
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
-            aria-controls="handy-menue"
+            aria-controls="mobile-menu"
             aria-label={open ? menu.close : menu.open}
-            className="flex size-11 items-center justify-center border-2 border-tinte lg:hidden dark:border-leinen"
+            className="flex size-11 items-center justify-center border-2 border-ink lg:hidden dark:border-linen"
           >
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
               {open ? (
@@ -95,9 +95,9 @@ export function Header({
 
       {open && (
         <nav
-          id="handy-menue"
+          id="mobile-menu"
           aria-label="Hauptnavigation"
-          className="border-t-2 border-tinte px-5 pb-8 lg:hidden dark:border-leinen"
+          className="border-t-2 border-ink px-5 pb-8 lg:hidden dark:border-linen"
         >
           <ul className="flex flex-col">
             {nav.map((item) => (
@@ -115,7 +115,7 @@ export function Header({
           <Link
             href={cta.href}
             onClick={close}
-            className="mt-5 inline-block bg-tinte px-5 py-3.5 text-[17px] font-semibold text-leinen dark:bg-gelb dark:text-tinte"
+            className="mt-5 inline-block bg-ink px-5 py-3.5 text-[17px] font-semibold text-linen dark:bg-yellow dark:text-ink"
           >
             {cta.label}
           </Link>

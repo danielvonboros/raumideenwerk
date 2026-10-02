@@ -24,7 +24,7 @@ const emptyValues = {
 
 const labelClass = "flex flex-col gap-2 text-[15px] font-semibold";
 const fieldClass =
-  "border-2 border-tinte bg-white px-3.5 text-[17px] font-normal text-tinte disabled:cursor-not-allowed disabled:opacity-50";
+  "border-2 border-ink bg-white px-3.5 text-[17px] font-normal text-ink disabled:cursor-not-allowed disabled:opacity-50";
 
 export function ContactForm({ c }: { c: ContactFormContent }) {
   const [values, setValues] = useState(emptyValues);
@@ -207,8 +207,8 @@ export function ContactForm({ c }: { c: ContactFormContent }) {
           <p
             className={`p-4 text-[15px] leading-snug ${
               status.type === "success"
-                ? "bg-petrol text-leinen"
-                : "bg-tinte text-leinen"
+                ? "bg-petrol text-linen"
+                : "bg-ink text-linen"
             }`}
           >
             {status.message}
@@ -220,7 +220,7 @@ export function ContactForm({ c }: { c: ContactFormContent }) {
         <button
           type="submit"
           disabled={sending || !challenge}
-          className="h-14 bg-tinte px-7 text-lg font-semibold text-leinen hover:bg-petrol disabled:cursor-not-allowed disabled:opacity-50"
+          className="h-14 bg-ink px-7 text-lg font-semibold text-linen hover:bg-petrol disabled:cursor-not-allowed disabled:opacity-50"
         >
           {sending ? c.sending : c.submit}
         </button>

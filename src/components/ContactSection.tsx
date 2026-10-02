@@ -9,7 +9,7 @@ export function ContactSection({ c }: { c: SiteContent["contact"] }) {
       aria-labelledby="kontakt-titel"
       className="scroll-mt-24 px-5 py-16 md:px-14 md:py-[72px]"
     >
-      <div className="grid bg-gelb text-tinte lg:grid-cols-[minmax(0,520px)_minmax(0,1fr)]">
+      <div className="grid bg-yellow text-ink lg:grid-cols-[minmax(0,520px)_minmax(0,1fr)]">
         <div className="flex flex-col justify-between gap-10 p-7 md:p-12">
           <div className="flex flex-col gap-4">
             <h2
@@ -46,7 +46,7 @@ export function ContactSection({ c }: { c: SiteContent["contact"] }) {
           </dl>
         </div>
 
-        <div className="mx-4 mb-4 bg-leinen p-6 md:mx-6 md:mb-6 md:p-9 lg:mt-6 lg:ml-0">
+        <div className="mx-4 mb-4 bg-linen p-6 md:mx-6 md:mb-6 md:p-9 lg:mt-6 lg:ml-0">
           <ContactIsland c={c.form} />
         </div>
       </div>

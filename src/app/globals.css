@@ -3,14 +3,14 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-gelb: #f6ed20;
-  --color-tinte: #1b212a;
-  --color-leinen: #f6f2eb;
+  --color-yellow: #f6ed20;
+  --color-ink: #1b212a;
+  --color-linen: #f6f2eb;
   --color-petrol: #3f5b60;
   --color-sand: #e7e1d6;
-  --color-schiefer: #4a515c;
-  --color-nebel: #d6d9de;
-  --color-tiefe: #252c37;
+  --color-graphite: #4a515c;
+  --color-mist: #d6d9de;
+  --color-depth: #252c37;
 }
 
 @theme inline {
@@ -25,39 +25,17 @@
 
 :root {
   color-scheme: light;
-  --platzhalter-grund: var(--color-sand);
-  --platzhalter-strich: rgb(27 33 42 / 0.07);
-  --fokus-farbe: var(--color-petrol);
+  --focus-color: var(--color-petrol);
 }
 
 .dark {
   color-scheme: dark;
-  --platzhalter-grund: var(--color-tiefe);
-  --platzhalter-strich: rgb(246 242 235 / 0.09);
-  --fokus-farbe: var(--color-gelb);
-}
-
-@utility platzhalter {
-  background-color: var(--platzhalter-grund);
-  background-image: repeating-linear-gradient(
-    135deg,
-    var(--platzhalter-strich) 0 2px,
-    transparent 2px 16px
-  );
+  --focus-color: var(--color-yellow);
 }
 
 @utility spine {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-}
-
-@utility placeholder {
-  background-color: var(--color-sand);
-  background-image: repeating-linear-gradient(
-    135deg,
-    rgb(27 33 42 / 0.07) 0 2px,
-    transparent 2px 16px
-  );
 }
 
 @layer base {
@@ -98,7 +76,7 @@
     }
   }
   :focus-visible {
-    outline: 3px solid var(--color-petrol);
+    outline: 3px solid var(--focus-color);
     outline-offset: 3px;
   }
 }

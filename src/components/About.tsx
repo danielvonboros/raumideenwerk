@@ -8,7 +8,7 @@ export function About({ c }: { c: SiteContent["about"] }) {
       aria-labelledby="ueber-mich-titel"
       className="grid scroll-mt-24 items-start gap-10 px-5 py-16 md:px-14 md:py-[72px] lg:grid-cols-[440px_minmax(0,1fr)] lg:gap-20"
     >
-      <div className="grid h-[440px] max-w-[440px] grid-cols-[56px_minmax(0,1fr)] bg-tinte text-leinen md:h-[500px] md:grid-cols-[64px_minmax(0,1fr)]">
+      <div className="grid h-[440px] max-w-[440px] grid-cols-[56px_minmax(0,1fr)] bg-ink text-linen md:h-[500px] md:grid-cols-[64px_minmax(0,1fr)]">
         <div className="flex items-end pb-5 pl-4 md:pl-[18px]">
           <span className="spine text-[20px] leading-none font-bold tracking-[-0.02em] md:text-[22px]">
             {c.spine}
@@ -38,7 +38,9 @@ export function About({ c }: { c: SiteContent["about"] }) {
             {c.subtitle}
           </p>
         </div>
-        <p className="max-w-[62ch] text-lg leading-[1.55] md:text-xl">{c.text}</p>
+        <p className="max-w-[62ch] text-lg leading-[1.55] md:text-xl">
+          {c.text}
+        </p>
       </div>
     </section>
   );

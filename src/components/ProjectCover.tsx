@@ -20,7 +20,6 @@ export function ProjectCover({
       href={href ?? `/projekte/${project.slug}`}
       className={`grid grid-cols-[52px_minmax(0,1fr)] grid-rows-[1.2fr_auto_1fr] md:grid-cols-[64px_minmax(0,1fr)] ${cardSize} ${frameClasses[project.color]}`}
     >
-      {/* Buchrücken: Katalognummer oben, Jahr unten */}
       <div className="row-span-3 flex flex-col justify-between py-4 pl-3 md:pl-4">
         <span className="text-[28px] leading-none font-bold tracking-[-0.04em] md:text-[34px]">
           {project.number}
@@ -69,7 +68,6 @@ interface ProjectCtaCardProps {
   href: string;
 }
 
-/** Letzte Karte im Katalog: der nächste Platz ist frei */
 export function ProjectCtaCard({
   number,
   title,
@@ -77,25 +75,27 @@ export function ProjectCtaCard({
   href,
 }: ProjectCtaCardProps) {
   return (
-    <Link
-      href={href}
-      className={`grid grid-cols-[50px_minmax(0,1fr)] grid-rows-[1.2fr_auto_1fr] border-2 border-tinte bg-leinen text-tinte md:grid-cols-[62px_minmax(0,1fr)] ${cardSize}`}
-    >
-      <div className="row-span-3 py-3.5 pl-3 md:pl-3.5">
-        <span className="text-[28px] leading-none font-bold tracking-[-0.04em] md:text-[34px]">
-          {number}
-        </span>
-      </div>
-      <div className="mt-3.5 mr-3.5 border-2 border-dashed border-tinte" />
-      <div className="flex flex-col gap-1.5 px-4 pt-4 pb-4 md:pl-3.5">
-        <h3 className="text-[22px] leading-none font-bold tracking-[-0.035em] md:text-[26px]">
-          {title}
-        </h3>
-        <p className="text-[15px] leading-snug italic underline underline-offset-4 md:text-[17px]">
-          {subtitle}
-        </p>
-      </div>
-      <div className="mr-3.5 mb-3.5 border-2 border-dashed border-tinte" />
-    </Link>
+    <div className={`{${["bg-ink"]} ? "border-linen" : "border-ink"}`}>
+      <Link
+        href={href}
+        className={`grid grid-cols-[50px_minmax(0,1fr)] grid-rows-[1.2fr_auto_1fr] border-2 border-ink bg-linen text-ink md:grid-cols-[62px_minmax(0,1fr)] ${cardSize}`}
+      >
+        <div className="row-span-3 py-3.5 pl-3 md:pl-3.5 {bg-ink ? border-linen : border-ink}">
+          <span className="text-[28px] leading-none font-bold tracking-[-0.04em] md:text-[34px]">
+            {number}
+          </span>
+        </div>
+        <div className="mt-3.5 mr-3.5 border-2 border-dashed border-ink" />
+        <div className="flex flex-col gap-1.5 px-4 pt-4 pb-4 md:pl-3.5">
+          <h3 className="text-[22px] leading-none font-bold tracking-[-0.035em] md:text-[26px]">
+            {title}
+          </h3>
+          <p className="text-[15px] leading-snug italic underline underline-offset-4 md:text-[17px]">
+            {subtitle}
+          </p>
+        </div>
+        <div className="mr-3.5 mb-3.5 border-2 border-dashed border-ink" />
+      </Link>
+    </div>
   );
 }

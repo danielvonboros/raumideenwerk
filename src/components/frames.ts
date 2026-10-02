@@ -1,15 +1,13 @@
 import type { FrameColor } from "@/content/types";
 
-/** Rahmenfarbe mit passender Textfarbe */
 export const frameClasses: Record<FrameColor, string> = {
-  gelb: "bg-gelb text-tinte",
-  tinte: "bg-tinte text-leinen",
-  petrol: "bg-petrol text-leinen",
+  yellow: "bg-yellow text-ink",
+  ink: "bg-ink text-linen",
+  petrol: "bg-petrol text-linen",
 };
 
-/** Button, der auf der jeweiligen Rahmenfarbe genug Kontrast hat */
 export const frameButtonClasses: Record<FrameColor, string> = {
-  gelb: "bg-tinte text-leinen hover:bg-petrol",
-  tinte: "bg-gelb text-tinte hover:bg-leinen",
-  petrol: "bg-leinen text-tinte hover:bg-sand",
+  yellow: "bg-ink text-linen hover:bg-petrol",
+  ink: "bg-yellow text-ink hover:bg-linen",
+  petrol: "bg-linen text-ink hover:bg-sand",
 };

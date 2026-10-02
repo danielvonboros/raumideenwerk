@@ -3,7 +3,7 @@ import LogoLightWide from "@/assets/LogoLightWide.svg";
 import LogoDarkWide from "@/assets/LogoDarkWide.svg";
 
 interface LogoProps {
-  variant?: "tinte" | "leinen" | "auto";
+  variant?: "ink" | "linen" | "auto";
   className?: string;
   priority?: boolean;
 }
@@ -30,7 +30,7 @@ export function Logo({ variant = "auto", className, priority }: LogoProps) {
 
   return (
     <Image
-      src={variant === "tinte" ? LogoLightWide : LogoDarkWide}
+      src={variant === "ink" ? LogoLightWide : LogoDarkWide}
       alt="raumideenwerk"
       className={className}
       priority={priority}

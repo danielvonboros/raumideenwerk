@@ -1,4 +1,4 @@
-// src/components/StructuredData.jsx
+// "use server";
 
 export default function StructuredData() {
   const schema = {
