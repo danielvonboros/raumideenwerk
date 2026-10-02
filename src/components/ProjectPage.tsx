@@ -1,60 +1,32 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import { de } from "@/content/de";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { frameClasses } from "@/components/frames";
+import type { Locale } from "@/content/types";
+import { findProject, pathFor, site } from "@/content/site";
+import { Chrome } from "./Chrome";
+import { frameClasses } from "./frames";
 
-const content = de;
-const projects = content.projects.items;
+export function ProjectPage({
+  locale,
+  slug,
+}: {
+  locale: Locale;
+  slug: string;
+}) {
+  const found = findProject(locale, slug);
+  if (!found) return null;
 
-// Nur die bekannten Projekte, alles andere ergibt 404
-export const dynamicParams = false;
+  const { index, project } = found;
+  const items = site[locale].projects.items;
+  const t = site[locale].projectPage;
 
-export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
-}
-
-type Props = { params: Promise<{ slug: string }> };
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const project = projects.find((item) => item.slug === slug);
-  if (!project) return {};
-
-  return {
-    title: project.metaTitle,
-    description: project.description,
-    alternates: { canonical: `/projekte/${project.slug}` },
-    openGraph: {
-      title: `${project.metaTitle} | raumideenwerk`,
-      description: project.description,
-      url: `/projekte/${project.slug}`,
-      type: "article",
-      locale: "de_DE",
-      images: [{ url: project.cover.src, alt: project.cover.alt }],
-    },
-  };
-}
-
-export default async function ProjectPage({ params }: Props) {
-  const { slug } = await params;
-  const index = projects.findIndex((item) => item.slug === slug);
-  if (index === -1) notFound();
-
-  const project = projects[index];
-  const previous = projects[(index - 1 + projects.length) % projects.length];
-  const next = projects[(index + 1) % projects.length];
-  const t = content.projectPage;
+  const previousIndex = (index - 1 + items.length) % items.length;
+  const nextIndex = (index + 1) % items.length;
+  const previous = items[previousIndex];
+  const next = items[nextIndex];
 
   return (
-    <>
-      <Header nav={content.nav} cta={content.headerCta} menu={content.menu} />
-
+    <Chrome locale={locale} page={{ kind: "project", index }}>
       <main id="inhalt">
-        {/* Das Cover aus dem Katalog, groß */}
         <section
           className={`grid grid-cols-[64px_minmax(0,1fr)] md:grid-cols-[180px_minmax(0,1fr)] ${frameClasses[project.color]}`}
         >
@@ -103,7 +75,7 @@ export default async function ProjectPage({ params }: Props) {
         <section className="grid gap-12 px-5 py-16 md:px-14 md:py-[72px] lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-20">
           <div className="flex max-w-[68ch] flex-col gap-10">
             <Link
-              href="/#projekte"
+              href={`${pathFor(locale, { kind: "home" })}#projekte`}
               className="w-fit text-base font-semibold underline underline-offset-4 hover:text-petrol"
             >
               {t.back}
@@ -148,7 +120,6 @@ export default async function ProjectPage({ params }: Props) {
           >
             {t.gallery}
           </h2>
-          {/* Bilder im eigenen Seitenverhältnis, zweispaltig gestapelt */}
           <div className="mt-8 columns-1 gap-6 sm:columns-2">
             {project.gallery.map((image) => (
               <Image
@@ -182,11 +153,11 @@ export default async function ProjectPage({ params }: Props) {
         </section>
 
         <nav
-          aria-label="Weitere Projekte"
+          aria-label={t.gallery}
           className="grid gap-6 px-5 pb-16 sm:grid-cols-2 md:px-14 md:pb-[72px]"
         >
           <Link
-            href={`/projekte/${previous.slug}`}
+            href={pathFor(locale, { kind: "project", index: previousIndex })}
             className="border-2 border-tinte p-5 hover:bg-sand"
           >
             <span className="text-base italic">{t.prev}</span>
@@ -195,7 +166,7 @@ export default async function ProjectPage({ params }: Props) {
             </span>
           </Link>
           <Link
-            href={`/projekte/${next.slug}`}
+            href={pathFor(locale, { kind: "project", index: nextIndex })}
             className="border-2 border-tinte p-5 hover:bg-sand sm:text-right"
           >
             <span className="text-base italic">{t.next}</span>
@@ -205,8 +176,6 @@ export default async function ProjectPage({ params }: Props) {
           </Link>
         </nav>
       </main>
-
-      <Footer c={content.footer} />
-    </>
+    </Chrome>
   );
 }

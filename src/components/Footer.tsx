@@ -2,10 +2,16 @@ import Link from "next/link";
 import type { SiteContent } from "@/content/types";
 import { Logo } from "./Logo";
 
-export function Footer({ c }: { c: SiteContent["footer"] }) {
+export function Footer({
+  c,
+  homeHref,
+}: {
+  c: SiteContent["footer"];
+  homeHref: string;
+}) {
   return (
     <footer className="grid gap-10 bg-tinte px-5 pt-12 pb-11 text-leinen sm:grid-cols-2 md:px-14 lg:grid-cols-4">
-      <Link href="/" aria-label={c.homeLabel} className="w-fit">
+      <Link href={homeHref ?? "/"} aria-label={c.homeLabel} className="w-fit">
         <Logo variant="leinen" className="h-10 w-auto" />
       </Link>
 

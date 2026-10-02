@@ -9,19 +9,26 @@ interface HeaderProps {
   nav: NavLink[];
   cta: NavLink;
   menu: { open: string; close: string };
+  homeHref: string;
+  languageSwitch: { href: string; label: string; title: string };
 }
 
-export function Header({ nav, cta, menu }: HeaderProps) {
+export function Header({
+  nav,
+  cta,
+  menu,
+  homeHref,
+  languageSwitch,
+}: HeaderProps) {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
 
   return (
     <header className="sticky top-0 z-40 bg-leinen">
       <div className="flex h-16 items-center justify-between gap-6 px-5 md:h-24 md:px-14">
-        <Link href="/" aria-label="raumideenwerk, Startseite" className="shrink-0">
+        <Link href={homeHref} aria-label="raumideenwerk" className="shrink-0">
           <Logo priority className="h-9 w-auto md:h-11" />
         </Link>
-
         <nav aria-label="Hauptnavigation" className="hidden lg:block">
           <ul className="flex gap-8 text-lg font-medium">
             {nav.map((item) => (
@@ -33,8 +40,15 @@ export function Header({ nav, cta, menu }: HeaderProps) {
             ))}
           </ul>
         </nav>
-
         <div className="flex items-center gap-3">
+          <Link
+            href={languageSwitch.href}
+            hrefLang={languageSwitch.label}
+            title={languageSwitch.title}
+            className="px-1 text-lg font-medium hover:text-petrol"
+          >
+            {languageSwitch.label}
+          </Link>
           <Link
             href={cta.href}
             className="hidden bg-tinte px-5 py-3.5 text-[17px] font-semibold text-leinen hover:bg-petrol sm:inline-block"
@@ -51,9 +65,17 @@ export function Header({ nav, cta, menu }: HeaderProps) {
           >
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
               {open ? (
-                <path d="M5 5 L19 19 M19 5 L5 19" stroke="currentColor" strokeWidth="2.4" />
+                <path
+                  d="M5 5 L19 19 M19 5 L5 19"
+                  stroke="currentColor"
+                  strokeWidth="2.4"
+                />
               ) : (
-                <path d="M3 7 H21 M3 17 H21" stroke="currentColor" strokeWidth="2.4" />
+                <path
+                  d="M3 7 H21 M3 17 H21"
+                  stroke="currentColor"
+                  strokeWidth="2.4"
+                />
               )}
             </svg>
           </button>

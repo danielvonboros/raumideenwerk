@@ -8,10 +8,16 @@ const cardSize =
 
 const imageSizes = "(min-width: 640px) 356px, 70vw";
 
-export function ProjectCover({ project }: { project: Project }) {
+export function ProjectCover({
+  project,
+  href,
+}: {
+  project: Project;
+  href: string;
+}) {
   return (
     <Link
-      href={`/projekte/${project.slug}`}
+      href={href ?? `/projekte/${project.slug}`}
       className={`grid grid-cols-[52px_minmax(0,1fr)] grid-rows-[1.2fr_auto_1fr] md:grid-cols-[64px_minmax(0,1fr)] ${cardSize} ${frameClasses[project.color]}`}
     >
       {/* Buchrücken: Katalognummer oben, Jahr unten */}
@@ -37,7 +43,9 @@ export function ProjectCover({ project }: { project: Project }) {
         <h3 className="text-[22px] leading-none font-bold tracking-[-0.035em] md:text-[26px]">
           {project.title}
         </h3>
-        <p className="text-[15px] leading-snug italic md:text-[17px]">{project.subtitle}</p>
+        <p className="text-[15px] leading-snug italic md:text-[17px]">
+          {project.subtitle}
+        </p>
       </div>
 
       <div className="relative overflow-hidden">
@@ -62,7 +70,12 @@ interface ProjectCtaCardProps {
 }
 
 /** Letzte Karte im Katalog: der nächste Platz ist frei */
-export function ProjectCtaCard({ number, title, subtitle, href }: ProjectCtaCardProps) {
+export function ProjectCtaCard({
+  number,
+  title,
+  subtitle,
+  href,
+}: ProjectCtaCardProps) {
   return (
     <Link
       href={href}

@@ -1,9 +1,5 @@
 import type { Project, SiteContent } from "./types";
 
-/**
- * Projekte in Katalog-Reihenfolge.
- * Die Nummer ist dieselbe wie auf Instagram (Projekt-Post 03 = Katalog-Karte 03).
- */
 const projects: Project[] = [
   {
     slug: "raumtransformation-mit-stauraum",

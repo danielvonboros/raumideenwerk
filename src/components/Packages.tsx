@@ -3,7 +3,13 @@ import type { SiteContent } from "@/content/types";
 import { SectionHeader } from "./SectionHeader";
 import { frameButtonClasses, frameClasses } from "./frames";
 
-export function Packages({ c }: { c: SiteContent["packages"] }) {
+export function Packages({
+  c,
+  ctaHref,
+}: {
+  c: SiteContent["packages"];
+  ctaHref: string;
+}) {
   return (
     <section
       id="pakete"
@@ -14,7 +20,10 @@ export function Packages({ c }: { c: SiteContent["packages"] }) {
 
       <div className="mt-10 grid gap-6 md:mt-11 lg:grid-cols-3">
         {c.items.map((item) => (
-          <article key={item.name} className={`flex flex-col ${frameClasses[item.color]}`}>
+          <article
+            key={item.name}
+            className={`flex flex-col ${frameClasses[item.color]}`}
+          >
             <div className="flex flex-col gap-1.5 px-7 pt-7 pb-6">
               <div className="flex items-center justify-between gap-3">
                 <p className="text-lg leading-tight italic">{item.kind}</p>
@@ -38,7 +47,10 @@ export function Packages({ c }: { c: SiteContent["packages"] }) {
               <ul className="flex flex-col gap-2 text-base leading-[1.35]">
                 {item.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <span aria-hidden="true" className="mt-[7px] size-2 shrink-0 bg-tinte" />
+                    <span
+                      aria-hidden="true"
+                      className="mt-[7px] size-2 shrink-0 bg-tinte"
+                    />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -57,7 +69,7 @@ export function Packages({ c }: { c: SiteContent["packages"] }) {
 
             <div className="p-5">
               <Link
-                href="/#kontakt"
+                href={ctaHref ?? "/#kontakt"}
                 className={`block px-5 py-4 text-center text-lg font-semibold ${frameButtonClasses[item.color]}`}
               >
                 {item.cta}

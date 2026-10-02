@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { de } from "@/content/de";
 import { legal } from "@/content/legal";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import { metadataAlternates } from "@/content/site";
+import { Chrome } from "@/components/Chrome";
 import { LegalPage } from "@/components/LegalPage";
 
 const content = legal.de;
@@ -10,15 +9,13 @@ const content = legal.de;
 export const metadata: Metadata = {
   title: content.meta.imprint.title,
   description: content.meta.imprint.description,
-  alternates: { canonical: "/impressum/" },
+  alternates: metadataAlternates("de", { kind: "imprint" }),
 };
 
-export default function ImpressumPage() {
+export default function Page() {
   return (
-    <>
-      <Header nav={de.nav} cta={de.headerCta} menu={de.menu} />
+    <Chrome locale="de" page={{ kind: "imprint" }}>
       <LegalPage doc={content.imprint} />
-      <Footer c={de.footer} />
-    </>
+    </Chrome>
   );
 }
