@@ -1,5 +1,4 @@
 import { Hanken_Grotesk } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Locale } from "@/content/types";
 import StructuredData from "@/components/StructuredData";
 import "@/app/globals.css";
@@ -22,7 +21,6 @@ export function Document({
       </head>
       <body className="bg-leinen font-sans text-tinte antialiased">
         {children}
-        <SpeedInsights />
       </body>
     </html>
   );

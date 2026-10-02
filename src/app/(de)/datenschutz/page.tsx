@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { de } from "@/content/de";
 import { legal } from "@/content/legal";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import { metadataAlternates } from "@/content/site";
+import { Chrome } from "@/components/Chrome";
 import { LegalPage } from "@/components/LegalPage";
 
 const content = legal.de;
@@ -10,15 +9,13 @@ const content = legal.de;
 export const metadata: Metadata = {
   title: content.meta.privacy.title,
   description: content.meta.privacy.description,
-  alternates: { canonical: "/datenschutz/" },
+  alternates: metadataAlternates("de", { kind: "privacy" }),
 };
 
-export default function DatenschutzPage() {
+export default function Page() {
   return (
-    <>
-      <Header nav={de.nav} cta={de.headerCta} menu={de.menu} />
+    <Chrome locale="de" page={{ kind: "privacy" }}>
       <LegalPage doc={content.privacy} />
-      <Footer c={de.footer} />
-    </>
+    </Chrome>
   );
 }
