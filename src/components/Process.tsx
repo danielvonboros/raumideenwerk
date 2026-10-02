@@ -50,15 +50,15 @@ export function Process({ c }: { c: SiteContent["process"] }) {
             >
               {String(index + 1).padStart(2, "0")}
             </span>
-            <div aria-hidden="true" className="relative mt-2 h-6 text-ink">
-              <span className="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 bg-ink" />
+            <div aria-hidden="true" className="relative mt-2 h-6">
+              <span className="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 bg-current" />
               <Tick side="start" />
               <Tick side="end" />
             </div>
             <h3 className="mt-6 pr-8 pl-3 text-[28px] leading-none font-bold tracking-[-0.035em] md:text-[34px]">
               {step.title}
             </h3>
-            <p className="mt-3 pr-8 pl-3 text-lg leading-[1.5] text-graphite md:text-[19px]">
+            <p className="mt-3 pr-8 pl-3 text-lg leading-[1.5] muted md:text-[19px]">
               {step.text}
             </p>
           </li>

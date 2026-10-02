@@ -1,5 +1,3 @@
-// "use server";
-
 export default function StructuredData() {
   const schema = {
     "@context": "https://schema.org",

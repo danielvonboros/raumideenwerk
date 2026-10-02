@@ -25,12 +25,42 @@
 
 :root {
   color-scheme: light;
+  --rule: var(--color-ink);
+  --rule-accent: var(--color-ink);
+  --surface: var(--color-linen);
+  --surface-strong: var(--color-sand);
+  --muted: var(--color-graphite);
   --focus-color: var(--color-petrol);
 }
 
 .dark {
   color-scheme: dark;
+  --rule: var(--color-linen);
+  --rule-accent: var(--color-yellow);
+  --surface: var(--color-depth);
+  --surface-strong: #333c4a;
+  --muted: var(--color-mist);
   --focus-color: var(--color-yellow);
+}
+
+@utility rule {
+  border-color: var(--rule);
+}
+
+@utility rule-accent {
+  border-color: var(--rule-accent);
+}
+
+@utility surface {
+  background-color: var(--surface);
+}
+
+@utility surface-strong {
+  background-color: var(--surface-strong);
+}
+
+@utility muted {
+  color: var(--muted);
 }
 
 @utility spine {

@@ -61,7 +61,7 @@ export function ProjectCatalog({
             type="button"
             onClick={() => scrollByCard(-1)}
             aria-label={prevLabel}
-            className="flex size-14 items-center justify-center border-2 border-ink bg-linen text-ink hover:bg-sand"
+            className="flex size-14 items-center justify-center border-2 rule surface hover:surface-strong"
           >
             <Chevron direction="left" />
           </button>
@@ -69,7 +69,7 @@ export function ProjectCatalog({
             type="button"
             onClick={() => scrollByCard(1)}
             aria-label={nextLabel}
-            className="flex size-14 items-center justify-center border-2 border-ink bg-ink text-linen hover:border-petrol hover:bg-petrol dark:border-linen"
+            className="flex size-14 items-center justify-center border-2 rule surface hover:surface-strong"
           >
             <Chevron direction="right" />
           </button>

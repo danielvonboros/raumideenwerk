@@ -81,7 +81,7 @@ export function Packages({
 
       <div className="mt-11 flex max-w-[900px] flex-col gap-1.5">
         {c.notes.map((note) => (
-          <p key={note} className="text-[17px] leading-[1.5] text-graphite">
+          <p key={note} className="text-[17px] leading-[1.5] muted">
             {note}
           </p>
         ))}

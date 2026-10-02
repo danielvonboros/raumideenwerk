@@ -100,7 +100,7 @@ export function ProjectPage({
             </div>
           </div>
 
-          <dl className="grid h-fit grid-cols-[130px_minmax(0,1fr)] gap-x-4 gap-y-3 border-t-2 border-ink pt-5 text-lg leading-snug">
+          <dl className="grid h-fit grid-cols-[130px_minmax(0,1fr)] gap-x-4 gap-y-3 border-t-2 rule pt-5 text-lg leading-snug">
             <dt className="italic">{t.materials}</dt>
             <dd>{project.materials}</dd>
             <dt className="italic">{t.dimensions}</dt>
@@ -158,7 +158,7 @@ export function ProjectPage({
         >
           <Link
             href={pathFor(locale, { kind: "project", index: previousIndex })}
-            className="border-2 border-ink p-5 hover:bg-sand"
+            className="border-2 rule p-5 hover:bg-sand"
           >
             <span className="text-base italic">{t.prev}</span>
             <span className="mt-1 block text-2xl leading-tight font-bold tracking-[-0.03em]">
@@ -167,7 +167,7 @@ export function ProjectPage({
           </Link>
           <Link
             href={pathFor(locale, { kind: "project", index: nextIndex })}
-            className="border-2 border-ink p-5 hover:bg-sand sm:text-right"
+            className="border-2 rule p-5 hover:bg-sand sm:text-right"
           >
             <span className="text-base italic">{t.next}</span>
             <span className="mt-1 block text-2xl leading-tight font-bold tracking-[-0.03em]">

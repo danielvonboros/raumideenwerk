@@ -49,14 +49,11 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
           {doc.title}
         </h1>
         {doc.lastUpdated && (
-          <p className="mt-4 text-lg italic text-graphite">{doc.lastUpdated}</p>
+          <p className="mt-4 text-lg italic muted">{doc.lastUpdated}</p>
         )}
 
         {doc.sections.map((section) => (
-          <section
-            key={section.heading}
-            className="mt-12 border-t-2 border-ink pt-7"
-          >
+          <section key={section.heading} className="mt-12 border-t-2 rule pt-7">
             <h2 className="text-2xl leading-tight font-bold tracking-[-0.03em] md:text-[28px]">
               {section.heading}
             </h2>
@@ -65,7 +62,7 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
                 isPlaceholder(line) ? (
                   <p
                     key={index}
-                    className="border-2 border-dashed border-petrol bg-sand px-4 py-3 text-[17px] leading-[1.6] text-graphite"
+                    className="border-2 border-dashed border-petrol surface-strong px-4 py-3 text-[17px] leading-[1.6] muted"
                   >
                     {line}
                   </p>
