@@ -11,11 +11,11 @@
   --color-schiefer: #4a515c;
   --color-nebel: #d6d9de;
   --color-tiefe: #252c37;
-
 }
 
 @theme inline {
-  --font-sans: var(--font-hanken), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans:
+    var(--font-hanken), "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --tracking-tighter: -0.035em;
@@ -37,14 +37,14 @@
   --fokus-farbe: var(--color-gelb);
 }
 
- @utility platzhalter {
+@utility platzhalter {
   background-color: var(--platzhalter-grund);
-   background-image: repeating-linear-gradient(
-     135deg,
+  background-image: repeating-linear-gradient(
+    135deg,
     var(--platzhalter-strich) 0 2px,
-     transparent 2px 16px
-   );
- }
+    transparent 2px 16px
+  );
+}
 
 @utility spine {
   writing-mode: vertical-rl;
@@ -64,7 +64,9 @@
   body {
     font-family: var(--font-sans);
     letter-spacing: var(--tracking-normal);
-    font-feature-settings: "kern" 1, "liga" 1;
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1;
     text-rendering: optimizeLegibility;
   }
   h1,

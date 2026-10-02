@@ -1,0 +1,904 @@
+diff --git a/src/app/globals.css b/src/app/globals.css
+index ed98615..9934ffa 100644
+--- a/src/app/globals.css
++++ b/src/app/globals.css
+@@ -3,15 +3,14 @@
+ @custom-variant dark (&:is(.dark *));
+ 
+ @theme {
+-  --color-gelb: #f6ed20;
+-  --color-tinte: #1b212a;
+-  --color-leinen: #f6f2eb;
++  --color-yellow: #f6ed20;
++  --color-ink: #1b212a;
++  --color-linen: #f6f2eb;
+   --color-petrol: #3f5b60;
+   --color-sand: #e7e1d6;
+-  --color-schiefer: #4a515c;
+-  --color-nebel: #d6d9de;
+-  --color-tiefe: #252c37;
+-
++  --color-graphite: #4a515c;
++  --color-mist: #d6d9de;
++  --color-depth: #252c37;
+ }
+ 
+ @theme inline {
+@@ -25,27 +24,14 @@
+ 
+ :root {
+   color-scheme: light;
+-  --platzhalter-grund: var(--color-sand);
+-  --platzhalter-strich: rgb(27 33 42 / 0.07);
+-  --fokus-farbe: var(--color-petrol);
++  --focus-color: var(--color-petrol);
+ }
+ 
+ .dark {
+   color-scheme: dark;
+-  --platzhalter-grund: var(--color-tiefe);
+-  --platzhalter-strich: rgb(246 242 235 / 0.09);
+-  --fokus-farbe: var(--color-gelb);
++  --focus-color: var(--color-yellow);
+ }
+ 
+- @utility platzhalter {
+-  background-color: var(--platzhalter-grund);
+-   background-image: repeating-linear-gradient(
+-     135deg,
+-    var(--platzhalter-strich) 0 2px,
+-     transparent 2px 16px
+-   );
+- }
+-
+ @utility spine {
+   writing-mode: vertical-rl;
+   transform: rotate(180deg);
+@@ -96,7 +82,7 @@
+     }
+   }
+   :focus-visible {
+-    outline: 3px solid var(--color-petrol);
++    outline: 3px solid var(--focus-color);
+     outline-offset: 3px;
+   }
+ }
+\ No newline at end of file
+diff --git a/src/components/About.tsx b/src/components/About.tsx
+index ff6f147..8934f25 100644
+--- a/src/components/About.tsx
++++ b/src/components/About.tsx
+@@ -8,7 +8,7 @@ export function About({ c }: { c: SiteContent["about"] }) {
+       aria-labelledby="ueber-mich-titel"
+       className="grid scroll-mt-24 items-start gap-10 px-5 py-16 md:px-14 md:py-[72px] lg:grid-cols-[440px_minmax(0,1fr)] lg:gap-20"
+     >
+-      <div className="grid h-[440px] max-w-[440px] grid-cols-[56px_minmax(0,1fr)] bg-tinte text-leinen md:h-[500px] md:grid-cols-[64px_minmax(0,1fr)]">
++      <div className="grid h-[440px] max-w-[440px] grid-cols-[56px_minmax(0,1fr)] bg-ink text-linen md:h-[500px] md:grid-cols-[64px_minmax(0,1fr)]">
+         <div className="flex items-end pb-5 pl-4 md:pl-[18px]">
+           <span className="spine text-[20px] leading-none font-bold tracking-[-0.02em] md:text-[22px]">
+             {c.spine}
+diff --git a/src/components/Chrome.tsx b/src/components/Chrome.tsx
+index 77f9642..09cb1cd 100644
+--- a/src/components/Chrome.tsx
++++ b/src/components/Chrome.tsx
+@@ -47,7 +47,7 @@ export function Chrome({
+     <>
+       <a
+         href="#inhalt"
+-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-tinte focus:px-4 focus:py-3 focus:text-leinen dark:focus:bg-gelb dark:focus:text-tinte"
++        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-ink focus:px-4 focus:py-3 focus:text-linen dark:focus:bg-yellow dark:focus:text-ink"
+       >
+         {c.skipLink}
+       </a>
+diff --git a/src/components/ContactForm.tsx b/src/components/ContactForm.tsx
+index 1a98243..d93d9f7 100644
+--- a/src/components/ContactForm.tsx
++++ b/src/components/ContactForm.tsx
+@@ -24,7 +24,7 @@ const emptyValues = {
+ 
+ const labelClass = "flex flex-col gap-2 text-[15px] font-semibold";
+ const fieldClass =
+-  "border-2 border-tinte bg-white px-3.5 text-[17px] font-normal text-tinte disabled:cursor-not-allowed disabled:opacity-50";
++  "border-2 border-ink bg-white px-3.5 text-[17px] font-normal text-ink disabled:cursor-not-allowed disabled:opacity-50";
+ 
+ export function ContactForm({ c }: { c: ContactFormContent }) {
+   const [values, setValues] = useState(emptyValues);
+@@ -207,8 +207,8 @@ export function ContactForm({ c }: { c: ContactFormContent }) {
+           <p
+             className={`p-4 text-[15px] leading-snug ${
+               status.type === "success"
+-                ? "bg-petrol text-leinen"
+-                : "bg-tinte text-leinen"
++                ? "bg-petrol text-linen"
++                : "bg-ink text-linen"
+             }`}
+           >
+             {status.message}
+@@ -220,7 +220,7 @@ export function ContactForm({ c }: { c: ContactFormContent }) {
+         <button
+           type="submit"
+           disabled={sending || !challenge}
+-          className="h-14 bg-tinte px-7 text-lg font-semibold text-leinen hover:bg-petrol disabled:cursor-not-allowed disabled:opacity-50"
++          className="h-14 bg-ink px-7 text-lg font-semibold text-linen hover:bg-petrol disabled:cursor-not-allowed disabled:opacity-50"
+         >
+           {sending ? c.sending : c.submit}
+         </button>
+diff --git a/src/components/ContactSection.tsx b/src/components/ContactSection.tsx
+index b74c619..50d9f7d 100644
+--- a/src/components/ContactSection.tsx
++++ b/src/components/ContactSection.tsx
+@@ -9,7 +9,7 @@ export function ContactSection({ c }: { c: SiteContent["contact"] }) {
+       aria-labelledby="kontakt-titel"
+       className="scroll-mt-24 px-5 py-16 md:px-14 md:py-[72px]"
+     >
+-      <div className="grid bg-gelb text-tinte lg:grid-cols-[minmax(0,520px)_minmax(0,1fr)]">
++      <div className="grid bg-yellow text-ink lg:grid-cols-[minmax(0,520px)_minmax(0,1fr)]">
+         <div className="flex flex-col justify-between gap-10 p-7 md:p-12">
+           <div className="flex flex-col gap-4">
+             <h2
+@@ -46,8 +46,8 @@ export function ContactSection({ c }: { c: SiteContent["contact"] }) {
+           </dl>
+         </div>
+ 
+-        {/* Fenster im Rahmen */}
+-        <div className="mx-4 mb-4 bg-leinen p-6 md:mx-6 md:mb-6 md:p-9 lg:mt-6 lg:ml-0">
++        {}
++        <div className="mx-4 mb-4 bg-linen p-6 md:mx-6 md:mb-6 md:p-9 lg:mt-6 lg:ml-0">
+           <ContactIsland c={c.form} />
+         </div>
+       </div>
+diff --git a/src/components/Document.tsx b/src/components/Document.tsx
+index 6aa2d54..f0d23c6 100644
+--- a/src/components/Document.tsx
++++ b/src/components/Document.tsx
+@@ -21,7 +21,7 @@ export function Document({
+         <StructuredData />
+         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+       </head>
+-      <body className="bg-leinen font-sans text-tinte antialiased dark:bg-tinte dark:text-leinen">
++      <body className="bg-linen font-sans text-ink antialiased dark:bg-ink dark:text-linen">
+         {children}
+       </body>
+     </html>
+diff --git a/src/components/Footer.tsx b/src/components/Footer.tsx
+index ab25e5d..f51c8a1 100644
+--- a/src/components/Footer.tsx
++++ b/src/components/Footer.tsx
+@@ -10,15 +10,15 @@ export function Footer({
+   homeHref: string;
+ }) {
+   return (
+-    <footer className="grid gap-10 bg-tinte px-5 pt-12 pb-11 text-leinen sm:grid-cols-2 md:px-14 lg:grid-cols-4">
++    <footer className="grid gap-10 bg-ink px-5 pt-12 pb-11 text-linen sm:grid-cols-2 md:px-14 lg:grid-cols-4">
+       <Link href={homeHref ?? "/"} aria-label={c.homeLabel} className="w-fit">
+-        <Logo variant="leinen" className="h-10 w-auto" />
++        <Logo variant="linen" className="h-10 w-auto" />
+       </Link>
+ 
+       <ul className="flex flex-col gap-2 text-[17px] leading-[1.4]">
+         {c.contact.map((link) => (
+           <li key={link.href}>
+-            <a href={link.href} className="hover:text-gelb">
++            <a href={link.href} className="hover:text-yellow">
+               {link.label}
+             </a>
+           </li>
+@@ -32,7 +32,7 @@ export function Footer({
+             href={link.href}
+             target="_blank"
+             rel="noopener noreferrer"
+-            className="w-fit hover:text-gelb"
++            className="w-fit hover:text-yellow"
+           >
+             {link.label}
+           </a>
+@@ -43,7 +43,7 @@ export function Footer({
+       <ul className="flex flex-col gap-2 text-base leading-[1.4] lg:items-end">
+         {c.legal.map((link) => (
+           <li key={link.href}>
+-            <Link href={link.href} className="hover:text-gelb">
++            <Link href={link.href} className="hover:text-yellow">
+               {link.label}
+             </Link>
+           </li>
+diff --git a/src/components/Header.tsx b/src/components/Header.tsx
+index 2c6c293..2c59dc6 100644
+--- a/src/components/Header.tsx
++++ b/src/components/Header.tsx
+@@ -27,7 +27,7 @@ export function Header({
+   const close = () => setOpen(false);
+ 
+   return (
+-    <header className="sticky top-0 z-40 bg-leinen dark:bg-tinte">
++    <header className="sticky top-0 z-40 bg-linen dark:bg-ink">
+       <div className="flex h-16 items-center justify-between gap-6 px-5 md:h-24 md:px-14">
+         <Link href={homeHref} aria-label="raumideenwerk" className="shrink-0">
+           <Logo priority className="h-9 w-auto md:h-11" />
+@@ -38,7 +38,7 @@ export function Header({
+               <li key={item.href}>
+                 <Link
+                   href={item.href}
+-                  className="hover:text-petrol dark:hover:text-gelb"
++                  className="hover:text-petrol dark:hover:text-yellow"
+                 >
+                   {item.label}
+                 </Link>
+@@ -51,7 +51,7 @@ export function Header({
+             href={languageSwitch.href}
+             hrefLang={languageSwitch.label}
+             title={languageSwitch.title}
+-            className="px-1 text-lg font-medium hover:text-petrol dark:hover:text-gelb"
++            className="px-1 text-lg font-medium hover:text-petrol dark:hover:text-yellow"
+           >
+             {languageSwitch.label}
+           </Link>
+@@ -62,7 +62,7 @@ export function Header({
+           />
+           <Link
+             href={cta.href}
+-            className="hidden bg-tinte px-5 py-3.5 text-[17px] font-semibold text-leinen hover:bg-petrol sm:inline-block dark:bg-gelb dark:text-tinte dark:hover:bg-leinen"
++            className="hidden bg-ink px-5 py-3.5 text-[17px] font-semibold text-linen hover:bg-petrol sm:inline-block dark:bg-yellow dark:text-ink dark:hover:bg-linen"
+           >
+             {cta.label}
+           </Link>
+@@ -70,9 +70,9 @@ export function Header({
+             type="button"
+             onClick={() => setOpen((value) => !value)}
+             aria-expanded={open}
+-            aria-controls="handy-menue"
++            aria-controls="mobile-menu"
+             aria-label={open ? menu.close : menu.open}
+-            className="flex size-11 items-center justify-center border-2 border-tinte lg:hidden dark:border-leinen"
++            className="flex size-11 items-center justify-center border-2 border-ink lg:hidden dark:border-linen"
+           >
+             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+               {open ? (
+@@ -95,9 +95,9 @@ export function Header({
+ 
+       {open && (
+         <nav
+-          id="handy-menue"
++          id="mobile-menu"
+           aria-label="Hauptnavigation"
+-          className="border-t-2 border-tinte px-5 pb-8 lg:hidden dark:border-leinen"
++          className="border-t-2 border-ink px-5 pb-8 lg:hidden dark:border-linen"
+         >
+           <ul className="flex flex-col">
+             {nav.map((item) => (
+@@ -115,7 +115,7 @@ export function Header({
+           <Link
+             href={cta.href}
+             onClick={close}
+-            className="mt-5 inline-block bg-tinte px-5 py-3.5 text-[17px] font-semibold text-leinen dark:bg-gelb dark:text-tinte"
++            className="mt-5 inline-block bg-ink px-5 py-3.5 text-[17px] font-semibold text-linen dark:bg-yellow dark:text-ink"
+           >
+             {cta.label}
+           </Link>
+diff --git a/src/components/Hero.tsx b/src/components/Hero.tsx
+index 836a8ee..687694a 100644
+--- a/src/components/Hero.tsx
++++ b/src/components/Hero.tsx
+@@ -6,9 +6,9 @@ export function Hero({ c }: { c: SiteContent["hero"] }) {
+   return (
+     <section
+       id="start"
+-      className="grid grid-cols-[64px_minmax(0,1fr)] grid-rows-[minmax(220px,34svh)_auto_minmax(150px,22svh)] bg-gelb text-tinte md:grid-cols-[200px_minmax(0,1fr)] md:grid-rows-[320px_auto_200px]"
++      className="grid grid-cols-[64px_minmax(0,1fr)] grid-rows-[minmax(220px,34svh)_auto_minmax(150px,22svh)] bg-yellow text-ink md:grid-cols-[200px_minmax(0,1fr)] md:grid-rows-[320px_auto_200px]"
+     >
+-      {/* Buchrücken über die volle Höhe */}
++      {}
+       <div className="row-span-3 flex items-end gap-1 pb-6 pl-3 md:pb-10 md:pl-10">
+         <span className="spine text-[34px] leading-none font-bold tracking-[-0.035em] md:text-[56px]">
+           {c.spine[0]}
+@@ -31,7 +31,7 @@ export function Hero({ c }: { c: SiteContent["hero"] }) {
+       </div>
+ 
+       <div className="flex flex-col justify-center gap-6 px-5 py-10 md:gap-7 md:py-14 md:pr-14 md:pl-11">
+-        {/* h1 trägt Claim und Suchbegriffe zugleich */}
++        {}
+         <h1 className="flex flex-col gap-3 font-normal">
+           <span className="text-[44px] leading-[0.92] font-bold tracking-[-0.045em] sm:text-[64px] lg:text-[96px]">
+             {c.claim}
+@@ -43,7 +43,7 @@ export function Hero({ c }: { c: SiteContent["hero"] }) {
+         <div className="flex flex-wrap items-center gap-x-7 gap-y-4">
+           <Link
+             href={c.primaryCta.href}
+-            className="bg-tinte px-6 py-4 text-lg font-semibold text-leinen hover:bg-petrol"
++            className="bg-ink px-6 py-4 text-lg font-semibold text-linen hover:bg-petrol"
+           >
+             {c.primaryCta.label}
+           </Link>
+diff --git a/src/components/LegalPage.tsx b/src/components/LegalPage.tsx
+index 06a1be3..852aecb 100644
+--- a/src/components/LegalPage.tsx
++++ b/src/components/LegalPage.tsx
+@@ -49,13 +49,13 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
+           {doc.title}
+         </h1>
+         {doc.lastUpdated && (
+-          <p className="mt-4 text-lg italic text-schiefer">{doc.lastUpdated}</p>
++          <p className="mt-4 text-lg italic text-graphite">{doc.lastUpdated}</p>
+         )}
+ 
+         {doc.sections.map((section) => (
+           <section
+             key={section.heading}
+-            className="mt-12 border-t-2 border-tinte pt-7"
++            className="mt-12 border-t-2 border-ink pt-7"
+           >
+             <h2 className="text-2xl leading-tight font-bold tracking-[-0.03em] md:text-[28px]">
+               {section.heading}
+@@ -65,7 +65,7 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
+                 isPlaceholder(line) ? (
+                   <p
+                     key={index}
+-                    className="border-2 border-dashed border-petrol bg-sand px-4 py-3 text-[17px] leading-[1.6] text-schiefer"
++                    className="border-2 border-dashed border-petrol bg-sand px-4 py-3 text-[17px] leading-[1.6] text-graphite"
+                   >
+                     {line}
+                   </p>
+diff --git a/src/components/Logo.tsx b/src/components/Logo.tsx
+index b7cf05c..11ec7c4 100644
+--- a/src/components/Logo.tsx
++++ b/src/components/Logo.tsx
+@@ -3,7 +3,7 @@ import LogoLightWide from "@/assets/LogoLightWide.svg";
+ import LogoDarkWide from "@/assets/LogoDarkWide.svg";
+ 
+ interface LogoProps {
+-  variant?: "tinte" | "leinen" | "auto";
++  variant?: "ink" | "linen" | "auto";
+   className?: string;
+   priority?: boolean;
+ }
+@@ -30,7 +30,7 @@ export function Logo({ variant = "auto", className, priority }: LogoProps) {
+ 
+   return (
+     <Image
+-      src={variant === "tinte" ? LogoLightWide : LogoDarkWide}
++      src={variant === "ink" ? LogoLightWide : LogoDarkWide}
+       alt="raumideenwerk"
+       className={className}
+       priority={priority}
+diff --git a/src/components/Packages.tsx b/src/components/Packages.tsx
+index 4874d1f..cab439e 100644
+--- a/src/components/Packages.tsx
++++ b/src/components/Packages.tsx
+@@ -28,7 +28,7 @@ export function Packages({
+               <div className="flex items-center justify-between gap-3">
+                 <p className="text-lg leading-tight italic">{item.kind}</p>
+                 {item.popular && (
+-                  <span className="bg-tinte px-2.5 pt-[5px] pb-[7px] text-sm leading-none font-semibold text-leinen">
++                  <span className="bg-ink px-2.5 pt-[5px] pb-[7px] text-sm leading-none font-semibold text-linen">
+                     {c.popularLabel}
+                   </span>
+                 )}
+@@ -42,14 +42,14 @@ export function Packages({
+               <p className="text-base leading-snug">{item.surcharge}</p>
+             </div>
+ 
+-            <div className="mx-5 flex grow flex-col gap-[18px] bg-leinen p-6 text-tinte">
++            <div className="mx-5 flex grow flex-col gap-[18px] bg-linen p-6 text-ink">
+               <p className="text-[17px] leading-[1.45]">{item.description}</p>
+               <ul className="flex flex-col gap-2 text-base leading-[1.35]">
+                 {item.features.map((feature) => (
+                   <li key={feature} className="flex items-start gap-3">
+                     <span
+                       aria-hidden="true"
+-                      className="mt-[7px] size-2 shrink-0 bg-tinte"
++                      className="mt-[7px] size-2 shrink-0 bg-ink"
+                     />
+                     <span>{feature}</span>
+                   </li>
+@@ -81,7 +81,7 @@ export function Packages({
+ 
+       <div className="mt-11 flex max-w-[900px] flex-col gap-1.5">
+         {c.notes.map((note) => (
+-          <p key={note} className="text-[17px] leading-[1.5] text-schiefer">
++          <p key={note} className="text-[17px] leading-[1.5] text-graphite">
+             {note}
+           </p>
+         ))}
+diff --git a/src/components/PainPoints.tsx b/src/components/PainPoints.tsx
+index 6a69ce8..a830260 100644
+--- a/src/components/PainPoints.tsx
++++ b/src/components/PainPoints.tsx
+@@ -4,7 +4,7 @@ export function PainPoints({ c }: { c: SiteContent["painPoints"] }) {
+   return (
+     <section
+       aria-labelledby="bekannt-titel"
+-      className="bg-tinte px-5 py-16 text-leinen md:px-14 md:py-[72px]"
++      className="bg-ink px-5 py-16 text-linen md:px-14 md:py-[72px]"
+     >
+       <h2
+         id="bekannt-titel"
+@@ -15,10 +15,10 @@ export function PainPoints({ c }: { c: SiteContent["painPoints"] }) {
+       <div className="mt-10 grid gap-10 sm:grid-cols-2 md:mt-12 lg:grid-cols-4">
+         {c.items.map((item) => (
+           <div key={item.title} className="flex flex-col gap-4">
+-            <h3 className="text-[26px] leading-[1.05] font-bold tracking-[-0.03em] text-gelb md:text-[30px]">
++            <h3 className="text-[26px] leading-[1.05] font-bold tracking-[-0.03em] text-yellow md:text-[30px]">
+               {item.title}
+             </h3>
+-            <p className="text-lg leading-[1.5] text-nebel md:text-[19px]">{item.text}</p>
++            <p className="text-lg leading-[1.5] text-mist md:text-[19px]">{item.text}</p>
+           </div>
+         ))}
+       </div>
+diff --git a/src/components/Process.tsx b/src/components/Process.tsx
+index e0788ef..825c518 100644
+--- a/src/components/Process.tsx
++++ b/src/components/Process.tsx
+@@ -1,7 +1,6 @@
+ import type { SiteContent } from "@/content/types";
+ import { SectionHeader } from "./SectionHeader";
+ 
+-/** Maßkettenende: senkrechter Strich plus 45°-Schrägstrich */
+ function Tick({ side }: { side: "start" | "end" }) {
+   const position =
+     side === "start" ? "left-0 -translate-x-1/2" : "right-0 translate-x-1/2";
+@@ -19,11 +18,6 @@ function Tick({ side }: { side: "start" | "end" }) {
+   );
+ }
+ 
+-/**
+- * Jeder Schritt hat sein eigenes Kettenstück. Auf dem Desktop stoßen die vier
+- * Stücke ohne Abstand aneinander und lesen sich als eine durchgehende Maßkette,
+- * auf dem Handy stehen sie untereinander.
+- */
+ export function Process({ c }: { c: SiteContent["process"] }) {
+   return (
+     <section
+@@ -42,15 +36,15 @@ export function Process({ c }: { c: SiteContent["process"] }) {
+             >
+               {String(index + 1).padStart(2, "0")}
+             </span>
+-            <div aria-hidden="true" className="relative mt-2 h-6 text-tinte">
+-              <span className="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 bg-tinte" />
++            <div aria-hidden="true" className="relative mt-2 h-6 text-ink">
++              <span className="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 bg-ink" />
+               <Tick side="start" />
+               <Tick side="end" />
+             </div>
+             <h3 className="mt-6 pr-8 pl-3 text-[28px] leading-none font-bold tracking-[-0.035em] md:text-[34px]">
+               {step.title}
+             </h3>
+-            <p className="mt-3 pr-8 pl-3 text-lg leading-[1.5] text-schiefer md:text-[19px]">
++            <p className="mt-3 pr-8 pl-3 text-lg leading-[1.5] text-graphite md:text-[19px]">
+               {step.text}
+             </p>
+           </li>
+diff --git a/src/components/ProjectCatalog.tsx b/src/components/ProjectCatalog.tsx
+index 1119b0f..a21f3fc 100644
+--- a/src/components/ProjectCatalog.tsx
++++ b/src/components/ProjectCatalog.tsx
+@@ -8,7 +8,6 @@ interface ProjectCatalogProps {
+   subtitle: string;
+   prevLabel: string;
+   nextLabel: string;
+-  /** Die Karten werden auf dem Server gerendert und hier nur hineingereicht */
+   children: ReactNode;
+ }
+ 
+@@ -57,7 +56,7 @@ export function ProjectCatalog({
+             type="button"
+             onClick={() => scrollByCard(-1)}
+             aria-label={prevLabel}
+-            className="flex size-14 items-center justify-center border-2 border-tinte bg-leinen text-tinte hover:bg-sand"
++            className="flex size-14 items-center justify-center border-2 border-ink bg-linen text-ink hover:bg-sand"
+           >
+             <Chevron direction="left" />
+           </button>
+@@ -65,17 +64,17 @@ export function ProjectCatalog({
+             type="button"
+             onClick={() => scrollByCard(1)}
+             aria-label={nextLabel}
+-            className="flex size-14 items-center justify-center border-2 border-tinte bg-tinte text-leinen hover:border-petrol hover:bg-petrol"
++            className="flex size-14 items-center justify-center border-2 border-ink bg-ink text-linen hover:border-petrol hover:bg-petrol"
+           >
+             <Chevron direction="right" />
+           </button>
+         </div>
+       </div>
+ 
+-      {/* Reicht bis an den rechten Rand, damit die nächste Karte anschneidet */}
++      {}
+       <div
+         ref={scroller}
+-        className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pr-5 pb-5 [scrollbar-color:var(--color-tinte)_var(--color-sand)] [scrollbar-width:thin] md:pr-14"
++        className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pr-5 pb-5 [scrollbar-color:var(--color-ink)_var(--color-sand)] [scrollbar-width:thin] md:pr-14"
+       >
+         {children}
+       </div>
+diff --git a/src/components/ProjectCover.tsx b/src/components/ProjectCover.tsx
+index 605ed52..2d70f86 100644
+--- a/src/components/ProjectCover.tsx
++++ b/src/components/ProjectCover.tsx
+@@ -20,7 +20,7 @@ export function ProjectCover({
+       href={href ?? `/projekte/${project.slug}`}
+       className={`grid grid-cols-[52px_minmax(0,1fr)] grid-rows-[1.2fr_auto_1fr] md:grid-cols-[64px_minmax(0,1fr)] ${cardSize} ${frameClasses[project.color]}`}
+     >
+-      {/* Buchrücken: Katalognummer oben, Jahr unten */}
++      {}
+       <div className="row-span-3 flex flex-col justify-between py-4 pl-3 md:pl-4">
+         <span className="text-[28px] leading-none font-bold tracking-[-0.04em] md:text-[34px]">
+           {project.number}
+@@ -69,7 +69,6 @@ interface ProjectCtaCardProps {
+   href: string;
+ }
+ 
+-/** Letzte Karte im Katalog: der nächste Platz ist frei */
+ export function ProjectCtaCard({
+   number,
+   title,
+@@ -79,14 +78,14 @@ export function ProjectCtaCard({
+   return (
+     <Link
+       href={href}
+-      className={`grid grid-cols-[50px_minmax(0,1fr)] grid-rows-[1.2fr_auto_1fr] border-2 border-tinte bg-leinen text-tinte md:grid-cols-[62px_minmax(0,1fr)] ${cardSize}`}
++      className={`grid grid-cols-[50px_minmax(0,1fr)] grid-rows-[1.2fr_auto_1fr] border-2 border-ink bg-linen text-ink md:grid-cols-[62px_minmax(0,1fr)] ${cardSize}`}
+     >
+       <div className="row-span-3 py-3.5 pl-3 md:pl-3.5">
+         <span className="text-[28px] leading-none font-bold tracking-[-0.04em] md:text-[34px]">
+           {number}
+         </span>
+       </div>
+-      <div className="mt-3.5 mr-3.5 border-2 border-dashed border-tinte" />
++      <div className="mt-3.5 mr-3.5 border-2 border-dashed border-ink" />
+       <div className="flex flex-col gap-1.5 px-4 pt-4 pb-4 md:pl-3.5">
+         <h3 className="text-[22px] leading-none font-bold tracking-[-0.035em] md:text-[26px]">
+           {title}
+@@ -95,7 +94,7 @@ export function ProjectCtaCard({
+           {subtitle}
+         </p>
+       </div>
+-      <div className="mr-3.5 mb-3.5 border-2 border-dashed border-tinte" />
++      <div className="mr-3.5 mb-3.5 border-2 border-dashed border-ink" />
+     </Link>
+   );
+ }
+diff --git a/src/components/ProjectPage.tsx b/src/components/ProjectPage.tsx
+index 7187954..e9b9ab1 100644
+--- a/src/components/ProjectPage.tsx
++++ b/src/components/ProjectPage.tsx
+@@ -100,7 +100,7 @@ export function ProjectPage({
+             </div>
+           </div>
+ 
+-          <dl className="grid h-fit grid-cols-[130px_minmax(0,1fr)] gap-x-4 gap-y-3 border-t-2 border-tinte pt-5 text-lg leading-snug">
++          <dl className="grid h-fit grid-cols-[130px_minmax(0,1fr)] gap-x-4 gap-y-3 border-t-2 border-ink pt-5 text-lg leading-snug">
+             <dt className="italic">{t.materials}</dt>
+             <dd>{project.materials}</dd>
+             <dt className="italic">{t.dimensions}</dt>
+@@ -136,7 +136,7 @@ export function ProjectPage({
+         </section>
+ 
+         <section className="px-5 pb-16 md:px-14 md:pb-[72px]">
+-          <div className="flex flex-col items-start gap-6 bg-gelb p-7 text-tinte md:p-12">
++          <div className="flex flex-col items-start gap-6 bg-yellow p-7 text-ink md:p-12">
+             <h2 className="text-[32px] leading-[0.95] font-bold tracking-[-0.045em] md:text-[56px]">
+               {t.ctaTitle}
+             </h2>
+@@ -145,7 +145,7 @@ export function ProjectPage({
+             </p>
+             <Link
+               href={t.ctaButton.href}
+-              className="bg-tinte px-6 py-4 text-lg font-semibold text-leinen hover:bg-petrol"
++              className="bg-ink px-6 py-4 text-lg font-semibold text-linen hover:bg-petrol"
+             >
+               {t.ctaButton.label}
+             </Link>
+@@ -158,7 +158,7 @@ export function ProjectPage({
+         >
+           <Link
+             href={pathFor(locale, { kind: "project", index: previousIndex })}
+-            className="border-2 border-tinte p-5 hover:bg-sand"
++            className="border-2 border-ink p-5 hover:bg-sand"
+           >
+             <span className="text-base italic">{t.prev}</span>
+             <span className="mt-1 block text-2xl leading-tight font-bold tracking-[-0.03em]">
+@@ -167,7 +167,7 @@ export function ProjectPage({
+           </Link>
+           <Link
+             href={pathFor(locale, { kind: "project", index: nextIndex })}
+-            className="border-2 border-tinte p-5 hover:bg-sand sm:text-right"
++            className="border-2 border-ink p-5 hover:bg-sand sm:text-right"
+           >
+             <span className="text-base italic">{t.next}</span>
+             <span className="mt-1 block text-2xl leading-tight font-bold tracking-[-0.03em]">
+diff --git a/src/components/SectionHeader.tsx b/src/components/SectionHeader.tsx
+index 0636d20..fc034d4 100644
+--- a/src/components/SectionHeader.tsx
++++ b/src/components/SectionHeader.tsx
+@@ -4,7 +4,6 @@ interface SectionHeaderProps {
+   subtitle?: string;
+ }
+ 
+-/** h2 plus kursive Unterzeile auf einer Grundlinie, bricht auf dem Handy um */
+ export function SectionHeader({ id, title, subtitle }: SectionHeaderProps) {
+   return (
+     <div className="flex flex-wrap items-baseline gap-x-7 gap-y-2">
+diff --git a/src/components/SeoServices.tsx b/src/components/SeoServices.tsx
+index b930c86..c7a341a 100644
+--- a/src/components/SeoServices.tsx
++++ b/src/components/SeoServices.tsx
+@@ -4,7 +4,7 @@ export function SeoServices() {
+       aria-label="Platzhalter: Leistungsübersicht"
+       className="px-5 py-16 md:px-14 md:py-[72px]"
+     >
+-      <div className="flex flex-col gap-7 border-2 border-dashed border-tinte p-6 md:p-10">
++      <div className="flex flex-col gap-7 border-2 border-dashed border-ink p-6 md:p-10">
+         <h2 className="text-3xl leading-none font-bold tracking-[-0.035em] md:text-[44px]">
+           Raumplanung & Einrichtungsberatung in Berlin - mehr Platz für dein
+           Leben
+@@ -29,7 +29,7 @@ export function SeoServices() {
+               <h3 className="text-2xl leading-tight font-bold tracking-[-0.02em]">
+                 {service.title}
+               </h3>
+-              <p className="text-lg leading-[1.5] text-schiefer">
++              <p className="text-lg leading-[1.5] text-graphite">
+                 {service.text}
+               </p>
+             </div>
+diff --git a/src/components/Services.tsx b/src/components/Services.tsx
+index ebd2f4c..cc40aee 100644
+--- a/src/components/Services.tsx
++++ b/src/components/Services.tsx
+@@ -14,9 +14,9 @@ export function Services({ c }: { c: SiteContent["services"] }) {
+         {c.items.map((item, index) => (
+           <article
+             key={item.title}
+-            className="grid min-h-[400px] grid-cols-[72px_minmax(0,1fr)] grid-rows-[auto_1fr] bg-gelb text-tinte md:grid-cols-[112px_minmax(0,1fr)] lg:min-h-[460px]"
++            className="grid min-h-[400px] grid-cols-[72px_minmax(0,1fr)] grid-rows-[auto_1fr] bg-yellow text-ink md:grid-cols-[112px_minmax(0,1fr)] lg:min-h-[460px]"
+           >
+-            {/* Nummer als Buchrücken statt „raumideenwerk" */}
++            {}
+             <div className="row-span-2 flex items-end pb-5 pl-4 md:pb-[26px] md:pl-[26px]">
+               <span
+                 aria-hidden="true"
+@@ -26,15 +26,15 @@ export function Services({ c }: { c: SiteContent["services"] }) {
+               </span>
+             </div>
+ 
+-            {/* Headline im gelben Rahmen */}
++            {}
+             <div className="flex min-h-[150px] flex-col justify-end pt-8 pr-6 pb-5 md:min-h-[196px] md:pr-10 md:pb-[22px]">
+               <h3 className="text-[32px] leading-[0.95] font-bold tracking-[-0.04em] md:text-[44px]">
+                 {item.title}
+               </h3>
+             </div>
+ 
+-            {/* Kursivtext im Fenster, dort wo beim Ideen-Post das Foto sitzt */}
+-            <div className="mr-4 mb-4 bg-leinen px-6 py-6 md:mr-6 md:mb-6 md:px-8 md:py-7">
++            {}
++            <div className="mr-4 mb-4 bg-linen px-6 py-6 md:mr-6 md:mb-6 md:px-8 md:py-7">
+               <p className="text-lg leading-[1.4] font-semibold tracking-[-0.01em] italic md:text-[23px]">
+                 {item.text}
+               </p>
+diff --git a/src/components/StructuredData.tsx b/src/components/StructuredData.tsx
+index 22bd41b..a9b20da 100644
+--- a/src/components/StructuredData.tsx
++++ b/src/components/StructuredData.tsx
+@@ -1,13 +1,9 @@
+-// src/components/StructuredData.jsx
+ 
+ export default function StructuredData() {
+   const schema = {
+     "@context": "https://schema.org",
+ 
+     "@graph": [
+-      // ─────────────────────────────────────────────────────────────
+-      // 1. LOCAL BUSINESS
+-      // ─────────────────────────────────────────────────────────────
+       {
+         "@type": "LocalBusiness",
+         "@id": "https://www.raumideenwerk.com/#business",
+@@ -68,9 +64,6 @@ export default function StructuredData() {
+         },
+       },
+ 
+-      // ─────────────────────────────────────────────────────────────
+-      // 2. PERSON
+-      // ─────────────────────────────────────────────────────────────
+       {
+         "@type": "Person",
+         "@id": "https://www.raumideenwerk.com/#person",
+@@ -110,9 +103,6 @@ export default function StructuredData() {
+         ],
+       },
+ 
+-      // ─────────────────────────────────────────────────────────────
+-      // 3. SERVICE CATALOG
+-      // ─────────────────────────────────────────────────────────────
+       {
+         "@type": "OfferCatalog",
+         "@id": "https://www.raumideenwerk.com/#services",
+diff --git a/src/components/Testimonials.tsx b/src/components/Testimonials.tsx
+index 99dee70..c81ec6a 100644
+--- a/src/components/Testimonials.tsx
++++ b/src/components/Testimonials.tsx
+@@ -4,7 +4,7 @@ export function Testimonials({ c }: { c: SiteContent["testimonials"] }) {
+   return (
+     <section
+       aria-labelledby="stimmen-titel"
+-      className="bg-petrol px-5 py-16 text-leinen md:px-14 md:py-[72px]"
++      className="bg-petrol px-5 py-16 text-linen md:px-14 md:py-[72px]"
+     >
+       <h2
+         id="stimmen-titel"
+@@ -15,7 +15,7 @@ export function Testimonials({ c }: { c: SiteContent["testimonials"] }) {
+       <div className="mt-10 grid items-start gap-10 md:mt-11 md:grid-cols-3">
+         {c.items.map((item) => (
+           <figure key={item.author} className="flex flex-col gap-[18px]">
+-            <span aria-hidden="true" className="text-[72px] leading-[0.6] font-bold text-gelb">
++            <span aria-hidden="true" className="text-[72px] leading-[0.6] font-bold text-yellow">
+               „
+             </span>
+             <blockquote className="text-lg leading-[1.5]">{item.text}</blockquote>
+diff --git a/src/components/ThemeToggle.tsx b/src/components/ThemeToggle.tsx
+index a77cc82..927620b 100644
+--- a/src/components/ThemeToggle.tsx
++++ b/src/components/ThemeToggle.tsx
+@@ -34,9 +34,9 @@ export function ThemeToggle({ label, toDark, toLight }: ThemeToggleProps) {
+       aria-label={label}
+       title={dark ? toLight : toDark}
+       onClick={toggle}
+-      className="relative h-8 w-14 shrink-0 cursor-pointer rounded-full border-2 border-tinte dark:border-gelb"
++      className="relative h-8 w-14 shrink-0 cursor-pointer rounded-full border-2 border-ink dark:border-yellow"
+     >
+-      <span className="absolute top-1/2 left-1 flex size-5 -translate-y-1/2 items-center justify-center rounded-full bg-tinte text-leinen transition-transform duration-200 motion-reduce:transition-none dark:translate-x-6 dark:bg-gelb dark:text-tinte">
++      <span className="absolute top-1/2 left-1 flex size-5 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-linen transition-transform duration-200 motion-reduce:transition-none dark:translate-x-6 dark:bg-yellow dark:text-ink">
+         <svg
+           viewBox="0 0 16 16"
+           width="13"
+diff --git a/src/components/frames.ts b/src/components/frames.ts
+index d29647a..8e5884d 100644
+--- a/src/components/frames.ts
++++ b/src/components/frames.ts
+@@ -1,15 +1,13 @@
+ import type { FrameColor } from "@/content/types";
+ 
+-/** Rahmenfarbe mit passender Textfarbe */
+ export const frameClasses: Record<FrameColor, string> = {
+-  gelb: "bg-gelb text-tinte",
+-  tinte: "bg-tinte text-leinen",
+-  petrol: "bg-petrol text-leinen",
++  yellow: "bg-yellow text-ink",
++  ink: "bg-ink text-linen",
++  petrol: "bg-petrol text-linen",
+ };
+ 
+-/** Button, der auf der jeweiligen Rahmenfarbe genug Kontrast hat */
+ export const frameButtonClasses: Record<FrameColor, string> = {
+-  gelb: "bg-tinte text-leinen hover:bg-petrol",
+-  tinte: "bg-gelb text-tinte hover:bg-leinen",
+-  petrol: "bg-leinen text-tinte hover:bg-sand",
++  yellow: "bg-ink text-linen hover:bg-petrol",
++  ink: "bg-yellow text-ink hover:bg-linen",
++  petrol: "bg-linen text-ink hover:bg-sand",
+ };
+diff --git a/src/content/de.ts b/src/content/de.ts
+index f6e1e17..13a62a8 100644
+--- a/src/content/de.ts
++++ b/src/content/de.ts
+@@ -5,7 +5,7 @@ const projects: Project[] = [
+     slug: "raumtransformation-mit-stauraum",
+     number: "01",
+     year: "2025",
+-    color: "gelb",
++    color: "yellow",
+     title: "raumtransformation mit stauraum",
+     subtitle: "einbauelement mit zusätzlicher ebene und einer kleinen kleiderkammer",
+     metaTitle: "Raumtransformation mit Stauraum",
+@@ -45,7 +45,7 @@ const projects: Project[] = [
+     slug: "minimalistisches-sideboard",
+     number: "02",
+     year: "2024",
+-    color: "tinte",
++    color: "ink",
+     title: "minimalistisches sideboard",
+     subtitle: "elegante und funktionale aufbewahrung für moderne wohnräume",
+     metaTitle: "Minimalistisches Sideboard aus Akazienholz",
+@@ -124,7 +124,7 @@ const projects: Project[] = [
+     slug: "hochbett-kleiderschrank-wohnwand",
+     number: "04",
+     year: "2025",
+-    color: "gelb",
++    color: "yellow",
+     title: "einbaumöbel für kleine apartments",
+     subtitle: "begehbarer kleiderschrank, wohnwand und hochbett in einem",
+     metaTitle: "Hochbett mit begehbarem Kleiderschrank und Wohnwand",
+@@ -161,7 +161,7 @@ const projects: Project[] = [
+     slug: "neue-nutzung-fuer-10-qm-zimmer",
+     number: "05",
+     year: "2026",
+-    color: "tinte",
++    color: "ink",
+     title: "neue nutzung für 10 m²",
+     subtitle: "arbeitszimmer, gästezimmer und stauraum in einem raum",
+     metaTitle: "Neue Nutzung für ein 10-m²-Zimmer",
+@@ -409,7 +409,7 @@ export const de: SiteContent = {
+           { name: "Fotorealistische Visualisierung", price: "150 €" },
+         ],
+         cta: "konzepte wählen",
+-        color: "gelb",
++        color: "yellow",
+         popular: true,
+       },
+       {
+@@ -428,7 +428,7 @@ export const de: SiteContent = {
+           "Vermittlung an Partnertischlerei",
+         ],
+         cta: "raum transformieren",
+-        color: "tinte",
++        color: "ink",
+       },
+     ],
+     notes: [
+diff --git a/src/content/en.ts b/src/content/en.ts
+index 5362163..11a1f77 100644
+--- a/src/content/en.ts
++++ b/src/content/en.ts
+@@ -5,7 +5,7 @@ const projects: Project[] = [
+     slug: "room-transformation-with-storage",
+     number: "01",
+     year: "2025",
+-    color: "gelb",
++    color: "yellow",
+     title: "room transformation with storage",
+     subtitle: "a built-in element with an extra level and a small walk-in wardrobe",
+     metaTitle: "Room Transformation with Storage",
+@@ -45,7 +45,7 @@ const projects: Project[] = [
+     slug: "minimalist-sideboard",
+     number: "02",
+     year: "2024",
+-    color: "tinte",
++    color: "ink",
+     title: "minimalist sideboard",
+     subtitle: "elegant, functional storage for modern living spaces",
+     metaTitle: "Minimalist Acacia Sideboard",
+@@ -124,7 +124,7 @@ const projects: Project[] = [
+     slug: "loft-bed-with-wardrobe-and-media-wall",
+     number: "04",
+     year: "2025",
+-    color: "gelb",
++    color: "yellow",
+     title: "built-in furniture for small flats",
+     subtitle: "walk-in wardrobe, media wall and loft bed in one",
+     metaTitle: "Loft Bed with Walk-in Wardrobe and Media Wall",
+@@ -161,7 +161,7 @@ const projects: Project[] = [
+     slug: "new-use-for-a-10-sqm-room",
+     number: "05",
+     year: "2026",
+-    color: "tinte",
++    color: "ink",
+     title: "a new use for 10 m²",
+     subtitle: "study, guest room and storage in a single room",
+     metaTitle: "A New Use for a 10 m² Room",
+@@ -409,7 +409,7 @@ export const en: SiteContent = {
+           { name: "Photorealistic visualisation", price: "€150" },
+         ],
+         cta: "choose concepts",
+-        color: "gelb",
++        color: "yellow",
+         popular: true,
+       },
+       {
+@@ -428,7 +428,7 @@ export const en: SiteContent = {
+           "Introduction to my partner joinery",
+         ],
+         cta: "transform the room",
+-        color: "tinte",
++        color: "ink",
+       },
+     ],
+     notes: [
+diff --git a/src/content/types.ts b/src/content/types.ts
+index 327b19b..4796252 100644
+--- a/src/content/types.ts
++++ b/src/content/types.ts
+@@ -1,4 +1,4 @@
+-export type FrameColor = "gelb" | "tinte" | "petrol";
++export type FrameColor = "yellow" | "ink" | "petrol";
+ 
+ export interface ImageRef {
+   src: string;
