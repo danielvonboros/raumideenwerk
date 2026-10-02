@@ -1,6 +1,7 @@
 import { Hanken_Grotesk } from "next/font/google";
 import type { Locale } from "@/content/types";
 import StructuredData from "@/components/StructuredData";
+import { themeScript } from "@/components/ThemeToggle";
 import "@/app/globals.css";
 
 const hanken = Hanken_Grotesk({
@@ -15,11 +16,12 @@ export function Document({
   children,
 }: Readonly<{ locale: Locale; children: React.ReactNode }>) {
   return (
-    <html lang={locale} className={hanken.variable}>
+    <html lang={locale} className={hanken.variable} suppressHydrationWarning>
       <head>
         <StructuredData />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="bg-leinen font-sans text-tinte antialiased">
+      <body className="bg-leinen font-sans text-tinte antialiased dark:bg-tinte dark:text-leinen">
         {children}
       </body>
     </html>

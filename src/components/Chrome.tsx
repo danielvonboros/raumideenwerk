@@ -14,6 +14,22 @@ const switchTitle: Record<Locale, string> = {
   en: "This page in English",
 };
 
+const themeLabels: Record<
+  Locale,
+  { label: string; toDark: string; toLight: string }
+> = {
+  de: {
+    label: "Dunkelmodus",
+    toDark: "Zum dunklen Modus wechseln",
+    toLight: "Zum hellen Modus wechseln",
+  },
+  en: {
+    label: "Dark mode",
+    toDark: "Switch to dark mode",
+    toLight: "Switch to light mode",
+  },
+};
+
 export function Chrome({
   locale,
   page,
@@ -31,7 +47,7 @@ export function Chrome({
     <>
       <a
         href="#inhalt"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-tinte focus:px-4 focus:py-3 focus:text-leinen"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-tinte focus:px-4 focus:py-3 focus:text-leinen dark:focus:bg-gelb dark:focus:text-tinte"
       >
         {c.skipLink}
       </a>
@@ -45,6 +61,7 @@ export function Chrome({
           label: localeLabel[other],
           title: switchTitle[other],
         }}
+        theme={themeLabels[locale]}
       />
       {children}
       <Footer c={c.footer} homeHref={pathFor(locale, { kind: "home" })} />
