@@ -39,7 +39,7 @@ jobs:
           echo "Export enthält $(find out -name '*.html' | wc -l) HTML-Seiten"
 
       - name: Upload via rsync
-        uses: easingthemes/ssh-deploy@v5
+        uses: easingthemes/ssh-deploy@v6.0.3
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
