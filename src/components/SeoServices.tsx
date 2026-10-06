@@ -14,15 +14,15 @@ export function SeoServices() {
           {[
             {
               title: "Raumkonzepte & Grundrissoptimierung",
-              text: "Ein Arbeitsplatz im Wohnzimmer, ein Kinderzimmer mehr oder endlich ein abgetrennter Schlafbereich? Ich entwickle individuelle Raumkonzepte für kleine Wohnungen und veränderte Lebenssituationen – mit durchdachter Raumaufteilung und passenden Lösungen für deinen Alltag.",
+              text: "Nachwuchs kündigt sich an, die Kinder brauchen mehr Platz oder ein Arbeitsplatz muss ins Wohnzimmer passen? Ich entwickle Raumkonzepte, die Platz für euren Alltag schaffen – vom zusätzlichen Kinderzimmer bis zum Geschwisterzimmer mit eigenen Bereichen zum Schlafen, Spielen und Lernen. Mit durchdachter Raumaufteilung wird aus eurer bestehenden Wohnung ein Zuhause, das mitwächst.",
             },
             {
               title: "Stauraum & individuelle Möbellösungen",
               text: "Wenn Schränke voll sind und Stellfläche fehlt, braucht es Ideen, die deinen Raum besser nutzen. Ich plane Einbauschränke, Hochebenen und multifunktionale Möbel, die zusätzlichen Stauraum schaffen und zu deiner Wohnung passen.",
             },
             {
-              title: "Raumkonzepte & Grundrissoptimierung",
-              text: "Nachwuchs kündigt sich an, die Kinder brauchen mehr Platz oder ein Arbeitsplatz muss ins Wohnzimmer passen? Ich entwickle Raumkonzepte, die Platz für euren Alltag schaffen – vom zusätzlichen Kinderzimmer bis zum Geschwisterzimmer mit eigenen Bereichen zum Schlafen, Spielen und Lernen. Mit durchdachter Raumaufteilung wird aus eurer bestehenden Wohnung ein Zuhause, das mitwächst.",
+              title: "Einrichtungsberatung & Interior Design",
+              text: "Du möchtest deine Wohnung neu einrichten, bist aber bei Möbeln, Farben und Materialien unsicher? Ich entwickle ein stimmiges Einrichtungskonzept und mache es mit Moodboards und 3D-Visualisierungen für dich greifbar – bei dir vor Ort in Berlin oder online.",
             },
           ].map((service) => (
             <div key={service.title} className="flex flex-col gap-2.5">
