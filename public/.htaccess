@@ -26,14 +26,14 @@ Options -Indexes
   Header always set X-Frame-Options "SAMEORIGIN"
 </IfModule>
 
-# <IfModule mod_rewrite.c>
-#   RewriteEngine On
-#   RewriteRule ^\.well-known/ - [L]
-#
-#   RewriteCond %{HTTPS} !=on
-#   RewriteCond %{HTTP:X-Forwarded-Proto} !=https
-#   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-#
-#   RewriteCond %{HTTP_HOST} ^raumideenwerk\.com$ [NC]
-#   RewriteRule ^(.*)$ https://www.raumideenwerk.com/$1 [R=301,L]
-# </IfModule>
+ <IfModule mod_rewrite.c>
+   RewriteEngine On
+   RewriteRule ^\.well-known/ - [L]
+
+   RewriteCond %{HTTPS} !=on
+   RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+   RewriteCond %{HTTP_HOST} ^raumideenwerk\.com$ [NC]
+   RewriteRule ^(.*)$ https://www.raumideenwerk.com/$1 [R=301,L]
+ </IfModule>
