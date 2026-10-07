@@ -20,21 +20,48 @@ function fail(int $status, string $code): never
 }
 
 function loadConfig(): array
-{
-    $path = dirname($_SERVER['DOCUMENT_ROOT'] ?? __DIR__) . '/contact-config.php';
-    if (!is_readable($path)) {
-        error_log('contact.php: Konfiguration nicht gefunden unter ' . $path);
-        fail(500, 'config_missing');
-    }
-    $config = require $path;
-    foreach (['to', 'from', 'secret', 'allowed_origins'] as $key) {
-        if (empty($config[$key])) {
-            error_log('contact.php: Konfigurationswert fehlt: ' . $key);
-            fail(500, 'config_incomplete');
+ {
+     $path = dirname($_SERVER['DOCUMENT_ROOT'] ?? __DIR__) . '/contact-config.php';
+     if (!is_readable($path)) {
+         error_log('contact.php: Konfiguration nicht gefunden unter ' . $path);
+         fail(500, 'config_missing');
+     }
+    $all = require $path;
+
+    $host = strtolower(explode(':', $_SERVER['HTTP_HOST'] ?? '')[0]);
+    $domain = preg_replace('/^www\./', '', $host);
+
+    if (!isset($all[$domain])) {
+        foreach (array_keys($all) as $key) {
+            if (str_starts_with($domain, $key . '.')) {
+                $domain = $key;
+                break;
+            }
         }
     }
-    return $config;
-}
+    if (!isset($all[$domain]) || !is_array($all[$domain])) {
+        error_log('contact.php: keine Konfiguration für Host: ' . $host);
+        fail(500, 'config_missing');
+    }
+
+    $config = $all[$domain];
+    foreach (['to', 'from', 'secret'] as $key) {
+         if (empty($config[$key])) {
+             error_log('contact.php: Konfigurationswert fehlt: ' . $key);
+             fail(500, 'config_incomplete');
+         }
+     }
+
+    $origins = ['https://' . $domain, 'https://www.' . $domain];
+    if ($host !== $domain && $host !== 'www.' . $domain) {
+        $origins[] = 'https://' . $host;
+        $origins[] = 'http://' . $host;
+    }
+    $config['allowed_origins'] = $origins;
+    $config['rate_dir'] = dirname($path) . '/contact-rate/' . $domain;
+
+     return $config;
+ }
 
 function base64UrlEncode(string $raw): string
 {
