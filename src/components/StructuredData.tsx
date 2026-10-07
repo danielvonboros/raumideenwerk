@@ -31,7 +31,7 @@ export default function StructuredData() {
           "Innenarchitektur und Raumplanung für kleine Wohnungen in Berlin. Spezialisiert auf intelligente Raumkonzepte, Zonierung, Stauraumlösungen und individuelle Möbelplanung.",
 
         telephone: "+491604958148",
-        email: "hallo@raumideenwerk.com",
+        email: "mail@raumideenwerk.com",
 
         address: {
           "@type": "PostalAddress",

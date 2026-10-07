@@ -18,7 +18,7 @@ export const legalDe: LegalContent = {
       {
         heading: "Kontakt",
         lines: [
-          "E-Mail: hallo@raumideenwerk.com",
+          "E-Mail: mail@raumideenwerk.com",
           "Telefon: +49 160 495 8148",
           "Website: https://raumideenwerk.com",
         ],
@@ -94,7 +94,7 @@ export const legalDe: LegalContent = {
           "Kolonnenstraße 8",
           "10827 Berlin",
           "Deutschland",
-          "E-Mail: hallo@raumideenwerk.com",
+          "E-Mail: mail@raumideenwerk.com",
           "Telefon: +49 160 495 8148",
         ],
       },
@@ -164,7 +164,7 @@ export const legalDe: LegalContent = {
           "Zur Veranschaulichung meiner Leistungen können bearbeitete Projektbilder auf dieser Website veröffentlicht werden, soweit die hierfür erforderlichen Bild- und Nutzungsrechte bestehen und keine entgegenstehenden Vertraulichkeitsvereinbarungen vorliegen.",
           "Für eine Veröffentlichung ohne personenbezogene Einwilligung verwende ich ausschließlich Darstellungen, die keine Identifizierung von Kunden, Bewohnern oder sonstigen Personen ermöglichen. Hierzu werden insbesondere Personen, persönliche Gegenstände, Dokumente, Lagehinweise und gegebenenfalls der Blick aus Fenstern entfernt oder ausreichend verändert. Identifizierende Metadaten werden ebenfalls entfernt.",
           "Bei der Prüfung werden auch Bildunterschriften, der Veröffentlichungskontext und vernünftigerweise verfügbare Zusatzinformationen berücksichtigt. Eine Retusche oder KI-Bearbeitung allein garantiert keine Anonymität.",
-          "Wenn Sie auch eine Verwendung anonymisierter Darstellungen Ihres Projekts nicht wünschen, können Sie mir dies jederzeit formlos mitteilen, beispielsweise per E-Mail an hallo@raumideenwerk.com. Ich respektiere diesen Nutzungsausschluss und entferne betroffene Darstellungen aus den von mir kontrollierten Veröffentlichungen.",
+          "Wenn Sie auch eine Verwendung anonymisierter Darstellungen Ihres Projekts nicht wünschen, können Sie mir dies jederzeit formlos mitteilen, beispielsweise per E-Mail an mail@raumideenwerk.com. Ich respektiere diesen Nutzungsausschluss und entferne betroffene Darstellungen aus den von mir kontrollierten Veröffentlichungen.",
           "Bleibt ein Personenbezug bestehen oder kann eine Identifizierung nicht zuverlässig ausgeschlossen werden, veröffentliche ich die Bilder nur mit vorheriger, freiwilliger und zweckbezogener Einwilligung der betroffenen Personen gemäß Art. 6 Abs. 1 lit. a DSGVO. Ein fehlender Widerspruch gilt nicht als Einwilligung.",
           "Eine Einwilligung kann jederzeit für die Zukunft widerrufen werden. Bereits von Dritten angefertigte Kopien oder Weiterverbreitungen lassen sich möglicherweise nicht vollständig zurückholen.",
           "Diese Datenschutzerklärung ersetzt keine erforderliche vertragliche Vereinbarung über Bild- und Nutzungsrechte.",
@@ -192,7 +192,7 @@ export const legalDe: LegalContent = {
           "Empfänger sind im erforderlichen Umfang ALL-INKL.COM, die eingesetzten Apple- und Google-Dienste sowie bei entsprechender Nutzung OpenAI und Anthropic. Handwerksunternehmen erhalten Daten ausschließlich nach der in Abschnitt 9 beschriebenen Freigabe.",
           "Die datenschutzrechtliche Rolle der Anbieter richtet sich nach dem jeweiligen Dienst und den geltenden Bedingungen. Soweit Auftragsverarbeitung vorliegt, ist eine Vereinbarung gemäß Art. 28 DSGVO erforderlich.",
           "Bei internationalen Cloud- und KI-Diensten können Daten außerhalb der EU beziehungsweise des EWR, insbesondere in den USA, verarbeitet werden. Dafür ist zusätzlich zur Rechtsgrundlage der Verarbeitung eine Grundlage nach Art. 44 ff. DSGVO erforderlich.",
-          "Informationen und gegebenenfalls Kopien der einschlägigen Garantien können über hallo@raumideenwerk.com angefordert werden.",
+          "Informationen und gegebenenfalls Kopien der einschlägigen Garantien können über mail@raumideenwerk.com angefordert werden.",
         ],
       },
       {
@@ -209,7 +209,7 @@ export const legalDe: LegalContent = {
           "Unter den gesetzlichen Voraussetzungen haben Sie Rechte auf Auskunft nach Art. 15 DSGVO, Berichtigung nach Art. 16 DSGVO, Löschung nach Art. 17 DSGVO, Einschränkung der Verarbeitung nach Art. 18 DSGVO und Datenübertragbarkeit nach Art. 20 DSGVO.",
           "Erteilte Einwilligungen können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Die Rechtmäßigkeit der Verarbeitung vor dem Widerruf bleibt unberührt.",
           "Werden Ihre Daten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO verarbeitet, können Sie aus Gründen Ihrer besonderen Situation jederzeit nach Art. 21 DSGVO widersprechen. Ich verarbeite die Daten dann nicht weiter, es sei denn, ich weise zwingende schutzwürdige Gründe nach, die Ihre Interessen, Rechte und Freiheiten überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.",
-          "Zur Ausübung Ihrer Rechte wenden Sie sich an hallo@raumideenwerk.com.",
+          "Zur Ausübung Ihrer Rechte wenden Sie sich an mail@raumideenwerk.com.",
         ],
       },
       {

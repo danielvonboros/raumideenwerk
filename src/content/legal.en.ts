@@ -18,7 +18,7 @@ export const legalEn: LegalContent = {
       {
         heading: "Contact",
         lines: [
-          "Email: hallo@raumideenwerk.com",
+          "Email: mail@raumideenwerk.com",
           "Phone: +49 160 495 8148",
           "Website: https://raumideenwerk.com",
         ],
@@ -94,7 +94,7 @@ export const legalEn: LegalContent = {
           "Kolonnenstraße 8",
           "10827 Berlin",
           "Germany",
-          "Email: hallo@raumideenwerk.com",
+          "Email: mail@raumideenwerk.com",
           "Phone: +49 160 495 8148",
         ],
       },
@@ -164,7 +164,7 @@ export const legalEn: LegalContent = {
           "Edited project images may be published on this website to illustrate my services, provided the necessary image and usage rights exist and no conflicting confidentiality agreements apply.",
           "For publication without consent relating to personal data, I use only images that do not allow clients, residents or other individuals to be identified. Individuals, personal belongings, documents, location clues and, where necessary, views through windows are removed or sufficiently altered. Identifying metadata is also removed.",
           "The assessment also considers captions, publication context and additional information reasonably available. Retouching or AI editing alone does not guarantee anonymity.",
-          "If you do not want even anonymised images of your project to be used, you may inform me at any time without any prescribed form, for example by emailing hallo@raumideenwerk.com. I respect this restriction and remove the affected images from publications under my control.",
+          "If you do not want even anonymised images of your project to be used, you may inform me at any time without any prescribed form, for example by emailing mail@raumideenwerk.com. I respect this restriction and remove the affected images from publications under my control.",
           "Where personal data remains or identification cannot reliably be ruled out, I publish images only with the prior, freely given and purpose-specific consent of the individuals concerned under Article 6(1)(a) GDPR. A failure to object does not constitute consent.",
           "Consent may be withdrawn at any time with effect for the future. Copies already made or content redistributed by third parties may not be fully recoverable.",
           "This Privacy Policy does not replace any necessary contractual agreement concerning image and usage rights.",
@@ -192,7 +192,7 @@ export const legalEn: LegalContent = {
           "Recipients include, to the extent necessary, ALL-INKL.COM, the Apple and Google services used, and OpenAI and Anthropic when their services are used. Trade contractors receive data only following the authorisation described in Section 9.",
           "Providers' data protection roles depend on the service and applicable terms. Where they act as processors, an agreement under Article 28 GDPR is required.",
           "International cloud and AI services may process data outside the EU or EEA, particularly in the United States. In addition to a legal basis for processing, this requires a basis under Articles 44 et seq. GDPR.",
-          "Information and, where applicable, copies of the relevant safeguards may be requested at hallo@raumideenwerk.com.",
+          "Information and, where applicable, copies of the relevant safeguards may be requested at mail@raumideenwerk.com.",
         ],
       },
       {
@@ -209,7 +209,7 @@ export const legalEn: LegalContent = {
           "Subject to the applicable legal conditions, you have rights of access under Article 15 GDPR, rectification under Article 16 GDPR, erasure under Article 17 GDPR, restriction of processing under Article 18 GDPR and data portability under Article 20 GDPR.",
           "You may withdraw consent at any time with effect for the future. This does not affect the lawfulness of processing before withdrawal.",
           "Where your data is processed on the basis of Article 6(1)(f) GDPR, you may object at any time under Article 21 GDPR on grounds relating to your particular situation. I will then cease processing unless I demonstrate compelling legitimate grounds overriding your interests, rights and freedoms, or processing serves to establish, exercise or defend legal claims.",
-          "To exercise your rights, contact hallo@raumideenwerk.com.",
+          "To exercise your rights, contact mail@raumideenwerk.com.",
         ],
       },
       {

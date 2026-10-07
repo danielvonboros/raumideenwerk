@@ -471,7 +471,7 @@ export const en: SiteContent = {
     title: "contact",
     subtitle: "ready to transform your home?",
     details: [
-      { label: "email", value: "hallo@raumideenwerk.com", href: "mailto:hallo@raumideenwerk.com" },
+      { label: "email", value: "mail@raumideenwerk.com", href: "mailto:mail@raumideenwerk.com" },
       { label: "phone", value: "+49 160 495 81 48", href: "tel:+491604958148" },
       {
         label: "instagram",
@@ -490,19 +490,19 @@ export const en: SiteContent = {
       success:
         "Thank you, your message has arrived. I usually reply within 24 to 48 hours on working days.",
       error:
-        "That didn't work. Please try again later or write directly to hallo@raumideenwerk.com.",
+        "That didn't work. Please try again later or write directly to mail@raumideenwerk.com.",
       captchaLabel: "security question",
       captchaNew: "new question",
       captchaLoading: "loading …",
       captchaRequired: "Please solve the small sum first.",
       rateLimited:
-        "A lot of messages have come from your connection just now. Please try again in an hour, or write directly to hallo@raumideenwerk.com.",
+        "A lot of messages have come from your connection just now. Please try again in an hour, or write directly to mail@raumideenwerk.com.",
     },
   },
 
   footer: {
     contact: [
-      { href: "mailto:hallo@raumideenwerk.com", label: "hallo@raumideenwerk.com" },
+      { href: "mailto:mail@raumideenwerk.com", label: "mail@raumideenwerk.com" },
       { href: "tel:+491604958148", label: "+49 160 495 81 48" },
     ],
     social: [

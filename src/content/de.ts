@@ -471,7 +471,7 @@ export const de: SiteContent = {
     title: "kontakt",
     subtitle: "bereit, deine wohnung zu verwandeln?",
     details: [
-      { label: "e-mail", value: "hallo@raumideenwerk.com", href: "mailto:hallo@raumideenwerk.com" },
+      { label: "e-mail", value: "mail@raumideenwerk.com", href: "mailto:mail@raumideenwerk.com" },
       { label: "telefon", value: "+49 160 495 81 48", href: "tel:+491604958148" },
       {
         label: "instagram",
@@ -489,19 +489,19 @@ export const de: SiteContent = {
       sending: "wird gesendet …",
       success: "Danke, deine Nachricht ist angekommen. Ich melde mich in der Regel innerhalb von 24 bis 48 Stunden an Werktagen.",
       captchaRequired: "Bitte löse zuerst die kleine Rechenaufgabe.",
-      error:"Das hat nicht geklappt. Versuch es bitte später noch einmal oder schreib direkt an hallo@raumideenwerk.com.",
+      error:"Das hat nicht geklappt. Versuch es bitte später noch einmal oder schreib direkt an mail@raumideenwerk.com.",
       captchaLabel: "sicherheitsfrage",
       captchaNew: "neue aufgabe",
       captchaLoading: "wird geladen …",
       rateLimited:
-        "Es sind gerade viele Nachrichten von deinem Anschluss gekommen. Bitte versuch es in einer Stunde noch einmal oder schreib direkt an hallo@raumideenwerk.com.",
+        "Es sind gerade viele Nachrichten von deinem Anschluss gekommen. Bitte versuch es in einer Stunde noch einmal oder schreib direkt an mail@raumideenwerk.com.",
      },
     
   },
 
   footer: {
     contact: [
-      { href: "mailto:hallo@raumideenwerk.com", label: "hallo@raumideenwerk.com" },
+      { href: "mailto:mail@raumideenwerk.com", label: "mail@raumideenwerk.com" },
       { href: "tel:+491604958148", label: "+49 160 495 81 48" },
     ],
     social: [
