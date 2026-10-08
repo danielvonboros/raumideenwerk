@@ -371,7 +371,7 @@ export const de: SiteContent = {
     addOnsLabel: "zusätzlich buchbar",
     items: [
       {
-        name: "raum impulse",
+        name: "impuls",
         kind: "online paket",
         price: "590 €",
         surcharge: "ab 20 m²: +30 € pro weiterem m²",
@@ -385,11 +385,11 @@ export const de: SiteContent = {
           "Grober Grundriss",
           "Aufmaß durch dich",
         ],
-        cta: "loslegen",
+        cta: "impulse buchen",
         color: "petrol",
       },
       {
-        name: "raum konzepte",
+        name: "konzept",
         kind: "profi-paket",
         price: "890 €",
         surcharge: "ab 20 m²: +45 € pro weiterem m²",
@@ -413,7 +413,7 @@ export const de: SiteContent = {
         popular: true,
       },
       {
-        name: "raum transformation",
+        name: "transformation",
         kind: "komplettlösung",
         price: "1.490 €",
         surcharge: "ab 20 m²: +75 € pro weiterem m²",

@@ -371,7 +371,7 @@ export const en: SiteContent = {
     addOnsLabel: "available as add-ons",
     items: [
       {
-        name: "room impulses",
+        name: "impulse",
         kind: "online package",
         price: "€590",
         surcharge: "above 20 m²: +€30 per additional m²",
@@ -389,7 +389,7 @@ export const en: SiteContent = {
         color: "petrol",
       },
       {
-        name: "room concepts",
+        name: "concepts",
         kind: "full package",
         price: "€890",
         surcharge: "above 20 m²: +€45 per additional m²",
@@ -413,7 +413,7 @@ export const en: SiteContent = {
         popular: true,
       },
       {
-        name: "room transformation",
+        name: "transformation",
         kind: "complete solution",
         price: "€1,490",
         surcharge: "above 20 m²: +€75 per additional m²",
