@@ -61,6 +61,18 @@ export default function StructuredData() {
 
         sameAs: ["https://www.instagram.com/raum.ideen.werk.berlin"],
 
+        knowsAbout: [
+          "Innenarchitektur für kleine Wohnungen",
+          "Raumplanung",
+          "Einbaumöbel nach Maß",
+          "Podestbett mit Stauraum",
+          "Hochbett und Hochebene",
+          "Einbauschrank",
+          "Raumteiler",
+          "Stauraumlösungen",
+          "Zonierung von Wohn- und Schlafbereich",
+        ],
+
         hasOfferCatalog: {
           "@id": "https://www.raumideenwerk.com/#services",
         },
@@ -126,9 +138,9 @@ export default function StructuredData() {
 
             itemOffered: {
               "@type": "Service",
-              "@id": "https://www.raumideenwerk.com/#service-raum-impulse",
+              "@id": "https://www.raumideenwerk.com/#service-impuls",
 
-              name: "Raum Impulse",
+              name: "Impuls",
 
               serviceType: "Online-Raumberatung und Einrichtungsberatung",
 
@@ -154,9 +166,9 @@ export default function StructuredData() {
 
             itemOffered: {
               "@type": "Service",
-              "@id": "https://www.raumideenwerk.com/#service-raum-konzepte",
+              "@id": "https://www.raumideenwerk.com/#service-konzept",
 
-              name: "Raum Konzepte",
+              name: "Konzept",
 
               serviceType: "Innenarchitektur und Raumplanung",
 
@@ -183,14 +195,46 @@ export default function StructuredData() {
             itemOffered: {
               "@type": "Service",
               "@id":
-                "https://www.raumideenwerk.com/#service-raum-transformation",
+                "https://www.raumideenwerk.com/#service-transformation",
 
-              name: "Raum Transformation",
+              name: "Transformation",
 
               serviceType: "Innenarchitektur, Raumplanung und Möbelplanung",
 
               description:
                 "Umfassendes Raumkonzept mit individueller Möbelplanung, fotorealistischer 3D-Visualisierung, technischen Zeichnungen und Unterstützung bei der Umsetzung.",
+
+              provider: {
+                "@id": "https://www.raumideenwerk.com/#business",
+              },
+
+              areaServed: {
+                "@type": "City",
+                name: "Berlin",
+              },
+            },
+          },
+
+          {
+            "@type": "Offer",
+
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              minPrice: "500",
+              maxPrice: "700",
+              priceCurrency: "EUR",
+            },
+
+            itemOffered: {
+              "@type": "Service",
+              "@id": "https://www.raumideenwerk.com/#service-moebelplanung",
+
+              name: "Individuelle Möbelplanung",
+
+              serviceType: "Planung von Einbaumöbeln nach Maß",
+
+              description:
+                "Planung individueller Einbaumöbel für kleine Wohnungen: Podestbetten mit Stauraum, Hochbetten, Einbauschränke und Raumteiler – mit technischen Zeichnungen für den Selbstbau oder die Partnertischlerei.",
 
               provider: {
                 "@id": "https://www.raumideenwerk.com/#business",

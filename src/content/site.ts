@@ -8,17 +8,32 @@ export const site: Record<Locale, SiteContent> = { de, en };
 
 export const localeLabel: Record<Locale, string> = { de: "de", en: "en" };
 
-const segments: Record<Locale, { root: string; projects: string; imprint: string; privacy: string }> =
-  {
-    de: { root: "/", projects: "projekte", imprint: "impressum", privacy: "datenschutz" },
-    en: { root: "/en/", projects: "projects", imprint: "imprint", privacy: "privacy" },
-  };
+const segments: Record<
+  Locale,
+  { root: string; projects: string; services: string; imprint: string; privacy: string }
+> = {
+  de: {
+    root: "/",
+    projects: "projekte",
+    services: "leistungen",
+    imprint: "impressum",
+    privacy: "datenschutz",
+  },
+  en: {
+    root: "/en/",
+    projects: "projects",
+    services: "services",
+    imprint: "imprint",
+    privacy: "privacy",
+  },
+};
 
 export type PageRef =
   | { kind: "home" }
   | { kind: "imprint" }
   | { kind: "privacy" }
-  | { kind: "project"; index: number };
+  | { kind: "project"; index: number }
+  | { kind: "service"; index: number };
 
 export function pathFor(locale: Locale, page: PageRef): string {
   const s = segments[locale];
@@ -32,6 +47,10 @@ export function pathFor(locale: Locale, page: PageRef): string {
     case "project": {
       const project = site[locale].projects.items[page.index];
       return `${s.root}${s.projects}/${project.slug}/`;
+    }
+    case "service": {
+      const service = site[locale].servicePages.items[page.index];
+      return `${s.root}${s.services}/${service.slug}/`;
     }
   }
 }
@@ -51,6 +70,11 @@ export function metadataAlternates(locale: Locale, page: PageRef) {
 export function findProject(locale: Locale, slug: string) {
   const index = site[locale].projects.items.findIndex((item) => item.slug === slug);
   return index === -1 ? null : { index, project: site[locale].projects.items[index] };
+}
+
+export function findService(locale: Locale, slug: string) {
+  const index = site[locale].servicePages.items.findIndex((item) => item.slug === slug);
+  return index === -1 ? null : { index, service: site[locale].servicePages.items[index] };
 }
 
 const keywords = [

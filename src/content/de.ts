@@ -319,6 +319,266 @@ export const de: SiteContent = {
     ],
   },
 
+  servicePages: {
+    title: "leistungen im detail",
+    items: [
+      {
+        slug: "einbaumoebel-stauraum",
+        color: "yellow",
+        label: "einbaumöbel & stauraum",
+        title: "einbaumöbel nach maß in berlin",
+        subtitle: "mehr stauraum für kleine wohnungen, ohne umzug",
+        metaTitle: "Einbaumöbel nach Maß & Stauraum für kleine Wohnungen in Berlin",
+        description:
+          "Einbaumöbel nach Maß für kleine Wohnungen in Berlin: Einbauschränke, Podestbetten, Hochebenen und Regalwände, die Stauraum schaffen – geplant vom Architekten.",
+        image: {
+          src: "/room/room4/einbauschrank_stauraum_bettschrank_kleine_wohnung_berlin.webp",
+          alt: "Einbauschrank mit Stauraum und Hochbett in einer kleinen Wohnung in Berlin",
+        },
+        intro:
+          "Wenn die Schränke voll sind und jede Ecke zugestellt ist, liegt das selten an zu wenig Quadratmetern. Meist bleiben Nischen, Wandflächen und die Raumhöhe ungenutzt. Einbaumöbel nach Maß holen genau diesen Platz zurück: Sie passen sich dem Raum an, statt ihn mit Standardmöbeln zu füllen.",
+        fit: {
+          title: "wann sich einbaumöbel lohnen",
+          items: [
+            "Deine Schränke sind voll, und für einen weiteren ist kein Platz.",
+            "Deine Wohnung hat Nischen, Vorsprünge oder Ecken, in die kein Standardmöbel passt.",
+            "Die Decke ist hoch, aber der Raum darüber bleibt ungenutzt.",
+            "Ein Zimmer soll mehrere Aufgaben übernehmen, zum Beispiel Arbeiten, Schlafen und Gäste.",
+          ],
+        },
+        planning: [
+          {
+            title: "alltag verstehen",
+            text: "Ich schaue mir an, was du verstauen musst und wie du deine Wohnung im Alltag nutzt. Daraus ergibt sich, wo Stauraum hingehört – und wo er stören würde.",
+          },
+          {
+            title: "verlorenen platz nutzen",
+            text: "Nischen, Flächen über Türen, der Platz unter dem Bett und die Höhe bis zur Decke: Dort plane ich Einbauschränke, Podeste, Hochebenen oder Regalwände.",
+          },
+          {
+            title: "ruhig gestalten",
+            text: "Einbaumöbel sollen den Raum ordnen, nicht füllen. Durchgehende Fronten und klare Kanten lassen ein Zimmer aufgeräumter und größer wirken.",
+          },
+          {
+            title: "baubar planen",
+            text: "Du bekommst technische Zeichnungen, nach denen du selbst baust oder meine Partnertischlerei ein Angebot erstellt.",
+          },
+        ],
+        costs:
+          "Was der Bau kostet, hängt stark von Größe, Material und Oberfläche ab. Deshalb nenne ich dafür keinen Pauschalpreis: Mit dem fertigen Konzept bekommst du ein konkretes Angebot von der Tischlerei – oder du baust selbst.",
+        projects: [3, 0, 4, 5],
+        faq: [
+          {
+            question: "Was ist der Unterschied zwischen Einbaumöbeln und normalen Möbeln?",
+            answer:
+              "Einbaumöbel werden für einen bestimmten Raum geplant und nutzen ihn bis in die Ecken und bis unter die Decke. Standardmöbel lassen dagegen Lücken, die verloren gehen. Gerade in kleinen Wohnungen macht das beim Stauraum einen großen Unterschied.",
+          },
+          {
+            question: "Kann ich meine vorhandenen Möbel einbeziehen?",
+            answer:
+              "Ja. Oft lässt sich ein Teil des Stauraums mit vorhandenen Möbeln oder Möbeln aus dem Möbelhaus lösen, wie im Projekt „neue nutzung für 10 m²“. Einbauten nach Maß plane ich dort, wo Standardmöbel nicht passen.",
+          },
+          {
+            question: "Baust du die Möbel selbst?",
+            answer:
+              "Nein, ich plane sie. Gebaut wird von dir selbst oder von meiner Partnertischlerei, an die ich dich vermittle.",
+          },
+        ],
+      },
+      {
+        slug: "podestbett",
+        color: "petrol",
+        label: "podestbett",
+        title: "podestbett nach maß in berlin",
+        subtitle: "schlafen, verstauen und den raum zonieren",
+        metaTitle: "Podestbett mit Stauraum planen lassen in Berlin",
+        description:
+          "Podestbett nach Maß für kleine Wohnungen in Berlin: mit Stauraum, der den Kleiderschrank ersetzen kann, und klarer Trennung von Wohn- und Schlafbereich.",
+        image: {
+          src: "/room/room11/podestbett_arbeitsplatz_altbauwohnung_studio_stauraum.webp",
+          alt: "Podestbett mit Stauraum und Arbeitsplatz in einer Altbauwohnung",
+        },
+        intro:
+          "Ein Podestbett hebt die Matratze auf eine Ebene, unter der viel Stauraum entsteht – oft genug, um einen Kleiderschrank zu ersetzen. Gleichzeitig gliedert es den Raum: Das Bett wird Teil eines Möbels und bestimmt nicht mehr das ganze Zimmer.",
+        fit: {
+          title: "wann sich ein podestbett lohnt",
+          items: [
+            "Du wohnst in einer 1-Zimmer-Wohnung oder einem Studio, in dem Wohnen und Schlafen in einem Raum stattfinden.",
+            "Ein Kleiderschrank nimmt zu viel Platz weg oder passt gar nicht hinein.",
+            "Das Bett soll beim Betreten des Zimmers nicht als Erstes ins Auge fallen.",
+            "Du möchtest den Raum in Zonen gliedern, ohne Wände einzuziehen.",
+          ],
+        },
+        planning: [
+          {
+            title: "höhe und zugang",
+            text: "Wie hoch das Podest wird, hängt davon ab, wie viel Stauraum du brauchst und wie bequem das Ein- und Aussteigen sein soll.",
+          },
+          {
+            title: "stauraum, der erreichbar bleibt",
+            text: "Schubladen, Klappen oder offene Fächer – je nachdem, was du darin verstaust und wie oft du es brauchst.",
+          },
+          {
+            title: "ein möbel statt eines betts",
+            text: "Im Projekt „podestbett für kleine wohnungen“ wirkt das Podest wie ein langes Sideboard. So entsteht ein Schlafplatz, der nicht an ein Bett erinnert.",
+          },
+          {
+            title: "zusammen mit dem raum",
+            text: "Das Podest plane ich gemeinsam mit Arbeitsplatz, Regalen und Farbkonzept, damit der ganze Raum funktioniert.",
+          },
+        ],
+        costs:
+          "Die Kosten für den Bau hängen von Größe, Aufteilung des Stauraums und Material ab. Einen seriösen Preis gibt es erst mit dem fertigen Konzept – dann bekommst du ein Angebot von der Tischlerei, oder du baust selbst.",
+        projects: [5, 2],
+        faq: [
+          {
+            question: "Wie viel Stauraum bietet ein Podestbett?",
+            answer:
+              "Allein unter einer Liegefläche von 140 × 200 cm liegen fast drei Quadratmeter, die du als Stauraum nutzen kannst. Im Projekt „podestbett für kleine wohnungen“ hat das gereicht, um den Kleiderschrank zu ersetzen.",
+          },
+          {
+            question: "Was ist der Unterschied zwischen Podestbett und Hochbett?",
+            answer:
+              "Ein Podestbett ist niedrig, der Stauraum liegt darunter in Schubladen oder Fächern. Ein Hochbett oder eine Hochebene hebt den Schlafplatz so weit an, dass darunter ein nutzbarer Bereich entsteht, etwa für einen begehbaren Kleiderschrank oder einen Arbeitsplatz. Welche Lösung passt, hängt vor allem von der Raumhöhe ab.",
+          },
+          {
+            question: "Kann ich ein Podestbett selbst bauen?",
+            answer:
+              "Ja. Im Paket „transformation“ bekommst du technische Zeichnungen, nach denen du selbst bauen kannst. Wenn du das nicht möchtest, vermittle ich dich an meine Partnertischlerei.",
+          },
+        ],
+      },
+      {
+        slug: "hochebene-hochbett",
+        color: "ink",
+        label: "hochebene & hochbett",
+        title: "hochebene und hochbett in berlin",
+        subtitle: "die raumhöhe als zusätzliche fläche nutzen",
+        metaTitle: "Hochebene & Hochbett nach Maß planen lassen in Berlin",
+        description:
+          "Hochebene oder Hochbett nach Maß für kleine Wohnungen in Berlin: Die Raumhöhe wird zur zusätzlichen Fläche für Schlafplatz, Kleiderschrank oder Arbeitsplatz.",
+        image: {
+          src: "/room/room1/nische_berliner-zimmer_hochbett_stauraum.webp",
+          alt: "Hochbett mit Regal und Stauraum in der Nische eines Berliner Zimmers",
+          position: "50% 45%",
+        },
+        intro:
+          "Viele Berliner Wohnungen, vor allem im Altbau, haben hohe Decken. Eine Hochebene oder ein Hochbett macht aus dieser Höhe zusätzliche Fläche: oben schlafen, darunter verstauen, arbeiten oder sich anziehen. So bekommt ein kleines Zimmer eine zweite Ebene, ohne enger zu wirken.",
+        fit: {
+          title: "wann sich eine hochebene lohnt",
+          items: [
+            "Dein Zimmer hat hohe Decken, zum Beispiel im Berliner Altbau.",
+            "Du brauchst Platz zum Schlafen und für Stauraum, aber die Grundfläche reicht nicht für beides.",
+            "Eine Nische oder ein Teil des Raums wird bisher kaum genutzt.",
+            "Unter dem Bett soll ein begehbarer Kleiderschrank, ein Arbeitsplatz oder eine Leseecke entstehen.",
+          ],
+        },
+        planning: [
+          {
+            title: "raumhöhe prüfen",
+            text: "Ob eine Hochebene sinnvoll ist, entscheidet die Deckenhöhe: Oben und unten muss genug Luft bleiben, damit beide Ebenen angenehm nutzbar sind. Das prüfe ich als Erstes.",
+          },
+          {
+            title: "sicher konstruieren",
+            text: "Konstruktion, Aufstieg und Absturzsicherung gehören zur Planung. Du bekommst Zeichnungen, nach denen die Tischlerei – oder du selbst – bauen kann.",
+          },
+          {
+            title: "die untere ebene nutzen",
+            text: "Darunter entsteht ein eigener Bereich: ein begehbarer Kleiderschrank wie im Projekt „einbaumöbel für kleine apartments“ oder eine Homeoffice-Ecke wie bei „raumteiler und empore für bett“.",
+          },
+          {
+            title: "ein möbel statt eines gerüsts",
+            text: "Zum Raum hin kann die Hochebene mit einem Regal verkleidet werden. So wird sie zu einem Möbel, das den Raum ordnet, statt wie ein Gerüst zu wirken.",
+          },
+        ],
+        costs:
+          "Für den Bau gibt es eine große Spanne: Einfache Hochebenen werden ab etwa 2.000 € angeboten. Mit Größe, Material, Einbauten und Oberfläche – etwa einer Lackierung – kann der Preis aber auch ein Vielfaches betragen. Ein konkretes Angebot bekommst du deshalb erst auf Grundlage des fertigen Konzepts.",
+        projects: [0, 3, 2],
+        faq: [
+          {
+            question: "Was kostet eine Hochebene in Berlin?",
+            answer:
+              "Einfache Hochebenen gibt es ab etwa 2.000 €. Je nach Größe, Material, Einbauten und Oberfläche kann der Preis aber ein Vielfaches davon betragen. Dazu kommt die Planung: Die individuelle Möbelplanung ist zum Beispiel im Paket „transformation“ für 1.490 € enthalten.",
+          },
+          {
+            question: "Wie hoch muss ein Raum für eine Hochebene sein?",
+            answer:
+              "Das hängt davon ab, wie du die beiden Ebenen nutzen willst. Zum Schlafen reicht oben weniger Höhe als für einen Arbeitsplatz darunter, an dem du aufrecht sitzen oder stehen möchtest. Hohe Altbaudecken sind ideal – ob es bei dir passt, kläre ich beim Aufmaß.",
+          },
+          {
+            question: "Ist eine Hochebene in einer Mietwohnung möglich?",
+            answer:
+              "Oft ja, wenn sie freistehend gebaut wird und sich beim Auszug wieder abbauen lässt. Kläre das trotzdem vorher mit deinem Vermieter oder deiner Hausverwaltung – gern besprechen wir das im Erstgespräch.",
+          },
+        ],
+      },
+      {
+        slug: "wohn-und-schlafbereich-trennen",
+        color: "yellow",
+        label: "wohn- und schlafbereich trennen",
+        title: "wohn- und schlafbereich trennen",
+        subtitle: "zonierung für 1-zimmer-wohnungen und studios in berlin",
+        metaTitle: "Wohn- und Schlafbereich in einem Zimmer trennen – Raumplanung in Berlin",
+        description:
+          "Wohn- und Schlafbereich in einem Zimmer trennen: mit Raumteiler, Podestbett oder Empore. Zonierung für 1-Zimmer-Wohnungen und Studios in Berlin.",
+        image: {
+          src: "/room/room2/raumteiler_homeoffice_studio_kleine_wohnung_raumkonzept.webp",
+          alt: "Raumteiler mit Empore für das Bett und Homeoffice-Ecke darunter",
+          position: "50% 40%",
+        },
+        intro:
+          "In einer 1-Zimmer-Wohnung oder einem Studio ist das Bett oft das Erste, was man sieht, und Wohnen, Arbeiten und Schlafen gehen ineinander über. Mit Zonierung bekommt jeder Bereich seinen Platz, ohne dass Wände eingezogen werden müssen. Das Zimmer wirkt danach ruhiger und oft sogar größer.",
+        fit: {
+          title: "wann sich eine zonierung lohnt",
+          items: [
+            "Du wohnst, schläfst und arbeitest in einem Raum.",
+            "Beim Betreten des Zimmers fällt der Blick zuerst auf das Bett.",
+            "Deine Gäste sitzen praktisch in deinem Schlafzimmer.",
+            "Du suchst eine Trennung, die keinen Platz kostet, sondern zusätzlichen Stauraum bringt.",
+          ],
+        },
+        planning: [
+          {
+            title: "zonen festlegen",
+            text: "Wir klären, welche Bereiche du brauchst – Schlafen, Wohnen, Arbeiten, Ankleiden – und wo sie im Raum am besten liegen, mit Blick auf Fenster, Türen und Wege.",
+          },
+          {
+            title: "trennen mit stauraum",
+            text: "Ein Raumteiler als Regal trennt die Bereiche und nimmt gleichzeitig Bücher, Kleidung oder Technik auf. So kostet die Trennung keinen Platz, sondern schafft welchen.",
+          },
+          {
+            title: "die höhe nutzen",
+            text: "Eine Empore oder ein Podest hebt den Schlafbereich ab. Darunter entsteht Platz für Homeoffice, Leseecke oder Kleiderschrank.",
+          },
+          {
+            title: "blickachsen planen",
+            text: "Ich plane so, dass das Bett beim Hereinkommen nicht im Mittelpunkt steht. So wird aus einem Schlafzimmer mit Sofa wieder eine Wohnung.",
+          },
+        ],
+        costs:
+          "Eine Zonierung kann schon mit gut gestellten vorhandenen Möbeln gelingen – dann reicht oft das Paket „impuls“ oder „konzept“. Für Raumteiler, Podest oder Empore nach Maß hängen die Baukosten von Größe und Material ab; ein Angebot gibt es auf Grundlage des fertigen Konzepts.",
+        projects: [2, 5, 0],
+        faq: [
+          {
+            question: "Wie trenne ich Wohn- und Schlafbereich ohne Wand?",
+            answer:
+              "Mit einem Raumteiler, der gleichzeitig Regal oder Schrank ist, mit einem Podestbett oder mit einer Empore. Manchmal reichen auch ein Vorhang oder eine geschickte Möbelstellung. Entscheidend ist, dass jeder Bereich klar erkennbar ist und die Wege frei bleiben.",
+          },
+          {
+            question: "Lohnt sich eine Zonierung in einem kleinen Zimmer?",
+            answer:
+              "Gerade dort. Je kleiner der Raum, desto mehr profitiert er von klaren Zonen. Im Projekt „raumteiler und empore für bett“ ist unter der Empore sogar eine zusätzliche Homeoffice-Ecke entstanden.",
+          },
+          {
+            question: "Kann ich meine vorhandenen Möbel weiter nutzen?",
+            answer:
+              "Oft schon. Manchmal reicht eine neue Anordnung der Möbel, die du schon hast, damit Wohnen und Schlafen getrennt wirken. Einbauten nach Maß plane ich nur dort, wo sie wirklich etwas bringen.",
+          },
+        ],
+      },
+    ],
+  },
+
   painPoints: {
     title: "kommt dir das bekannt vor?",
     items: [
@@ -467,6 +727,61 @@ export const de: SiteContent = {
     ],
   },
 
+  seoServices: {
+    title: "Raumplanung, Einbaumöbel & Einrichtungsberatung in Berlin – mehr Platz für dein Leben",
+    items: [
+      {
+        title: "Raumkonzepte & Grundrissoptimierung",
+        text: "Nachwuchs kündigt sich an, die Kinder brauchen mehr Platz oder ein Arbeitsplatz muss ins Wohnzimmer passen? Ich entwickle Raumkonzepte, die Platz für euren Alltag schaffen – vom zusätzlichen Kinderzimmer bis zum Geschwisterzimmer mit eigenen Bereichen zum Schlafen, Spielen und Lernen. Mit durchdachter Raumaufteilung wird aus eurer bestehenden Wohnung ein Zuhause, das mitwächst.",
+      },
+      {
+        title: "Einbaumöbel nach Maß & Stauraum",
+        text: "Wenn Schränke voll sind und Stellfläche fehlt, braucht es Ideen, die deinen Raum besser nutzen. Ich plane individuelle Einbaumöbel für kleine Wohnungen in Berlin: Podestbetten mit Stauraum, Hochbetten und Hochebenen, Einbauschränke für Nischen und Raumteiler, die Wohn- und Schlafbereich trennen. Gebaut wird von dir selbst oder von meiner Partnertischlerei.",
+      },
+      {
+        title: "Einrichtungsberatung & Interior Design",
+        text: "Du möchtest deine Wohnung neu einrichten, bist aber bei Möbeln, Farben und Materialien unsicher? Ich entwickle ein stimmiges Einrichtungskonzept und mache es mit Moodboards und 3D-Visualisierungen für dich greifbar – bei dir vor Ort in Berlin oder online.",
+      },
+    ],
+  },
+
+  faq: {
+    title: "häufige fragen",
+    subtitle: "stauraum, einbaumöbel und raumplanung in berlin",
+    items: [
+      {
+        question: "Meine kleine Wohnung ist vollgestellt – wie bekomme ich mehr Stauraum?",
+        answer:
+          "Meist fehlt nicht der Platz, sondern eine Planung, die ihn nutzt. Ich schaue mir an, wo in deiner Wohnung Fläche verloren geht – in Nischen, über Türen, unter dem Bett oder bis unter die Decke – und plane dort Einbauschränke, Podestbetten, Hochebenen oder Regalwände. So ist in meinem Projekt „neue nutzung für 10 m²“ aus einem kleinen Zimmer ein Arbeitszimmer, Gästezimmer und Stauraum in einem geworden.",
+      },
+      {
+        question: "Wie kann ich Wohn- und Schlafbereich in einem Zimmer sinnvoll trennen?",
+        answer:
+          "Mit Zonierung: Ein Raumteiler mit Stauraum, ein Podestbett oder eine Empore trennen den Schlafbereich ab, ohne den Raum zuzustellen. Das Bett rückt aus dem Blickfeld, und unter oder neben ihm entsteht Platz für Kleidung, ein Homeoffice oder eine Leseecke. Beispiele dafür sind meine Projekte „raumteiler und empore für bett“ und „podestbett für kleine wohnungen“.",
+      },
+      {
+        question: "Planst du individuelle Einbaumöbel wie Podestbett, Hochbett oder Einbauschrank?",
+        answer:
+          "Ja, das ist ein Schwerpunkt meiner Arbeit. Ich plane Einbaumöbel nach Maß für kleine Wohnungen in Berlin: Podestbetten mit Stauraum, Hochbetten mit begehbarem Kleiderschrank, Einbauschränke für Nischen und Raumteiler. Die individuelle Möbelplanung ist im Paket „transformation“ enthalten und im Paket „konzept“ für 500–700 € zubuchbar.",
+      },
+      {
+        question: "Was kostet die Planung bei raumideenwerk?",
+        answer:
+          "Die Pakete haben feste Grundpreise für Räume bis 20 m²: „impuls“ (online) 590 €, „konzept“ 890 € und „transformation“ 1.490 €. Für größere Räume kommt ein Aufschlag pro weiterem m² dazu. Ist der Umfang noch offen, rechne ich nach Zeitaufwand ab – mein Stundensatz liegt bei 160 €. Der Bau der Möbel ist nicht enthalten, seine Kosten hängen von Größe und Material ab.",
+      },
+      {
+        question: "Kümmerst du dich auch um die Umsetzung?",
+        answer:
+          "Du hast zwei Möglichkeiten: Du baust selbst um – dafür bekommst du Konzept, Shoppingliste und bei Bedarf technische Zeichnungen. Oder ich vermittle dich an meine Partnertischlerei, die die Einbaumöbel nach meinen Plänen baut. Im Paket „transformation“ sind technische Zeichnungen und die Vermittlung bereits enthalten.",
+      },
+      {
+        question: "Arbeitest du nur in Berlin?",
+        answer:
+          "Für Beratung und Aufmaß vor Ort komme ich zu dir nach Berlin. Das Paket „impuls“ läuft komplett online: Du misst selbst nach meiner Anleitung, egal wo in Deutschland du wohnst.",
+      },
+    ],
+  },
+
   contact: {
     title: "kontakt",
     subtitle: "bereit, deine wohnung zu verwandeln?",
@@ -522,12 +837,28 @@ export const de: SiteContent = {
     materials: "materialien",
     dimensions: "abmessungen",
     year: "jahr",
+    services: "leistung",
     gallery: "bilder",
     ctaTitle: "interessiert an einem ähnlichen projekt?",
     ctaText: "Lass uns über deine Wohnung sprechen. Das Erstgespräch ist der erste Schritt.",
     ctaButton: { href: "/#kontakt", label: "erstgespräch buchen" },
     prev: "vorheriges projekt",
     next: "nächstes projekt",
+  },
+
+  servicePage: {
+    back: "alle leistungen",
+    planning: "so plane ich",
+    costs: "was kostet das?",
+    planningCosts:
+      "Die Planung läuft über meine Pakete mit festen Grundpreisen für Räume bis 20 m²: „impuls“ (online) 590 €, „konzept“ 890 €, „transformation“ 1.490 €. Die individuelle Möbelplanung ist in „transformation“ enthalten und in „konzept“ für 500–700 € zubuchbar.",
+    packagesLink: { href: "/#pakete", label: "alle pakete ansehen" },
+    projects: "passende projekte",
+    faq: "häufige fragen",
+    more: "weitere leistungen",
+    ctaTitle: "lass uns über deine wohnung sprechen",
+    ctaText: "Im Erstgespräch klären wir, welche Lösung zu deinem Raum und deinem Alltag passt.",
+    ctaButton: { href: "/#kontakt", label: "erstgespräch buchen" },
   },
 
 };

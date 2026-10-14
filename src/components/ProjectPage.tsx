@@ -23,6 +23,9 @@ export function ProjectPage({
   const nextIndex = (index + 1) % items.length;
   const previous = items[previousIndex];
   const next = items[nextIndex];
+  const services = site[locale].servicePages.items
+    .map((service, serviceIndex) => ({ service, serviceIndex }))
+    .filter(({ service }) => service.projects.includes(index));
 
   return (
     <Chrome locale={locale} page={{ kind: "project", index }}>
@@ -107,6 +110,22 @@ export function ProjectPage({
             <dd>{project.dimensions}</dd>
             <dt className="italic">{t.year}</dt>
             <dd>{project.year}</dd>
+            {services.length > 0 && (
+              <>
+                <dt className="italic">{t.services}</dt>
+                <dd className="flex flex-col gap-1">
+                  {services.map(({ service, serviceIndex }) => (
+                    <Link
+                      key={service.slug}
+                      href={pathFor(locale, { kind: "service", index: serviceIndex })}
+                      className="w-fit underline underline-offset-4 hover:text-petrol"
+                    >
+                      {service.label}
+                    </Link>
+                  ))}
+                </dd>
+              </>
+            )}
           </dl>
         </section>
 

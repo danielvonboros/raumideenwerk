@@ -22,6 +22,9 @@ function entry(page: PageRef, priority: number, changeFrequency: "monthly" | "ye
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...entry({ kind: "home" }, 1, "monthly"),
+    ...site.de.servicePages.items.flatMap((_, index) =>
+      entry({ kind: "service", index }, 0.8, "monthly"),
+    ),
     ...site.de.projects.items.flatMap((_, index) =>
       entry({ kind: "project", index }, 0.7, "yearly"),
     ),

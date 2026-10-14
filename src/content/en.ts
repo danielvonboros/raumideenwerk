@@ -319,6 +319,266 @@ export const en: SiteContent = {
     ],
   },
 
+  servicePages: {
+    title: "services in detail",
+    items: [
+      {
+        slug: "built-in-furniture-storage",
+        color: "yellow",
+        label: "built-in furniture & storage",
+        title: "bespoke built-in furniture in berlin",
+        subtitle: "more storage for small flats, without moving",
+        metaTitle: "Bespoke Built-in Furniture & Storage for Small Flats in Berlin",
+        description:
+          "Made-to-measure built-in furniture for small flats in Berlin: built-in wardrobes, platform beds, raised levels and shelving walls that create storage – designed by an architect.",
+        image: {
+          src: "/room/room4/einbauschrank_stauraum_bettschrank_kleine_wohnung_berlin.webp",
+          alt: "Built-in wardrobe with storage and a loft bed in a small flat in Berlin",
+        },
+        intro:
+          "When the cupboards are full and every corner is cluttered, it's rarely because there aren't enough square metres. Usually alcoves, wall space and ceiling height go unused. Made-to-measure built-in furniture wins that space back: it adapts to the room instead of filling it with standard furniture.",
+        fit: {
+          title: "when built-in furniture makes sense",
+          items: [
+            "Your cupboards are full, and there's no room for another one.",
+            "Your flat has alcoves, recesses or corners that no standard furniture fits.",
+            "The ceiling is high, but the space up there goes unused.",
+            "One room has to do several jobs, such as working, sleeping and hosting guests.",
+          ],
+        },
+        planning: [
+          {
+            title: "understanding your routine",
+            text: "I look at what you need to store and how you use your flat day to day. That shows where storage belongs – and where it would get in the way.",
+          },
+          {
+            title: "using lost space",
+            text: "Alcoves, the space above doors, under the bed and up to the ceiling: that's where I plan built-in wardrobes, platforms, raised levels or shelving walls.",
+          },
+          {
+            title: "keeping it calm",
+            text: "Built-in furniture should organise a room, not fill it. Continuous fronts and clean edges make a room look tidier and larger.",
+          },
+          {
+            title: "designed to be built",
+            text: "You get technical drawings to build from yourself, or for my partner joinery to quote on.",
+          },
+        ],
+        costs:
+          "What the build costs depends heavily on size, materials and finish. That's why I don't give a flat price for it: once the concept is finished, you get a concrete quote from the joinery – or you build it yourself.",
+        projects: [3, 0, 4, 5],
+        faq: [
+          {
+            question: "What's the difference between built-in and regular furniture?",
+            answer:
+              "Built-in furniture is designed for one specific room and uses it right into the corners and up to the ceiling. Standard furniture leaves gaps that are lost. In small flats especially, that makes a big difference to storage.",
+          },
+          {
+            question: "Can I include furniture I already have?",
+            answer:
+              "Yes. Part of the storage can often be solved with furniture you already own or pieces from a furniture store, as in the project “a new use for 10 m²”. I plan made-to-measure pieces where standard furniture doesn't fit.",
+          },
+          {
+            question: "Do you build the furniture yourself?",
+            answer:
+              "No, I design it. It's built by you or by my partner joinery, which I put you in touch with.",
+          },
+        ],
+      },
+      {
+        slug: "platform-bed",
+        color: "petrol",
+        label: "platform bed",
+        title: "bespoke platform beds in berlin",
+        subtitle: "sleep, store and zone the room",
+        metaTitle: "Platform Bed with Storage, Designed in Berlin",
+        description:
+          "Made-to-measure platform beds for small flats in Berlin: with storage that can replace a wardrobe, and a clear separation of living and sleeping areas.",
+        image: {
+          src: "/room/room11/podestbett_arbeitsplatz_altbauwohnung_studio_stauraum.webp",
+          alt: "Platform bed with storage and a workspace in a period flat",
+        },
+        intro:
+          "A platform bed raises the mattress onto a level with plenty of storage underneath – often enough to replace a wardrobe. At the same time it structures the room: the bed becomes part of a piece of furniture and no longer dominates the whole space.",
+        fit: {
+          title: "when a platform bed makes sense",
+          items: [
+            "You live in a studio or one-room flat where living and sleeping happen in the same room.",
+            "A wardrobe takes up too much space or doesn't fit at all.",
+            "You don't want the bed to be the first thing you see when you walk in.",
+            "You want to divide the room into zones without putting up walls.",
+          ],
+        },
+        planning: [
+          {
+            title: "height and access",
+            text: "How high the platform is depends on how much storage you need and how easy it should be to get in and out of bed.",
+          },
+          {
+            title: "storage you can reach",
+            text: "Drawers, flaps or open compartments – depending on what you store and how often you need it.",
+          },
+          {
+            title: "furniture, not a bed",
+            text: "In the project “platform bed for small flats”, the platform looks like a long sideboard. The result is a place to sleep that doesn't read as a bed.",
+          },
+          {
+            title: "planned with the room",
+            text: "I plan the platform together with the workspace, shelving and colour scheme, so the whole room works.",
+          },
+        ],
+        costs:
+          "The cost of building it depends on size, the storage layout and materials. A reliable price is only possible once the concept is finished – then you get a quote from the joinery, or you build it yourself.",
+        projects: [5, 2],
+        faq: [
+          {
+            question: "How much storage does a platform bed give me?",
+            answer:
+              "Under a 140 × 200 cm mattress alone there are almost three square metres you can use for storage. In the project “platform bed for small flats”, that was enough to replace the wardrobe.",
+          },
+          {
+            question: "What's the difference between a platform bed and a loft bed?",
+            answer:
+              "A platform bed is low, with storage underneath in drawers or compartments. A loft bed or raised level lifts the bed high enough to create a usable area below, for a walk-in wardrobe or a workspace, for example. Which one fits depends mainly on the ceiling height.",
+          },
+          {
+            question: "Can I build a platform bed myself?",
+            answer:
+              "Yes. The “transformation” package includes technical drawings you can build from yourself. If you'd rather not, I'll put you in touch with my partner joinery.",
+          },
+        ],
+      },
+      {
+        slug: "raised-level-loft-bed",
+        color: "ink",
+        label: "raised level & loft bed",
+        title: "raised levels and loft beds in berlin",
+        subtitle: "turning ceiling height into extra floor space",
+        metaTitle: "Bespoke Raised Levels & Loft Beds, Designed in Berlin",
+        description:
+          "Made-to-measure raised levels and loft beds for small flats in Berlin: ceiling height becomes extra space for sleeping, a wardrobe or a workspace.",
+        image: {
+          src: "/room/room1/nische_berliner-zimmer_hochbett_stauraum.webp",
+          alt: "Loft bed with shelving and storage in the alcove of a Berlin room",
+          position: "50% 45%",
+        },
+        intro:
+          "Many Berlin flats, especially in period buildings, have high ceilings. A raised level or loft bed turns that height into extra space: sleep up top, and store things, work or get dressed below. A small room gains a second level without feeling more cramped.",
+        fit: {
+          title: "when a raised level makes sense",
+          items: [
+            "Your room has high ceilings, as in many Berlin period flats.",
+            "You need room for sleeping and storage, but the floor area isn't enough for both.",
+            "An alcove or part of the room is barely used.",
+            "You want a walk-in wardrobe, a workspace or a reading corner under the bed.",
+          ],
+        },
+        planning: [
+          {
+            title: "checking the ceiling height",
+            text: "Whether a raised level makes sense depends on the ceiling height: there has to be enough headroom above and below for both levels to be comfortable. That's the first thing I check.",
+          },
+          {
+            title: "built to be safe",
+            text: "Structure, access and fall protection are part of the design. You get drawings that the joinery – or you – can build from.",
+          },
+          {
+            title: "using the lower level",
+            text: "Underneath, a space of its own appears: a walk-in wardrobe as in the project “built-in furniture for small flats”, or a home office corner as in “room divider with bed platform”.",
+          },
+          {
+            title: "furniture, not scaffolding",
+            text: "Facing the room, the raised level can be clad with shelving. That turns it into furniture that organises the room instead of looking like scaffolding.",
+          },
+        ],
+        costs:
+          "Build costs vary widely: simple raised levels are offered from around €2,000. Depending on size, materials, built-in elements and finish – a lacquered finish, for example – the price can be several times that. That's why you only get a concrete quote once the concept is finished.",
+        projects: [0, 3, 2],
+        faq: [
+          {
+            question: "How much does a raised level cost in Berlin?",
+            answer:
+              "Simple raised levels start at around €2,000. Depending on size, materials, built-in elements and finish, the price can be several times that. Planning comes on top: bespoke furniture planning is included in the “transformation” package for €1,490, for example.",
+          },
+          {
+            question: "How high does a room need to be for a raised level?",
+            answer:
+              "That depends on how you want to use the two levels. Sleeping up top needs less headroom than a workspace below where you want to sit or stand upright. High period ceilings are ideal – whether it works in your flat is something I check when measuring up.",
+          },
+          {
+            question: "Is a raised level possible in a rented flat?",
+            answer:
+              "Often, yes, if it's freestanding and can be taken down when you move out. Still, check with your landlord or property management first – we can talk it through in the first call.",
+          },
+        ],
+      },
+      {
+        slug: "separate-living-and-sleeping-areas",
+        color: "yellow",
+        label: "separating living and sleeping",
+        title: "separating living and sleeping areas",
+        subtitle: "zoning for studios and one-room flats in berlin",
+        metaTitle: "Separating Living and Sleeping Areas in One Room – Space Planning in Berlin",
+        description:
+          "Separate the living and sleeping area in one room: with a room divider, platform bed or raised bed platform. Zoning for studios and one-room flats in Berlin.",
+        image: {
+          src: "/room/room2/raumteiler_homeoffice_studio_kleine_wohnung_raumkonzept.webp",
+          alt: "Room divider with a raised bed platform and a home office corner underneath",
+          position: "50% 40%",
+        },
+        intro:
+          "In a studio or one-room flat, the bed is often the first thing you see, and living, working and sleeping blur into one. Zoning gives each area its own place without putting up walls. Afterwards the room feels calmer and often even larger.",
+        fit: {
+          title: "when zoning makes sense",
+          items: [
+            "You live, sleep and work in one room.",
+            "When you walk in, your eye goes straight to the bed.",
+            "Your guests are practically sitting in your bedroom.",
+            "You want a separation that doesn't cost space but adds storage.",
+          ],
+        },
+        planning: [
+          {
+            title: "defining the zones",
+            text: "We work out which areas you need – sleeping, living, working, dressing – and where they sit best in the room, taking windows, doors and routes into account.",
+          },
+          {
+            title: "dividing with storage",
+            text: "A room divider that doubles as shelving separates the areas and holds books, clothes or electronics at the same time. The separation doesn't cost space, it creates it.",
+          },
+          {
+            title: "using the height",
+            text: "A raised platform sets the sleeping area apart. Underneath there's room for a home office, a reading corner or a wardrobe.",
+          },
+          {
+            title: "planning sightlines",
+            text: "I plan the room so the bed isn't the centre of attention when you walk in. That turns a bedroom with a sofa back into a home.",
+          },
+        ],
+        costs:
+          "Zoning can work simply by rearranging furniture you already own – then the “impulse” or “concepts” package is often enough. For a made-to-measure room divider, platform or raised level, build costs depend on size and materials; you get a quote based on the finished concept.",
+        projects: [2, 5, 0],
+        faq: [
+          {
+            question: "How do I separate living and sleeping areas without a wall?",
+            answer:
+              "With a room divider that doubles as shelving or a wardrobe, with a platform bed or with a raised bed platform. Sometimes a curtain or a clever furniture layout is enough. What matters is that each area is clearly defined and the routes stay clear.",
+          },
+          {
+            question: "Is zoning worth it in a small room?",
+            answer:
+              "Especially there. The smaller the room, the more it gains from clear zones. In the project “room divider with bed platform”, an extra home office corner even appeared under the raised bed.",
+          },
+          {
+            question: "Can I keep using my existing furniture?",
+            answer:
+              "Often, yes. Sometimes rearranging the furniture you already have is enough to separate living and sleeping. I only plan made-to-measure pieces where they really make a difference.",
+          },
+        ],
+      },
+    ],
+  },
+
   painPoints: {
     title: "sound familiar?",
     items: [
@@ -467,6 +727,61 @@ export const en: SiteContent = {
     ],
   },
 
+  seoServices: {
+    title: "Space planning, built-in furniture & interior advice in Berlin – more room for your life",
+    items: [
+      {
+        title: "Spatial concepts & floor plan optimisation",
+        text: "A baby on the way, children who need more room, or a workspace that has to fit into the living room? I develop spatial concepts that make room for your daily life – from an extra children's room to a shared sibling room with separate areas for sleeping, playing and learning. With a well-planned layout, your current flat becomes a home that grows with you.",
+      },
+      {
+        title: "Bespoke built-in furniture & storage",
+        text: "When the cupboards are full and there's no floor space left, you need ideas that make better use of your room. I design bespoke built-in furniture for small flats in Berlin: platform beds with storage, loft beds and raised sleeping levels, built-in wardrobes for alcoves, and room dividers that separate living and sleeping areas. You build it yourself, or my partner joinery does.",
+      },
+      {
+        title: "Interior advice & interior design",
+        text: "Want to refurnish your flat but unsure about furniture, colours and materials? I develop a coherent interior concept and make it tangible with moodboards and 3D visualisations – on site in Berlin or online.",
+      },
+    ],
+  },
+
+  faq: {
+    title: "frequently asked questions",
+    subtitle: "storage, built-in furniture and space planning in berlin",
+    items: [
+      {
+        question: "My small flat is cluttered – how do I get more storage?",
+        answer:
+          "Usually it isn't space that's missing, but a plan that uses it. I look at where your flat is losing floor area – in alcoves, above doors, under the bed or up to the ceiling – and plan built-in wardrobes, platform beds, raised levels or shelving walls there. In my project “a new use for 10 m²”, that turned a small room into a study, guest room and storage space in one.",
+      },
+      {
+        question: "How can I separate the living and sleeping area in one room?",
+        answer:
+          "With zoning: a room divider with storage, a platform bed or a raised bed platform separates the sleeping area without cluttering the room. The bed moves out of sight, and under or beside it there's room for clothes, a home office or a reading corner. My projects “room divider with bed platform” and “platform bed for small flats” are examples.",
+      },
+      {
+        question: "Do you design bespoke built-in furniture such as platform beds, loft beds or built-in wardrobes?",
+        answer:
+          "Yes, that's a core part of my work. I design made-to-measure built-in furniture for small flats in Berlin: platform beds with storage, loft beds with a walk-in wardrobe, built-in wardrobes for alcoves, and room dividers. Bespoke furniture planning is included in the “transformation” package and can be added to the “concepts” package for €500–700.",
+      },
+      {
+        question: "How much does planning with raumideenwerk cost?",
+        answer:
+          "The packages have fixed base prices for rooms up to 20 m²: “impulse” (online) €590, “concepts” €890 and “transformation” €1,490. Larger rooms add a surcharge per additional m². If the scope isn't clear yet, I bill by the hour at €160. Building the furniture is not included; its cost depends on size and materials.",
+      },
+      {
+        question: "Do you also take care of the build?",
+        answer:
+          "You have two options: you carry out the work yourself, with the concept, a shopping list and technical drawings if needed. Or I put you in touch with my partner joinery, who builds the furniture from my plans. Technical drawings and the introduction to the joinery are already included in the “transformation” package.",
+      },
+      {
+        question: "Do you only work in Berlin?",
+        answer:
+          "For consultations and surveys on site, I come to you in Berlin. The “impulse” package runs entirely online: you measure up following my instructions, wherever you live in Germany.",
+      },
+    ],
+  },
+
   contact: {
     title: "contact",
     subtitle: "ready to transform your home?",
@@ -523,11 +838,27 @@ export const en: SiteContent = {
     materials: "materials",
     dimensions: "dimensions",
     year: "year",
+    services: "service",
     gallery: "images",
     ctaTitle: "interested in something similar?",
     ctaText: "Let's talk about your home. The first call is where it starts.",
     ctaButton: { href: "/en/#kontakt", label: "book a first call" },
     prev: "previous project",
     next: "next project",
+  },
+
+  servicePage: {
+    back: "all services",
+    planning: "how i plan it",
+    costs: "what does it cost?",
+    planningCosts:
+      "Planning runs through my packages, with fixed base prices for rooms up to 20 m²: “impulse” (online) €590, “concepts” €890, “transformation” €1,490. Bespoke furniture planning is included in “transformation” and can be added to “concepts” for €500–700.",
+    packagesLink: { href: "/en/#pakete", label: "see all packages" },
+    projects: "related projects",
+    faq: "frequently asked questions",
+    more: "more services",
+    ctaTitle: "let's talk about your flat",
+    ctaText: "In the first call we work out which solution fits your room and your daily life.",
+    ctaButton: { href: "/en/#kontakt", label: "book a first call" },
   },
 };

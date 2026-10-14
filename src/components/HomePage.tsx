@@ -3,6 +3,7 @@ import { pathFor, site } from "@/content/site";
 import { About } from "./About";
 import { Chrome } from "./Chrome";
 import { ContactSection } from "./ContactSection";
+import { Faq } from "./Faq";
 import { Hero } from "./Hero";
 import { Packages } from "./Packages";
 import { PainPoints } from "./PainPoints";
@@ -37,13 +38,23 @@ export function HomePage({ locale }: { locale: Locale }) {
           <ProjectCtaCard {...c.projects.ctaCard} />
         </ProjectCatalog>
 
-        <Services c={c.services} />
+        <Services
+          c={c.services}
+          details={{
+            title: c.servicePages.title,
+            links: c.servicePages.items.map((service, index) => ({
+              href: pathFor(locale, { kind: "service", index }),
+              label: service.label,
+            })),
+          }}
+        />
         <PainPoints c={c.painPoints} />
         <Process c={c.process} />
         <Packages c={c.packages} ctaHref={c.headerCta.href} />
         <About c={c.about} />
         <Testimonials c={c.testimonials} />
-        <SeoServices />
+        <SeoServices c={c.seoServices} />
+        <Faq c={c.faq} />
         <ContactSection c={c.contact} />
       </main>
     </Chrome>

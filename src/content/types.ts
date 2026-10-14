@@ -34,6 +34,23 @@ export interface Project {
   gallery: ImageRef[];
 }
 
+export interface ServicePage {
+  slug: string;
+  color: FrameColor;
+  label: string;
+  title: string;
+  subtitle: string;
+  metaTitle: string;
+  description: string;
+  image: ImageRef;
+  intro: string;
+  fit: { title: string; items: string[] };
+  planning: TextItem[];
+  costs: string;
+  projects: number[];
+  faq: { question: string; answer: string }[];
+}
+
 export interface Package {
   name: string;
   kind: string;
@@ -86,6 +103,7 @@ export interface SiteContent {
     items: Project[];
   };
   services: { title: string; subtitle: string; items: TextItem[] };
+  servicePages: { title: string; items: ServicePage[] };
   painPoints: { title: string; items: TextItem[] };
   process: { title: string; subtitle: string; steps: TextItem[] };
   packages: {
@@ -104,6 +122,12 @@ export interface SiteContent {
     portrait: ImageRef;
   };
   testimonials: { title: string; items: { text: string; author: string }[] };
+  seoServices: { title: string; items: TextItem[] };
+  faq: {
+    title: string;
+    subtitle: string;
+    items: { question: string; answer: string }[];
+  };
   contact: {
     title: string;
     subtitle: string;
@@ -124,12 +148,26 @@ export interface SiteContent {
     materials: string;
     dimensions: string;
     year: string;
+    services: string;
     gallery: string;
     ctaTitle: string;
     ctaText: string;
     ctaButton: NavLink;
     prev: string;
     next: string;
+  };
+  servicePage: {
+    back: string;
+    planning: string;
+    costs: string;
+    planningCosts: string;
+    packagesLink: NavLink;
+    projects: string;
+    faq: string;
+    more: string;
+    ctaTitle: string;
+    ctaText: string;
+    ctaButton: NavLink;
   };
 }
 

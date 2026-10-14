@@ -1,7 +1,14 @@
-import type { SiteContent } from "@/content/types";
+import Link from "next/link";
+import type { NavLink, SiteContent } from "@/content/types";
 import { SectionHeader } from "./SectionHeader";
 
-export function Services({ c }: { c: SiteContent["services"] }) {
+export function Services({
+  c,
+  details,
+}: {
+  c: SiteContent["services"];
+  details: { title: string; links: NavLink[] };
+}) {
   return (
     <section
       id="leistungen"
@@ -43,6 +50,27 @@ export function Services({ c }: { c: SiteContent["services"] }) {
           </article>
         ))}
       </div>
+
+      <nav aria-labelledby="leistungen-detail-titel" className="mt-12 md:mt-14">
+        <h3
+          id="leistungen-detail-titel"
+          className="text-[28px] leading-none font-bold tracking-[-0.035em] md:text-4xl"
+        >
+          {details.title}
+        </h3>
+        <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {details.links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="block h-full border-2 rule p-5 text-2xl leading-tight font-bold tracking-[-0.03em] hover:surface-strong"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </section>
   );
 }
