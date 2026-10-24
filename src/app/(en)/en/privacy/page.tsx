@@ -1,21 +1,9 @@
 import type { Metadata } from "next";
-import { legal } from "@/content/legal";
-import { metadataAlternates } from "@/content/site";
-import { Chrome } from "@/components/Chrome";
-import { LegalPage } from "@/components/LegalPage";
+import { legalMetadata } from "@/lib/metadata";
+import Legal from "@/views/Legal";
 
-const content = legal.en;
+export const metadata: Metadata = legalMetadata("en", "privacy");
 
-export const metadata: Metadata = {
-  title: content.meta.privacy.title,
-  description: content.meta.privacy.description,
-  alternates: metadataAlternates("en", { kind: "privacy" }),
-};
+const Page = () => <Legal locale="en" kind="privacy" />;
 
-export default function Page() {
-  return (
-    <Chrome locale="en" page={{ kind: "privacy" }}>
-      <LegalPage doc={content.privacy} />
-    </Chrome>
-  );
-}
+export default Page;

@@ -1,167 +1,81 @@
-import type { Locale, SiteContent } from "./types";
-import { de } from "./de";
-import { en } from "./en";
+import type { Locale, ShellContent } from "./types";
 
 export const locales: Locale[] = ["de", "en"];
 
-export const site: Record<Locale, SiteContent> = { de, en };
+export const SECTION_IDS = {
+  start: "start",
+  projects: "projekte",
+  services: "leistungen",
+  process: "ablauf",
+  packages: "pakete",
+  about: "ueber-mich",
+  faq: "fragen",
+  contact: "kontakt",
+} as const;
 
-export const localeLabel: Record<Locale, string> = { de: "de", en: "en" };
-
-const segments: Record<
-  Locale,
-  { root: string; projects: string; services: string; imprint: string; privacy: string }
-> = {
-  de: {
-    root: "/",
-    projects: "projekte",
-    services: "leistungen",
-    imprint: "impressum",
-    privacy: "datenschutz",
+export const site = {
+  name: "raumideenwerk",
+  legalName: "raumideenwerk - Daniel von Boros",
+  owner: "Daniel von Boros",
+  url: "https://www.raumideenwerk.com",
+  email: "mail@raumideenwerk.com",
+  phone: "+49 160 495 81 48",
+  phoneE164: "+491604958148",
+  instagram: {
+    handle: "@raum.ideen.werk.berlin",
+    url: "https://www.instagram.com/raum.ideen.werk.berlin",
   },
-  en: {
-    root: "/en/",
-    projects: "projects",
-    services: "services",
-    imprint: "imprint",
-    privacy: "privacy",
+  linkedin: "https://www.linkedin.com/in/danielvonboros",
+  address: {
+    street: "Kolonnenstraße 8",
+    postalCode: "10827",
+    city: "Berlin",
+    country: "DE",
   },
+  geo: { latitude: 52.48627243666373, longitude: 13.35993720266727 },
 };
 
-export type PageRef =
-  | { kind: "home" }
-  | { kind: "imprint" }
-  | { kind: "privacy" }
-  | { kind: "project"; index: number }
-  | { kind: "service"; index: number };
+export const address = `${site.address.street}, ${site.address.postalCode} ${site.address.city}`;
 
-export function pathFor(locale: Locale, page: PageRef): string {
-  const s = segments[locale];
-  switch (page.kind) {
-    case "home":
-      return s.root;
-    case "imprint":
-      return `${s.root}${s.imprint}/`;
-    case "privacy":
-      return `${s.root}${s.privacy}/`;
-    case "project": {
-      const project = site[locale].projects.items[page.index];
-      return `${s.root}${s.projects}/${project.slug}/`;
-    }
-    case "service": {
-      const service = site[locale].servicePages.items[page.index];
-      return `${s.root}${s.services}/${service.slug}/`;
-    }
-  }
-}
-
-export function alternatesFor(page: PageRef): Record<Locale, string> {
-  return { de: pathFor("de", page), en: pathFor("en", page) };
-}
-
-export function metadataAlternates(locale: Locale, page: PageRef) {
-  const all = alternatesFor(page);
-  return {
-    canonical: all[locale],
-    languages: { de: all.de, en: all.en, "x-default": all.de },
-  };
-}
-
-export function findProject(locale: Locale, slug: string) {
-  const index = site[locale].projects.items.findIndex((item) => item.slug === slug);
-  return index === -1 ? null : { index, project: site[locale].projects.items[index] };
-}
-
-export function findService(locale: Locale, slug: string) {
-  const index = site[locale].servicePages.items.findIndex((item) => item.slug === slug);
-  return index === -1 ? null : { index, service: site[locale].servicePages.items[index] };
-}
-
-const keywords = [
-"interior design",
-    "room concepts",
-    "zoning",
-    "space optimization",
-    "small apartment design",
-    "Berlin interior designer",
-    "custom furniture",
-    "mid-century modern",
-    "Innenarchitektur Berlin",
-    "Raumkonzept",
-    "Raumaufteilung",
-    "Wohnung einrichten",
-    "Möbelplanung",
-    "Wohnungsoptimierung",
-    "kleine Wohnung gestalten",
-    "Möbeldesign Berlin",
-    "Möbeldesign",
-    "maßgefertigte Möbel",
-    "Innenarchitektur",
-    "handgefertigte Möbel",
-    "maßgeschneiderte Möbel",
-    "Möbel nach Maß",
-    "Innenraumgestaltung",
-    "Raumkonzepte",
-    "Designberatung",
-    "Möbel",
-    "Architektur",
-    "Inneneinrichtung",
-    "Raumgestaltung",
-    "Wohnkultur",
-    "Design",
-    "Einrichtungsideen",
-    "kreative Möbel",
-    "exklusive Möbel",
-    "individuelle Möbel",
-    "Designmöbel",
-    "Möbelherstellung",
-    "Innenarchitekt",
-    "Raumplanung",
-    "Innenraumkonzepte",
-    "Wohnraumgestaltung",
-    "kreative Innenräume",
-    "Designlösungen",
-    "Inneneinrichtungsideen",
-    "Möbelgestaltung",
-    "Architekturdesign",];
-
-const rootMeta: Record<Locale, { title: string; description: string; ogTitle: string }> = {
+export const shell: Record<Locale, ShellContent> = {
   de: {
-    title: "Innenarchitektur Berlin für kleine Wohnungen | raumideenwerk",
-    description:
-      "Innenarchitektur und Raumplanung für kleine Wohnungen in Berlin. Clevere Raumkonzepte, Stauraumlösungen und individuelle Möbelplanung – für mehr Platz ohne Umzug.",
-    ogTitle: "raumideenwerk — Innenarchitektur und Raumplanung in Berlin",
+    skipLink: "zum inhalt springen",
+    navigationLabel: "Hauptnavigation",
+    nav: [
+      { section: SECTION_IDS.projects, label: "projekte" },
+      { section: SECTION_IDS.services, label: "leistungen" },
+      { section: SECTION_IDS.process, label: "ablauf" },
+      { section: SECTION_IDS.packages, label: "pakete" },
+      { section: SECTION_IDS.about, label: "über mich" },
+      { section: SECTION_IDS.contact, label: "kontakt" },
+    ],
+    cta: { section: SECTION_IDS.contact, label: "erstgespräch buchen" },
+    menu: { open: "Menü öffnen", close: "Menü schließen" },
+    themeToggle: {
+      label: "Dunkelmodus",
+      toDark: "Zum dunklen Modus wechseln",
+      toLight: "Zum hellen Modus wechseln",
+    },
+    languageSwitchTitle: "Diese Seite auf Deutsch",
   },
   en: {
-    title: "Interior Architecture in Berlin for Small Flats | raumideenwerk",
-    description:
-      "Interior architecture and space planning for small flats in Berlin. Clever spatial concepts, storage solutions and bespoke furniture — more room without moving.",
-    ogTitle: "raumideenwerk — Interior Architecture and Space Planning in Berlin",
+    skipLink: "skip to content",
+    navigationLabel: "Main navigation",
+    nav: [
+      { section: SECTION_IDS.projects, label: "projects" },
+      { section: SECTION_IDS.services, label: "services" },
+      { section: SECTION_IDS.process, label: "process" },
+      { section: SECTION_IDS.packages, label: "packages" },
+      { section: SECTION_IDS.about, label: "about" },
+      { section: SECTION_IDS.contact, label: "contact" },
+    ],
+    cta: { section: SECTION_IDS.contact, label: "book a first call" },
+    menu: { open: "Open menu", close: "Close menu" },
+    themeToggle: {
+      label: "Dark mode",
+      toDark: "Switch to dark mode",
+      toLight: "Switch to light mode",
+    },
+    languageSwitchTitle: "This page in English",
   },
 };
-
-export function rootMetadata(locale: Locale) {
-  const m = rootMeta[locale];
-  return {
-    metadataBase: new URL("https://www.raumideenwerk.com"),
-    title: { default: m.title, template: "%s | raumideenwerk" },
-    description: m.description,
-    keywords,
-    authors: [{ name: "Daniel von Boros" }],
-    openGraph: {
-      title: m.ogTitle,
-      description: m.description,
-      url: "https://www.raumideenwerk.com" + pathFor(locale, { kind: "home" }),
-      siteName: "raumideenwerk",
-      locale: locale === "de" ? "de_DE" : "en_GB",
-      type: "website" as const,
-    },
-    twitter: {
-      card: "summary_large_image" as const,
-      title: m.ogTitle,
-      description: m.description,
-      images: ["https://www.raumideenwerk.com/website.webp"],
-    },
-    robots: { index: true, follow: true },
-  };
-}

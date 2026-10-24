@@ -1,12 +1,13 @@
 {
   "name": "raumideenwerk-website",
+  "private": true,
   "version": "0.2.0",
+  "type": "module",
   "homepage": "https://www.raumideenwerk.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "next": "^16.3.4",
@@ -14,15 +15,13 @@
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "3.3.7",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.4.1",
-    "@types/nodemailer": "^8.0.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^10.9.1",
+    "eslint": "^9.39.5",
     "eslint-config-next": "16.3.4",
     "tailwindcss": "^4.3.3",
-    "typescript": "^7.0.2"
+    "typescript": "~6.0.3"
   }
 }

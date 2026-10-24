@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { metadataAlternates } from "@/content/site";
-import { HomePage } from "@/components/HomePage";
+import { homeMetadata } from "@/lib/metadata";
+import Home from "@/views/Home";
 
-export const metadata: Metadata = {
-  alternates: metadataAlternates("en", { kind: "home" }),
-};
+export const metadata: Metadata = homeMetadata("en");
 
-export default function Page() {
-  return <HomePage locale="en" />;
-}
+const Page = () => <Home locale="en" />;
+
+export default Page;

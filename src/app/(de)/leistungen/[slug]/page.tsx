@@ -1,40 +1,19 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { findService, metadataAlternates, site } from "@/content/site";
-import { ServicePage } from "@/components/ServicePage";
+import { servicePages } from "@/content/servicePages";
+import { serviceMetadata } from "@/lib/metadata";
+import ServiceDetail from "@/views/ServiceDetail";
 
 const LOCALE = "de" as const;
 
 export const dynamicParams = false;
 
-export function generateStaticParams() {
-  return site[LOCALE].servicePages.items.map((service) => ({ slug: service.slug }));
-}
-
 type Props = { params: Promise<{ slug: string }> };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const found = findService(LOCALE, slug);
-  if (!found) return {};
-  const { index, service } = found;
+export const generateStaticParams = () => servicePages[LOCALE].items.map((item) => ({ slug: item.slug }));
 
-  return {
-    title: service.metaTitle,
-    description: service.description,
-    alternates: metadataAlternates(LOCALE, { kind: "service", index }),
-    openGraph: {
-      title: `${service.metaTitle} | raumideenwerk`,
-      description: service.description,
-      type: "website",
-      locale: "de_DE",
-      images: [{ url: service.image.src, alt: service.image.alt }],
-    },
-  };
-}
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> =>
+  serviceMetadata(LOCALE, (await params).slug);
 
-export default async function Page({ params }: Props) {
-  const { slug } = await params;
-  if (!findService(LOCALE, slug)) notFound();
-  return <ServicePage locale={LOCALE} slug={slug} />;
-}
+const Page = async ({ params }: Props) => <ServiceDetail locale={LOCALE} slug={(await params).slug} />;
+
+export default Page;

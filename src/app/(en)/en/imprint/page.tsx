@@ -1,21 +1,9 @@
 import type { Metadata } from "next";
-import { legal } from "@/content/legal";
-import { metadataAlternates } from "@/content/site";
-import { Chrome } from "@/components/Chrome";
-import { LegalPage } from "@/components/LegalPage";
+import { legalMetadata } from "@/lib/metadata";
+import Legal from "@/views/Legal";
 
-const content = legal.en;
+export const metadata: Metadata = legalMetadata("en", "imprint");
 
-export const metadata: Metadata = {
-  title: content.meta.imprint.title,
-  description: content.meta.imprint.description,
-  alternates: metadataAlternates("en", { kind: "imprint" }),
-};
+const Page = () => <Legal locale="en" kind="imprint" />;
 
-export default function Page() {
-  return (
-    <Chrome locale="en" page={{ kind: "imprint" }}>
-      <LegalPage doc={content.imprint} />
-    </Chrome>
-  );
-}
+export default Page;

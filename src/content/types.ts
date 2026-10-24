@@ -1,3 +1,9 @@
+import type { SECTION_IDS } from "./site";
+
+export type Locale = "de" | "en";
+
+export type SectionId = (typeof SECTION_IDS)[keyof typeof SECTION_IDS];
+
 export type FrameColor = "yellow" | "ink" | "petrol";
 
 export interface ImageRef {
@@ -11,9 +17,45 @@ export interface NavLink {
   label: string;
 }
 
+export interface SectionLink {
+  section: SectionId;
+  label: string;
+}
+
 export interface TextItem {
   title: string;
   text: string;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface ShellContent {
+  skipLink: string;
+  navigationLabel: string;
+  nav: SectionLink[];
+  cta: SectionLink;
+  menu: { open: string; close: string };
+  themeToggle: { label: string; toDark: string; toLight: string };
+  languageSwitchTitle: string;
+}
+
+export interface MetaContent {
+  title: string;
+  description: string;
+  ogTitle: string;
+}
+
+export interface HeroContent {
+  spine: [string, string];
+  claim: string;
+  keywords: string;
+  primaryCta: SectionLink;
+  secondaryCta: SectionLink;
+  imageTop: ImageRef;
+  imageBottom: ImageRef;
 }
 
 export interface Project {
@@ -34,6 +76,21 @@ export interface Project {
   gallery: ImageRef[];
 }
 
+export interface ProjectsContent {
+  title: string;
+  subtitle: string;
+  prevLabel: string;
+  nextLabel: string;
+  ctaCard: { number: string; title: string; subtitle: string; section: SectionId };
+  items: Project[];
+}
+
+export interface ServicesContent {
+  title: string;
+  subtitle: string;
+  items: TextItem[];
+}
+
 export interface ServicePage {
   slug: string;
   color: FrameColor;
@@ -48,7 +105,23 @@ export interface ServicePage {
   planning: TextItem[];
   costs: string;
   projects: number[];
-  faq: { question: string; answer: string }[];
+  faq: FaqItem[];
+}
+
+export interface ServicePagesContent {
+  title: string;
+  items: ServicePage[];
+}
+
+export interface PainPointsContent {
+  title: string;
+  items: TextItem[];
+}
+
+export interface ProcessContent {
+  title: string;
+  subtitle: string;
+  steps: TextItem[];
 }
 
 export interface Package {
@@ -64,7 +137,41 @@ export interface Package {
   popular?: boolean;
 }
 
+export interface PackagesContent {
+  title: string;
+  subtitle: string;
+  popularLabel: string;
+  addOnsLabel: string;
+  items: Package[];
+  notes: string[];
+}
+
+export interface AboutContent {
+  title: string;
+  subtitle: string;
+  spine: string;
+  text: string;
+  portrait: ImageRef;
+}
+
+export interface TestimonialsContent {
+  title: string;
+  items: { text: string; author: string }[];
+}
+
+export interface SeoServicesContent {
+  title: string;
+  items: TextItem[];
+}
+
+export interface FaqContent {
+  title: string;
+  subtitle: string;
+  items: FaqItem[];
+}
+
 export interface ContactFormContent {
+  label: string;
   name: string;
   email: string;
   subject: string;
@@ -80,98 +187,58 @@ export interface ContactFormContent {
   rateLimited: string;
 }
 
-export interface SiteContent {
-  skipLink: string;
-  nav: NavLink[];
-  headerCta: NavLink;
-  menu: { open: string; close: string };
-  hero: {
-    spine: [string, string];
-    claim: string;
-    keywords: string;
-    primaryCta: NavLink;
-    secondaryCta: NavLink;
-    imageTop: ImageRef;
-    imageBottom: ImageRef;
-  };
-  projects: {
-    title: string;
-    subtitle: string;
-    prevLabel: string;
-    nextLabel: string;
-    ctaCard: { number: string; title: string; subtitle: string; href: string };
-    items: Project[];
-  };
-  services: { title: string; subtitle: string; items: TextItem[] };
-  servicePages: { title: string; items: ServicePage[] };
-  painPoints: { title: string; items: TextItem[] };
-  process: { title: string; subtitle: string; steps: TextItem[] };
-  packages: {
-    title: string;
-    subtitle: string;
-    popularLabel: string;
-    addOnsLabel: string;
-    items: Package[];
-    notes: string[];
-  };
-  about: {
-    title: string;
-    subtitle: string;
-    spine: string;
-    text: string;
-    portrait: ImageRef;
-  };
-  testimonials: { title: string; items: { text: string; author: string }[] };
-  seoServices: { title: string; items: TextItem[] };
-  faq: {
-    title: string;
-    subtitle: string;
-    items: { question: string; answer: string }[];
-  };
-  contact: {
-    title: string;
-    subtitle: string;
-    details: { label: string; value: string; href?: string }[];
-    form: ContactFormContent;
-  };
-  footer: {
-    contact: NavLink[];
-    social: NavLink[];
-    address: string;
-    legal: NavLink[];
-    homeLabel: string;
-  };
-  projectPage: {
-    back: string;
-    goal: string;
-    story: string;
-    materials: string;
-    dimensions: string;
-    year: string;
-    services: string;
-    gallery: string;
-    ctaTitle: string;
-    ctaText: string;
-    ctaButton: NavLink;
-    prev: string;
-    next: string;
-  };
-  servicePage: {
-    back: string;
-    planning: string;
-    costs: string;
-    planningCosts: string;
-    packagesLink: NavLink;
-    projects: string;
-    faq: string;
-    more: string;
-    ctaTitle: string;
-    ctaText: string;
-    ctaButton: NavLink;
-  };
+export interface ContactDetail {
+  label: string;
+  value: string;
+  href?: string;
 }
 
-export type Locale = "de" | "en";
+export interface ContactContent {
+  title: string;
+  subtitle: string;
+  details: ContactDetail[];
+  form: ContactFormContent;
+}
+
+export interface FooterContent {
+  contact: NavLink[];
+  social: NavLink[];
+  address: string;
+  legal: { page: "imprint" | "privacy"; label: string }[];
+  homeLabel: string;
+}
+
+export interface ProjectPageContent {
+  back: string;
+  goal: string;
+  story: string;
+  materials: string;
+  dimensions: string;
+  year: string;
+  services: string;
+  gallery: string;
+  navigation: string;
+  ctaTitle: string;
+  ctaText: string;
+  ctaButton: SectionLink;
+  prev: string;
+  next: string;
+}
+
+export interface ServicePageContent {
+  back: string;
+  spine: string;
+  planning: string;
+  costs: string;
+  planningCosts: string;
+  packagesLink: SectionLink;
+  projects: string;
+  faq: string;
+  more: string;
+  ctaTitle: string;
+  ctaText: string;
+  ctaButton: SectionLink;
+}
 
 export interface LegalSection {
   heading: string;

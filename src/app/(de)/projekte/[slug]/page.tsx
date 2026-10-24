@@ -1,40 +1,19 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { findProject, metadataAlternates, site } from "@/content/site";
-import { ProjectPage } from "@/components/ProjectPage";
+import { projects } from "@/content/projects";
+import { projectMetadata } from "@/lib/metadata";
+import ProjectDetail from "@/views/ProjectDetail";
 
 const LOCALE = "de" as const;
 
 export const dynamicParams = false;
 
-export function generateStaticParams() {
-  return site[LOCALE].projects.items.map((project) => ({ slug: project.slug }));
-}
-
 type Props = { params: Promise<{ slug: string }> };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const found = findProject(LOCALE, slug);
-  if (!found) return {};
-  const { index, project } = found;
+export const generateStaticParams = () => projects[LOCALE].items.map((item) => ({ slug: item.slug }));
 
-  return {
-    title: project.metaTitle,
-    description: project.description,
-    alternates: metadataAlternates(LOCALE, { kind: "project", index }),
-    openGraph: {
-      title: `${project.metaTitle} | raumideenwerk`,
-      description: project.description,
-      type: "article",
-      locale: "de_DE",
-      images: [{ url: project.cover.src, alt: project.cover.alt }],
-    },
-  };
-}
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> =>
+  projectMetadata(LOCALE, (await params).slug);
 
-export default async function Page({ params }: Props) {
-  const { slug } = await params;
-  if (!findProject(LOCALE, slug)) notFound();
-  return <ProjectPage locale={LOCALE} slug={slug} />;
-}
+const Page = async ({ params }: Props) => <ProjectDetail locale={LOCALE} slug={(await params).slug} />;
+
+export default Page;

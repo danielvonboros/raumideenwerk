@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { rootMetadata } from "@/content/site";
-import { Document } from "@/components/Document";
+import type { ReactNode } from "react";
+import Document from "@/components/document/Document";
+import { rootMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = rootMetadata("en");
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return <Document locale="en">{children}</Document>;
-}
+const Layout = ({ children }: { children: ReactNode }) => <Document locale="en">{children}</Document>;
+
+export default Layout;
