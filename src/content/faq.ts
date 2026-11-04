@@ -27,7 +27,7 @@ export const faq: Record<Locale, FaqContent> = {
       },
       {
         question: "Arbeitest du nur in Berlin?",
-        answer: "Für Beratung und Aufmaß vor Ort komme ich zu dir nach Berlin. Wohnst du woanders in Deutschland, berate ich dich online und rechne nach Zeitaufwand ab: Du misst selbst nach meiner Anleitung.",
+        answer: "Für Beratung und Aufmaß vor Ort komme ich zu dir nach Berlin. Wohnst du woanders in Deutschland, berate ich dich online von hier aus. Du misst selbst nach meiner Anleitung.",
       },
     ],
   },
@@ -57,7 +57,7 @@ export const faq: Record<Locale, FaqContent> = {
       },
       {
         question: "Do you only work in Berlin?",
-        answer: "For consultations and surveys on site, I come to you in Berlin. If you live elsewhere in Germany, I advise you online and bill by the hour: you measure up following my instructions.",
+        answer: "For consultations and surveys on site, I come to you in Berlin. If you live elsewhere in Germany, I advise you online from here. You measure up following my instructions.",
       },
     ],
   },
