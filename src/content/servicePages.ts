@@ -217,7 +217,7 @@ export const servicePages: Record<Locale, ServicePagesContent> = {
             text: "Ich plane so, dass das Bett beim Hereinkommen nicht im Mittelpunkt steht. So wird aus einem Schlafzimmer mit Sofa wieder eine Wohnung.",
           },
         ],
-        costs: "Eine Zonierung kann schon mit gut gestellten vorhandenen Möbeln gelingen – dann reicht oft das Paket „impuls“ oder „konzept“. Für Raumteiler, Podest oder Empore nach Maß hängen die Baukosten von Größe und Material ab; ein Angebot gibt es auf Grundlage des fertigen Konzepts.",
+        costs: "Eine Zonierung kann schon mit gut gestellten vorhandenen Möbeln gelingen – dann reicht oft das Paket „konzept“. Für Raumteiler, Podest oder Empore nach Maß hängen die Baukosten von Größe und Material ab; ein Angebot gibt es auf Grundlage des fertigen Konzepts.",
         projects: [2, 5, 0],
         faq: [
           {
@@ -452,7 +452,7 @@ export const servicePages: Record<Locale, ServicePagesContent> = {
             text: "I plan the room so the bed isn't the centre of attention when you walk in. That turns a bedroom with a sofa back into a home.",
           },
         ],
-        costs: "Zoning can work simply by rearranging furniture you already own – then the “impulse” or “concepts” package is often enough. For a made-to-measure room divider, platform or raised level, build costs depend on size and materials; you get a quote based on the finished concept.",
+        costs: "Zoning can work simply by rearranging furniture you already own – then the “concepts” package is often enough. For a made-to-measure room divider, platform or raised level, build costs depend on size and materials; you get a quote based on the finished concept.",
         projects: [2, 5, 0],
         faq: [
           {
