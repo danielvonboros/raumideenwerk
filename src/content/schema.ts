@@ -50,15 +50,6 @@ export const offerCatalog: { name: string; offers: ServiceOffer[] } = {
   name: "Innenarchitektur und Raumplanung",
   offers: [
     {
-      id: "service-impuls",
-      name: "Impuls",
-      serviceType: "Online-Raumberatung und Einrichtungsberatung",
-      description:
-        "Online-Beratung für Räume bis 20 m² mit Designberatung, Stilberatung, Materialvorschlägen und Grundrissoptimierung.",
-      price: "590",
-      areaServed: { type: "Country", name: "Deutschland" },
-    },
-    {
       id: "service-konzept",
       name: "Konzept",
       serviceType: "Innenarchitektur und Raumplanung",
@@ -72,8 +63,17 @@ export const offerCatalog: { name: string; offers: ServiceOffer[] } = {
       name: "Transformation",
       serviceType: "Innenarchitektur, Raumplanung und Möbelplanung",
       description:
-        "Umfassendes Raumkonzept mit individueller Möbelplanung, fotorealistischer 3D-Visualisierung, technischen Zeichnungen und Unterstützung bei der Umsetzung.",
+        "Umfassendes Raumkonzept mit individueller Möbelplanung, fotorealistischer 3D-Visualisierung, technischen Zeichnungen und Vermittlung an die Partnertischlerei.",
       price: "1490",
+      areaServed: { type: "City", name: "Berlin" },
+    },
+    {
+      id: "service-vollendung",
+      name: "Vollendung",
+      serviceType: "Innenarchitektur, Möbelplanung und Projektbegleitung",
+      description:
+        "Raumplanung mit individueller Möbelplanung und 3D-Visualisierung, dazu Begleitung der Umsetzung bis zum fertigen Raum: Koordination von Tischlerei und Handwerk, Einkaufsservice und Styling-Tag in Berlin.",
+      price: "3990",
       areaServed: { type: "City", name: "Berlin" },
     },
     {

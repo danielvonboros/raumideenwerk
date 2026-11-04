@@ -19,15 +19,15 @@ export const faq: Record<Locale, FaqContent> = {
       },
       {
         question: "Was kostet die Planung bei raumideenwerk?",
-        answer: "Die Pakete haben feste Grundpreise für Räume bis 20 m²: „impuls“ (online) 590 €, „konzept“ 890 € und „transformation“ 1.490 €. Für größere Räume kommt ein Aufschlag pro weiterem m² dazu. Ist der Umfang noch offen, rechne ich nach Zeitaufwand ab – mein Stundensatz liegt bei 160 €. Der Bau der Möbel ist nicht enthalten, seine Kosten hängen von Größe und Material ab.",
+        answer: "Die Pakete haben feste Grundpreise für Räume bis 20 m²: „konzept“ 890 €, „transformation“ 1.490 € und „vollendung“ 3.990 €. Für größere Räume kommt ein Aufschlag pro weiterem m² dazu. Ist der Umfang noch offen, rechne ich nach Zeitaufwand ab – mein Stundensatz liegt bei 160 €. Der Bau der Möbel ist nicht enthalten, seine Kosten hängen von Größe und Material ab.",
       },
       {
         question: "Kümmerst du dich auch um die Umsetzung?",
-        answer: "Du hast zwei Möglichkeiten: Du baust selbst um – dafür bekommst du Konzept, Shoppingliste und bei Bedarf technische Zeichnungen. Oder ich vermittle dich an meine Partnertischlerei, die die Einbaumöbel nach meinen Plänen baut. Im Paket „transformation“ sind technische Zeichnungen und die Vermittlung bereits enthalten.",
+        answer: "Du hast drei Möglichkeiten: Du baust selbst um – dafür bekommst du Konzept, Shoppingliste und bei Bedarf technische Zeichnungen. Oder ich vermittle dich an meine Partnertischlerei, die die Einbaumöbel nach meinen Plänen baut. Im Paket „transformation“ sind technische Zeichnungen und die Vermittlung bereits enthalten. Oder ich begleite die Umsetzung im Paket „vollendung“ bis zum fertigen Raum – mit Terminen vor Ort, Einkaufsservice und Styling-Tag.",
       },
       {
         question: "Arbeitest du nur in Berlin?",
-        answer: "Für Beratung und Aufmaß vor Ort komme ich zu dir nach Berlin. Das Paket „impuls“ läuft komplett online: Du misst selbst nach meiner Anleitung, egal wo in Deutschland du wohnst.",
+        answer: "Für Beratung und Aufmaß vor Ort komme ich zu dir nach Berlin. Wohnst du woanders in Deutschland, berate ich dich online und rechne nach Zeitaufwand ab: Du misst selbst nach meiner Anleitung.",
       },
     ],
   },
@@ -49,15 +49,15 @@ export const faq: Record<Locale, FaqContent> = {
       },
       {
         question: "How much does planning with raumideenwerk cost?",
-        answer: "The packages have fixed base prices for rooms up to 20 m²: “impulse” (online) €590, “concepts” €890 and “transformation” €1,490. Larger rooms add a surcharge per additional m². If the scope isn't clear yet, I bill by the hour at €160. Building the furniture is not included; its cost depends on size and materials.",
+        answer: "The packages have fixed base prices for rooms up to 20 m²: “concepts” €890, “transformation” €1,490 and “completion” €3,990. Larger rooms add a surcharge per additional m². If the scope isn't clear yet, I bill by the hour at €160. Building the furniture is not included; its cost depends on size and materials.",
       },
       {
         question: "Do you also take care of the build?",
-        answer: "You have two options: you carry out the work yourself, with the concept, a shopping list and technical drawings if needed. Or I put you in touch with my partner joinery, who builds the furniture from my plans. Technical drawings and the introduction to the joinery are already included in the “transformation” package.",
+        answer: "You have three options: you carry out the work yourself, with the concept, a shopping list and technical drawings if needed. Or I put you in touch with my partner joinery, who builds the furniture from my plans. Technical drawings and the introduction to the joinery are already included in the “transformation” package. Or, with the “completion” package, I see the work through until the room is finished – with site visits, a shopping service and a styling day.",
       },
       {
         question: "Do you only work in Berlin?",
-        answer: "For consultations and surveys on site, I come to you in Berlin. The “impulse” package runs entirely online: you measure up following my instructions, wherever you live in Germany.",
+        answer: "For consultations and surveys on site, I come to you in Berlin. If you live elsewhere in Germany, I advise you online and bill by the hour: you measure up following my instructions.",
       },
     ],
   },
