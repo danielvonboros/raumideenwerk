@@ -234,6 +234,68 @@ export const servicePages: Record<Locale, ServicePagesContent> = {
           },
         ],
       },
+      {
+        slug: "raumteiler",
+        color: "petrol",
+        label: "raumteiler",
+        title: "raumteiler nach maß in berlin",
+        subtitle: "ein möbel, das trennt und stauraum schafft",
+        metaTitle: "Raumteiler & Raumtrenner nach Maß in Berlin",
+        description: "Raumteiler nach Maß für kleine Wohnungen in Berlin: als Regal, Schrank oder mit Empore fürs Bett. Trennt Bereiche und schafft Stauraum. Mit Beispielen.",
+        image: {
+          src: "/room/room4/studio_designloesung_raumbildend_einbauschrank.webp",
+          alt: "Entwurf eines raumbildenden Einbauschranks, der den Wohnraum gliedert",
+          position: "50% 55%",
+        },
+        intro: "Ein Raumteiler – manche sagen Raumtrenner – gliedert einen Raum, ohne dass eine Wand eingezogen wird. Nach Maß geplant kann er mehr als trennen: Er gibt dem Schlafbereich Sichtschutz, nimmt Bücher, Kleidung oder Technik auf und kann sogar eine Empore fürs Bett tragen. So bekommt jeder Bereich seinen Platz, und der Raum gewinnt Stauraum dazu.",
+        fit: {
+          title: "wann sich ein raumteiler lohnt",
+          items: [
+            "Du möchtest einen Raum gliedern, ohne eine Wand einzuziehen – etwa in einer Mietwohnung.",
+            "Wohnen, Schlafen und Arbeiten teilen sich ein Zimmer.",
+            "Ein Regal oder Paravent von der Stange wirkt provisorisch und bringt kaum Stauraum.",
+            "Der Raum soll hell und offen bleiben, aber klare Bereiche bekommen.",
+          ],
+        },
+        planning: [
+          {
+            title: "trennen mit funktion",
+            text: "Ein Raumteiler nach Maß ist zugleich Regal, Schrank oder Wohnwand. Statt nur eine Grenze zu ziehen, nimmt er auf, was sonst im Raum verteilt herumsteht.",
+          },
+          {
+            title: "offen oder geschlossen",
+            text: "Offene Fächer lassen Licht und Blicke durch, geschlossene Fronten schaffen Ruhe und Sichtschutz. Oft ist die Mischung richtig: offen zum Wohnbereich, geschlossen zum Bett hin.",
+          },
+          {
+            title: "höhe und tageslicht",
+            text: "Halbhoch oder bis zur Decke – das hängt davon ab, wie viel Sichtschutz du brauchst und woher das Tageslicht kommt. Kein Bereich soll durch die Trennung im Dunkeln liegen.",
+          },
+          {
+            title: "mehr als ein regal",
+            text: "Im Projekt „raumteiler und empore für bett“ trägt der Raumteiler eine Empore für das Bett, darunter ist eine Homeoffice-Ecke entstanden. Im Projekt „einbaumöbel für kleine apartments“ gliedern Hochbett, begehbarer Kleiderschrank und Wohnwand gemeinsam den Raum.",
+          },
+        ],
+        costs: "Was der Bau kostet, hängt von Größe, Fächern, Fronten und Material ab. Deshalb nenne ich dafür keinen Pauschalpreis: Mit dem fertigen Konzept bekommst du ein Angebot der Tischlerei – oder du baust selbst nach meinen Zeichnungen.",
+        projects: [2, 3, 5, 0],
+        faq: [
+          {
+            question: "Was ist der Unterschied zwischen Raumteiler und Raumtrenner?",
+            answer: "Keiner. Beide Wörter meinen ein Möbel oder Einbauelement, das einen Raum in Bereiche gliedert, ohne dass eine Wand eingezogen wird – etwa ein Regal, ein Schrank oder eine Wohnwand.",
+          },
+          {
+            question: "Raumteiler oder Trockenbauwand – was passt besser?",
+            answer: "Eine Trockenbauwand trennt vollständig, nimmt aber Licht und ist in einer Mietwohnung meist nur mit Zustimmung möglich. Ein Raumteiler nach Maß lässt Licht durch, bringt zusätzlichen Stauraum und lässt sich wieder abbauen. Brauchst du ein abgeschlossenes Zimmer, ist die Wand richtig; geht es um klare Bereiche, meist der Raumteiler.",
+          },
+          {
+            question: "Kann ich einen Raumteiler in einer Mietwohnung aufstellen?",
+            answer: "In der Regel ja, wenn er ohne größere Eingriffe in Wände und Decke auskommt und sich beim Auszug wieder abbauen lässt. Wie er sicher steht, gehört zur Planung. Muss etwas fest verschraubt werden, kläre das vorher mit deinem Vermieter oder deiner Hausverwaltung.",
+          },
+          {
+            question: "Was kostet ein Raumteiler nach Maß?",
+            answer: "Die Planung läuft über meine Pakete: „konzept“ ab 890 €, „transformation“ mit individueller Möbelplanung und technischen Zeichnungen ab 1.490 €. Die Kosten für den Bau hängen von Größe, Material und Fronten ab; ein konkretes Angebot gibt es auf Grundlage des fertigen Konzepts.",
+          },
+        ],
+      },
     ],
   },
   en: {
@@ -466,6 +528,64 @@ export const servicePages: Record<Locale, ServicePagesContent> = {
           {
             question: "Can I keep using my existing furniture?",
             answer: "Often, yes. Sometimes rearranging the furniture you already have is enough to separate living and sleeping. I only plan made-to-measure pieces where they really make a difference.",
+          },
+        ],
+      },
+      {
+        slug: "room-divider",
+        color: "petrol",
+        label: "room divider",
+        title: "bespoke room dividers in berlin",
+        subtitle: "furniture that divides the room and adds storage",
+        metaTitle: "Bespoke Room Dividers with Storage in Berlin",
+        description: "Made-to-measure room dividers for small flats in Berlin: as shelving, a wardrobe or with a raised platform for the bed. Divides the room and adds storage.",
+        image: {
+          src: "/room/room4/studio_designloesung_raumbildend_einbauschrank.webp",
+          alt: "Sketch of a room-forming built-in wardrobe that structures a living room",
+          position: "50% 55%",
+        },
+        intro: "A room divider structures a room without putting up a wall. Made to measure, it does more than divide: it screens the sleeping area, holds books, clothes or electronics, and can even carry a raised platform for the bed. Every area gets its own place, and the room gains storage.",
+        fit: {
+          title: "when a room divider makes sense",
+          items: [
+            "You want to structure a room without putting up a wall, for example in a rented flat.",
+            "Living, sleeping and working share one room.",
+            "An off-the-shelf shelf or folding screen looks makeshift and adds hardly any storage.",
+            "The room should stay bright and open but still have clear areas.",
+          ],
+        },
+        planning: [
+          {
+            title: "dividing with a purpose",
+            text: "A made-to-measure room divider is also a shelf, a wardrobe or a media wall. Instead of just drawing a line, it holds what would otherwise be spread around the room.",
+          },
+          {
+            title: "open or closed",
+            text: "Open compartments let light and views through, closed fronts create calm and privacy. Often a mix is right: open towards the living area, closed towards the bed.",
+          },
+          {
+            title: "height and daylight",
+            text: "Half height or up to the ceiling – that depends on how much privacy you need and where the daylight comes from. No area should end up in the dark.",
+          },
+          {
+            title: "more than a shelf",
+            text: "In the project “room divider with bed platform”, the divider carries a raised platform for the bed, with a home office corner underneath. In the project “built-in furniture for small flats”, a loft bed, walk-in wardrobe and media wall structure the room together.",
+          },
+        ],
+        costs: "What the build costs depends on size, compartments, fronts and materials. That's why I don't give a flat price for it: once the concept is finished, you get a quote from the joinery – or you build it yourself from my drawings.",
+        projects: [2, 3, 5, 0],
+        faq: [
+          {
+            question: "Room divider or drywall partition – which is better?",
+            answer: "A drywall partition separates completely, but it blocks light and in a rented flat usually needs the landlord's consent. A made-to-measure room divider lets light through, adds storage and can be taken down again. If you need a closed-off room, the wall is right; if you want clear areas, the room divider usually is.",
+          },
+          {
+            question: "Can I put a room divider in a rented flat?",
+            answer: "Usually yes, if it doesn't need major work on walls or ceiling and can be taken down when you move out. How it stands securely is part of the design. If something has to be fixed in place, check with your landlord or property management first.",
+          },
+          {
+            question: "How much does a bespoke room divider cost?",
+            answer: "Planning runs through my packages: “concepts” from €890, “transformation” with bespoke furniture planning and technical drawings from €1,490. Build costs depend on size, materials and fronts; you get a concrete quote based on the finished concept.",
           },
         ],
       },

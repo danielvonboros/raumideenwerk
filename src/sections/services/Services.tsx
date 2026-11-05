@@ -36,7 +36,7 @@ const Services = ({ locale }: ServicesProps) => {
         <h3 id="leistungen-detail-titel" className={text.blockTitle}>
           {details.title}
         </h3>
-        <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {details.items.map((service, index) => (
             <li key={service.slug}>
               <LinkTile href={pathFor(locale, { kind: "service", index })} title={service.label} />

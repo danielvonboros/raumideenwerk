@@ -22,7 +22,7 @@ const ServiceNavigation = ({ locale, index }: ServiceNavigationProps) => {
       <h2 id="weitere-titel" className={text.groupTitle}>
         {t.more}
       </h2>
-      <ul className="mt-8 grid gap-6 sm:grid-cols-3">
+      <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {others.map(({ item, itemIndex }) => (
           <li key={item.slug}>
             <LinkTile href={pathFor(locale, { kind: "service", index: itemIndex })} title={item.label} />
