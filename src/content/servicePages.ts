@@ -10,8 +10,8 @@ export const servicePages: Record<Locale, ServicePagesContent> = {
         label: "einbaumöbel & stauraum",
         title: "einbaumöbel nach maß in berlin",
         subtitle: "mehr stauraum für kleine wohnungen, ohne umzug",
-        metaTitle: "Einbaumöbel nach Maß & Stauraum für kleine Wohnungen in Berlin",
-        description: "Einbaumöbel nach Maß für kleine Wohnungen in Berlin: Einbauschränke, Podestbetten, Hochebenen und Regalwände, die Stauraum schaffen – geplant vom Architekten.",
+        metaTitle: "Einbaumöbel nach Maß in Berlin: mehr Stauraum",
+        description: "Einbaumöbel nach Maß für kleine Wohnungen in Berlin: Einbauschrank, Podestbett, Hochebene oder Regalwand – mehr Stauraum, geplant vom Architekten.",
         image: {
           src: "/room/room4/einbauschrank_stauraum_bettschrank_kleine_wohnung_berlin.webp",
           alt: "Einbauschrank mit Stauraum und Hochbett in einer kleinen Wohnung in Berlin",
@@ -67,8 +67,8 @@ export const servicePages: Record<Locale, ServicePagesContent> = {
         label: "podestbett",
         title: "podestbett nach maß in berlin",
         subtitle: "schlafen, verstauen und den raum zonieren",
-        metaTitle: "Podestbett mit Stauraum planen lassen in Berlin",
-        description: "Podestbett nach Maß für kleine Wohnungen in Berlin: mit Stauraum, der den Kleiderschrank ersetzen kann, und klarer Trennung von Wohn- und Schlafbereich.",
+        metaTitle: "Podestbett mit Stauraum nach Maß in Berlin",
+        description: "Podestbett nach Maß, z. B. 140 × 200 cm mit fast 3 m² Stauraum darunter: Es kann den Kleiderschrank ersetzen und trennt Wohnen und Schlafen. Mit Beispielen.",
         image: {
           src: "/room/room11/podestbett_arbeitsplatz_altbauwohnung_studio_stauraum.webp",
           alt: "Podestbett mit Stauraum und Arbeitsplatz in einer Altbauwohnung",
@@ -124,8 +124,8 @@ export const servicePages: Record<Locale, ServicePagesContent> = {
         label: "hochebene & hochbett",
         title: "hochebene und hochbett in berlin",
         subtitle: "die raumhöhe als zusätzliche fläche nutzen",
-        metaTitle: "Hochebene & Hochbett nach Maß planen lassen in Berlin",
-        description: "Hochebene oder Hochbett nach Maß für kleine Wohnungen in Berlin: Die Raumhöhe wird zur zusätzlichen Fläche für Schlafplatz, Kleiderschrank oder Arbeitsplatz.",
+        metaTitle: "Hochebene bauen lassen in Berlin: Kosten & Planung",
+        description: "Hochebene oder Hochbett nach Maß für Altbau und kleine Wohnungen in Berlin. Einfache Hochebenen ab ca. 2.000 €, je nach Ausführung mehr. Mit Beispielen.",
         image: {
           src: "/room/room1/nische_berliner-zimmer_hochbett_stauraum.webp",
           alt: "Hochbett mit Regal und Stauraum in der Nische eines Berliner Zimmers",
@@ -182,8 +182,8 @@ export const servicePages: Record<Locale, ServicePagesContent> = {
         label: "wohn- und schlafbereich trennen",
         title: "wohn- und schlafbereich trennen",
         subtitle: "zonierung für 1-zimmer-wohnungen und studios in berlin",
-        metaTitle: "Wohn- und Schlafbereich in einem Zimmer trennen – Raumplanung in Berlin",
-        description: "Wohn- und Schlafbereich in einem Zimmer trennen: mit Raumteiler, Podestbett oder Empore. Zonierung für 1-Zimmer-Wohnungen und Studios in Berlin.",
+        metaTitle: "1-Zimmer-Wohnung: Wohn- und Schlafbereich trennen",
+        description: "Bett abtrennen in der 1-Zimmer-Wohnung: Ideen mit Raumteiler, Podestbett oder Empore – mit Projektbeispielen, geplant vom Architekten in Berlin.",
         image: {
           src: "/room/room2/raumteiler_homeoffice_studio_kleine_wohnung_raumkonzept.webp",
           alt: "Raumteiler mit Empore für das Bett und Homeoffice-Ecke darunter",

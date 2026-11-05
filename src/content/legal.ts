@@ -21,7 +21,7 @@ export const legal: Record<Locale, LegalContent> = {
           lines: [
             "E-Mail: mail@raumideenwerk.com",
             "Telefon: +49 160 495 8148",
-            "Website: https://raumideenwerk.com",
+            "Website: https://www.raumideenwerk.com",
           ],
         },
         {
@@ -251,7 +251,7 @@ export const legal: Record<Locale, LegalContent> = {
           lines: [
             "Email: mail@raumideenwerk.com",
             "Phone: +49 160 495 8148",
-            "Website: https://raumideenwerk.com",
+            "Website: https://www.raumideenwerk.com",
           ],
         },
         {
