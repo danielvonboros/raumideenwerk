@@ -29,26 +29,37 @@ export const projects: Record<Locale, ProjectsContent> = {
         dimensions: "Regal: 200 × 200 × 40 cm, zweite Ebene: 240 × 200 cm",
         cover: {
           src: "/room/room1/nische_berliner-zimmer_hochbett_stauraum.webp",
-          alt: "Nische in einem Berliner Zimmer mit Hochbett, Regal und Stauraum",
+          alt: "Visualisierung: Nische in einem Berliner Zimmer mit Hochbett, Regal und Stauraum",
+          kind: "render",
           position: "50% 45%",
         },
         detail: {
           src: "/room/room1/problem_nische_berliner_zimmer.webp",
           alt: "Die Nische im Berliner Zimmer vor dem Umbau",
+          kind: "before",
+          position: "50% 55%",
+        },
+        before: {
+          src: "/room/room1/problem_nische_berliner_zimmer.webp",
+          alt: "Die Nische im Berliner Zimmer vor dem Umbau",
+          kind: "before",
           position: "50% 55%",
         },
         gallery: [
           {
             src: "/room/room1/problem_nische_berliner_zimmer.webp",
             alt: "Die Nische im Berliner Zimmer vor dem Umbau",
+            kind: "before",
           },
           {
             src: "/room/room1/entwurf_nische_bett.webp",
             alt: "Entwurf für das Hochbett in der Nische",
+            kind: "drawing",
           },
           {
             src: "/room/room1/nische_berliner-zimmer_hochbett_stauraum.webp",
-            alt: "Nische mit Hochbett, Regal und Stauraum nach dem Umbau",
+            alt: "Visualisierung: Nische mit Hochbett, Regal und Stauraum",
+            kind: "render",
           },
         ],
       },
@@ -68,24 +79,29 @@ export const projects: Record<Locale, ProjectsContent> = {
         cover: {
           src: "/furniture/quadra/moebeldesign_akazienholz_sideboard_wide.webp",
           alt: "Sideboard aus Akazienholz mit Hairpin-Stahlfüßen",
+          kind: "photo",
         },
         detail: {
           src: "/furniture/quadra/massgeschneiderte_moebel_detail_altbau.webp",
           alt: "Detail des Sideboards im Altbau",
+          kind: "photo",
           position: "50% 60%",
         },
         gallery: [
           {
             src: "/furniture/quadra/moebelbau_akazien_sideboard_schrank.webp",
             alt: "Sideboard aus Akazienholz im Wohnzimmer",
+            kind: "photo",
           },
           {
             src: "/furniture/quadra/massgeschneiderte_moebel_detail_altbau.webp",
             alt: "Detail der Verarbeitung",
+            kind: "photo",
           },
           {
             src: "/furniture/quadra/sideboard_hochwertig_altbau_mid-century.webp",
             alt: "Sideboard im Mid-Century-Stil in einer Altbauwohnung",
+            kind: "photo",
           },
         ],
       },
@@ -104,26 +120,36 @@ export const projects: Record<Locale, ProjectsContent> = {
         dimensions: "Bett: 140 × 200 cm, Regal: 140 × 40 × 200 cm",
         cover: {
           src: "/room/room2/raumteiler_homeoffice_studio_kleine_wohnung_raumkonzept.webp",
-          alt: "Raumteiler mit Homeoffice-Ecke unter der Empore",
+          alt: "Visualisierung: Raumteiler mit Homeoffice-Ecke unter der Empore",
+          kind: "render",
           position: "50% 40%",
         },
         detail: {
           src: "/room/room2/wgzimmer_entwurf_altbauwohnung_raumkonzept.webp",
           alt: "Entwurf des Raumkonzepts für das Zimmer",
+          kind: "drawing",
           position: "50% 50%",
+        },
+        before: {
+          src: "/room/room2/wgzimmer_berlin_kleiderschrank.webp",
+          alt: "Das Zimmer vor dem Umbau",
+          kind: "before",
         },
         gallery: [
           {
             src: "/room/room2/wgzimmer_berlin_kleiderschrank.webp",
             alt: "Das Zimmer vor dem Umbau",
+            kind: "before",
           },
           {
             src: "/room/room2/wgzimmer_entwurf_altbauwohnung_raumkonzept.webp",
             alt: "Entwurf des Raumkonzepts",
+            kind: "drawing",
           },
           {
             src: "/room/room2/raumteiler_homeoffice_studio_kleine_wohnung_raumkonzept.webp",
-            alt: "Raumteiler mit Empore und Homeoffice-Ecke nach dem Umbau",
+            alt: "Visualisierung: Raumteiler mit Empore und Homeoffice-Ecke",
+            kind: "render",
           },
         ],
       },
@@ -141,24 +167,34 @@ export const projects: Record<Locale, ProjectsContent> = {
         dimensions: "Bett: 160 × 200 cm, Höhe: 200 cm",
         cover: {
           src: "/room/room4/einbauschrank_stauraum_bettschrank_kleine_wohnung_berlin.webp",
-          alt: "Einbauschrank mit Stauraum und Hochbett in einer kleinen Wohnung in Berlin",
+          alt: "Visualisierung: Einbauschrank mit Stauraum und Hochbett in einer kleinen Wohnung in Berlin",
+          kind: "render",
         },
         detail: {
           src: "/room/room4/zimmer_unordnung_schraenke_stauraum.webp",
           alt: "Das Zimmer vor dem Umbau mit einzelnen Schränken",
+          kind: "before",
+        },
+        before: {
+          src: "/room/room4/zimmer_unordnung_schraenke_stauraum.webp",
+          alt: "Das Zimmer vor dem Umbau mit einzelnen Schränken",
+          kind: "before",
         },
         gallery: [
           {
             src: "/room/room4/zimmer_unordnung_schraenke_stauraum.webp",
             alt: "Das Zimmer vor dem Umbau mit einzelnen Schränken",
+            kind: "before",
           },
           {
             src: "/room/room4/studio_designloesung_raumbildend_einbauschrank.webp",
             alt: "Entwurf für den raumbildenden Einbauschrank",
+            kind: "drawing",
           },
           {
             src: "/room/room4/einbauschrank_stauraum_bettschrank_kleine_wohnung_berlin.webp",
-            alt: "Einbauschrank mit Hochbett nach dem Umbau",
+            alt: "Visualisierung: Einbauschrank mit Hochbett",
+            kind: "render",
           },
         ],
       },
@@ -177,28 +213,39 @@ export const projects: Record<Locale, ProjectsContent> = {
         dimensions: "Schreibtisch: ca. 170 × 65 cm",
         cover: {
           src: "/room/room13/kleines_arbeitszimmer_nachher_1.webp",
-          alt: "Kleines Arbeitszimmer mit Schreibtisch und Stauraum nach dem Umbau",
+          alt: "Visualisierung: Kleines Arbeitszimmer mit Schreibtisch und Stauraum",
+          kind: "render",
         },
         detail: {
           src: "/room/room13/kleines_arbeitszimmer_vorher_1.webp",
           alt: "Das Zimmer vor dem Umbau",
+          kind: "before",
+        },
+        before: {
+          src: "/room/room13/kleines_arbeitszimmer_vorher_1.webp",
+          alt: "Arbeitsbereich vor dem Umbau",
+          kind: "before",
         },
         gallery: [
           {
             src: "/room/room13/kleines_arbeitszimmer_vorher_1.webp",
             alt: "Arbeitsbereich vor dem Umbau",
+            kind: "before",
           },
           {
             src: "/room/room13/kleines_arbeitszimmer_nachher_1.webp",
-            alt: "Arbeitsbereich nach dem Umbau",
+            alt: "Visualisierung: Arbeitsbereich",
+            kind: "render",
           },
           {
             src: "/room/room13/gaestezimmer_stauraum_vorher_2.webp",
             alt: "Gäste- und Stauraumbereich vor dem Umbau",
+            kind: "before",
           },
           {
             src: "/room/room13/gaestezimmer_stauraum_nachher_2.webp",
-            alt: "Gäste- und Stauraumbereich nach dem Umbau",
+            alt: "Visualisierung: Gäste- und Stauraumbereich",
+            kind: "render",
           },
         ],
       },
@@ -217,36 +264,49 @@ export const projects: Record<Locale, ProjectsContent> = {
         dimensions: "Bett: 140 × 200 cm",
         cover: {
           src: "/room/room11/podestbett_arbeitsplatz_altbauwohnung_studio_stauraum.webp",
-          alt: "Podestbett mit Arbeitsplatz in einer Altbauwohnung",
+          alt: "Visualisierung: Podestbett mit Arbeitsplatz in einer Altbauwohnung",
+          kind: "render",
         },
         detail: {
           src: "/room/room11/studio_bett_stauraumproblem_kleine_wohnung.webp",
           alt: "Das Zimmer vor dem Umbau mit zu wenig Stauraum",
+          kind: "before",
+        },
+        before: {
+          src: "/room/room11/studio_bett_stauraumproblem_kleine_wohnung.webp",
+          alt: "Das Zimmer vor dem Umbau mit zu wenig Stauraum",
+          kind: "before",
         },
         gallery: [
           {
             src: "/room/room11/studio_bett_stauraumproblem_kleine_wohnung.webp",
             alt: "Das Zimmer vor dem Umbau mit zu wenig Stauraum",
+            kind: "before",
           },
           {
             src: "/room/room11/wgzimmer_dunkel_schreibtisch_wohnbereich.webp",
             alt: "Wohn- und Arbeitsbereich vor dem Umbau",
+            kind: "before",
           },
           {
             src: "/room/room11/kleine-wohnung_design_entwurf_podestbett.webp",
             alt: "Entwurf für das Podestbett",
+            kind: "drawing",
           },
           {
             src: "/room/room11/zimmer_design_podestbett.webp",
-            alt: "Visualisierung des Zimmers mit Podestbett",
+            alt: "Entwurf des Zimmers mit Podestbett",
+            kind: "drawing",
           },
           {
             src: "/room/room11/podestbett_arbeitsplatz_altbauwohnung_studio_stauraum.webp",
-            alt: "Podestbett mit Arbeitsplatz nach dem Umbau",
+            alt: "Visualisierung: Podestbett mit Arbeitsplatz",
+            kind: "render",
           },
           {
             src: "/room/room11/podestbett_stauraum_homeoffice_raumkonzept_farbkonzept.webp",
-            alt: "Podestbett mit Stauraum und Homeoffice im Farbkonzept",
+            alt: "Visualisierung: Podestbett mit Stauraum und Homeoffice im Farbkonzept",
+            kind: "render",
           },
         ],
       },
@@ -279,26 +339,37 @@ export const projects: Record<Locale, ProjectsContent> = {
         dimensions: "Shelf: 200 × 200 × 40 cm, second level: 240 × 200 cm",
         cover: {
           src: "/room/room1/nische_berliner-zimmer_hochbett_stauraum.webp",
-          alt: "Alcove in a Berlin room with a loft bed, shelving and storage",
+          alt: "Visualisation: Alcove in a Berlin room with a loft bed, shelving and storage",
+          kind: "render",
           position: "50% 45%",
         },
         detail: {
           src: "/room/room1/problem_nische_berliner_zimmer.webp",
           alt: "The alcove before the conversion",
+          kind: "before",
+          position: "50% 55%",
+        },
+        before: {
+          src: "/room/room1/problem_nische_berliner_zimmer.webp",
+          alt: "The alcove before the conversion",
+          kind: "before",
           position: "50% 55%",
         },
         gallery: [
           {
             src: "/room/room1/problem_nische_berliner_zimmer.webp",
             alt: "The alcove before the conversion",
+            kind: "before",
           },
           {
             src: "/room/room1/entwurf_nische_bett.webp",
             alt: "Design for the loft bed in the alcove",
+            kind: "drawing",
           },
           {
             src: "/room/room1/nische_berliner-zimmer_hochbett_stauraum.webp",
-            alt: "The alcove with loft bed, shelving and storage after the conversion",
+            alt: "Visualisation: The alcove with loft bed, shelving and storage",
+            kind: "render",
           },
         ],
       },
@@ -318,24 +389,29 @@ export const projects: Record<Locale, ProjectsContent> = {
         cover: {
           src: "/furniture/quadra/moebeldesign_akazienholz_sideboard_wide.webp",
           alt: "Acacia sideboard with hairpin steel legs",
+          kind: "photo",
         },
         detail: {
           src: "/furniture/quadra/massgeschneiderte_moebel_detail_altbau.webp",
           alt: "Detail of the sideboard in a period flat",
+          kind: "photo",
           position: "50% 60%",
         },
         gallery: [
           {
             src: "/furniture/quadra/moebelbau_akazien_sideboard_schrank.webp",
             alt: "Acacia sideboard in the living room",
+            kind: "photo",
           },
           {
             src: "/furniture/quadra/massgeschneiderte_moebel_detail_altbau.webp",
             alt: "Detail of the craftsmanship",
+            kind: "photo",
           },
           {
             src: "/furniture/quadra/sideboard_hochwertig_altbau_mid-century.webp",
             alt: "Mid-century sideboard in a period flat",
+            kind: "photo",
           },
         ],
       },
@@ -354,26 +430,36 @@ export const projects: Record<Locale, ProjectsContent> = {
         dimensions: "Bed: 140 × 200 cm, shelf: 140 × 40 × 200 cm",
         cover: {
           src: "/room/room2/raumteiler_homeoffice_studio_kleine_wohnung_raumkonzept.webp",
-          alt: "Room divider with a home office corner beneath the platform",
+          alt: "Visualisation: Room divider with a home office corner beneath the platform",
+          kind: "render",
           position: "50% 40%",
         },
         detail: {
           src: "/room/room2/wgzimmer_entwurf_altbauwohnung_raumkonzept.webp",
           alt: "Design drawing of the spatial concept",
+          kind: "drawing",
           position: "50% 50%",
+        },
+        before: {
+          src: "/room/room2/wgzimmer_berlin_kleiderschrank.webp",
+          alt: "The room before the conversion",
+          kind: "before",
         },
         gallery: [
           {
             src: "/room/room2/wgzimmer_berlin_kleiderschrank.webp",
             alt: "The room before the conversion",
+            kind: "before",
           },
           {
             src: "/room/room2/wgzimmer_entwurf_altbauwohnung_raumkonzept.webp",
             alt: "Design drawing of the spatial concept",
+            kind: "drawing",
           },
           {
             src: "/room/room2/raumteiler_homeoffice_studio_kleine_wohnung_raumkonzept.webp",
-            alt: "Room divider with platform and home office corner after the conversion",
+            alt: "Visualisation: Room divider with platform and home office corner",
+            kind: "render",
           },
         ],
       },
@@ -391,24 +477,34 @@ export const projects: Record<Locale, ProjectsContent> = {
         dimensions: "Bed: 160 × 200 cm, height: 200 cm",
         cover: {
           src: "/room/room4/einbauschrank_stauraum_bettschrank_kleine_wohnung_berlin.webp",
-          alt: "Built-in wardrobe with storage and loft bed in a small Berlin flat",
+          alt: "Visualisation: Built-in wardrobe with storage and loft bed in a small Berlin flat",
+          kind: "render",
         },
         detail: {
           src: "/room/room4/zimmer_unordnung_schraenke_stauraum.webp",
           alt: "The room before the conversion with freestanding wardrobes",
+          kind: "before",
+        },
+        before: {
+          src: "/room/room4/zimmer_unordnung_schraenke_stauraum.webp",
+          alt: "The room before the conversion with freestanding wardrobes",
+          kind: "before",
         },
         gallery: [
           {
             src: "/room/room4/zimmer_unordnung_schraenke_stauraum.webp",
             alt: "The room before the conversion with freestanding wardrobes",
+            kind: "before",
           },
           {
             src: "/room/room4/studio_designloesung_raumbildend_einbauschrank.webp",
             alt: "Design for the space-defining built-in wardrobe",
+            kind: "drawing",
           },
           {
             src: "/room/room4/einbauschrank_stauraum_bettschrank_kleine_wohnung_berlin.webp",
-            alt: "Built-in wardrobe with loft bed after the conversion",
+            alt: "Visualisation: Built-in wardrobe with loft bed",
+            kind: "render",
           },
         ],
       },
@@ -427,28 +523,39 @@ export const projects: Record<Locale, ProjectsContent> = {
         dimensions: "Desk: approx. 170 × 65 cm",
         cover: {
           src: "/room/room13/kleines_arbeitszimmer_nachher_1.webp",
-          alt: "Small study with desk and storage after the conversion",
+          alt: "Visualisation: Small study with desk and storage",
+          kind: "render",
         },
         detail: {
           src: "/room/room13/kleines_arbeitszimmer_vorher_1.webp",
           alt: "The room before the conversion",
+          kind: "before",
+        },
+        before: {
+          src: "/room/room13/kleines_arbeitszimmer_vorher_1.webp",
+          alt: "The work area before the conversion",
+          kind: "before",
         },
         gallery: [
           {
             src: "/room/room13/kleines_arbeitszimmer_vorher_1.webp",
             alt: "The work area before the conversion",
+            kind: "before",
           },
           {
             src: "/room/room13/kleines_arbeitszimmer_nachher_1.webp",
-            alt: "The work area after the conversion",
+            alt: "Visualisation: The work area",
+            kind: "render",
           },
           {
             src: "/room/room13/gaestezimmer_stauraum_vorher_2.webp",
             alt: "The guest and storage area before the conversion",
+            kind: "before",
           },
           {
             src: "/room/room13/gaestezimmer_stauraum_nachher_2.webp",
-            alt: "The guest and storage area after the conversion",
+            alt: "Visualisation: The guest and storage area",
+            kind: "render",
           },
         ],
       },
@@ -467,36 +574,49 @@ export const projects: Record<Locale, ProjectsContent> = {
         dimensions: "Bed: 140 × 200 cm",
         cover: {
           src: "/room/room11/podestbett_arbeitsplatz_altbauwohnung_studio_stauraum.webp",
-          alt: "Platform bed with a workspace in a period flat",
+          alt: "Visualisation: Platform bed with a workspace in a period flat",
+          kind: "render",
         },
         detail: {
           src: "/room/room11/studio_bett_stauraumproblem_kleine_wohnung.webp",
           alt: "The room before the conversion, short on storage",
+          kind: "before",
+        },
+        before: {
+          src: "/room/room11/studio_bett_stauraumproblem_kleine_wohnung.webp",
+          alt: "The room before the conversion, short on storage",
+          kind: "before",
         },
         gallery: [
           {
             src: "/room/room11/studio_bett_stauraumproblem_kleine_wohnung.webp",
             alt: "The room before the conversion, short on storage",
+            kind: "before",
           },
           {
             src: "/room/room11/wgzimmer_dunkel_schreibtisch_wohnbereich.webp",
             alt: "The living and working area before the conversion",
+            kind: "before",
           },
           {
             src: "/room/room11/kleine-wohnung_design_entwurf_podestbett.webp",
             alt: "Design for the platform bed",
+            kind: "drawing",
           },
           {
             src: "/room/room11/zimmer_design_podestbett.webp",
-            alt: "Visualisation of the room with the platform bed",
+            alt: "Sketch of the room with the platform bed",
+            kind: "drawing",
           },
           {
             src: "/room/room11/podestbett_arbeitsplatz_altbauwohnung_studio_stauraum.webp",
-            alt: "Platform bed with workspace after the conversion",
+            alt: "Visualisation: Platform bed with workspace",
+            kind: "render",
           },
           {
             src: "/room/room11/podestbett_stauraum_homeoffice_raumkonzept_farbkonzept.webp",
-            alt: "Platform bed with storage and home office in the colour scheme",
+            alt: "Visualisation: Platform bed with storage and home office in the colour scheme",
+            kind: "render",
           },
         ],
       },

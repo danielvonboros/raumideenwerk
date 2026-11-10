@@ -19,7 +19,8 @@ const imagesFor = (page: PageRef): string[] => {
   switch (page.kind) {
     case "home":
       return unique([
-        hero.de.imageTop.src,
+        hero.de.comparison.before.src,
+        hero.de.comparison.after.src,
         hero.de.imageBottom.src,
         about.de.portrait.src,
         ...projects.de.items.flatMap((_, index) => cardImages(index)),

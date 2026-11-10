@@ -12,14 +12,16 @@ const Testimonials = ({ locale }: TestimonialsProps) => {
   const c = testimonials[locale];
 
   return (
-    <Section labelledBy="stimmen-titel" tone="petrol">
-      <h2 id="stimmen-titel" className={text.sectionTitle}>
-        {c.title}
-      </h2>
-      <div className="mt-10 grid items-start gap-10 md:mt-11 md:grid-cols-3">
-        {c.items.map((item) => (
-          <Quote key={item.author} text={item.text} author={item.author} />
-        ))}
+    <Section labelledBy="stimmen-titel" spacing="bottom">
+      <div className="flex flex-col gap-10 border-t-2 rule pt-8 md:gap-11 md:pt-10">
+        <h2 id="stimmen-titel" className={text.groupTitle}>
+          {c.title}
+        </h2>
+        <div className="grid items-start gap-10 md:grid-cols-3">
+          {c.items.map((item) => (
+            <Quote key={item.author} text={item.text} author={item.author} />
+          ))}
+        </div>
       </div>
     </Section>
   );

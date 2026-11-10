@@ -15,7 +15,7 @@ const LinkTile = ({ href, title, eyebrow, alignEnd = false }: LinkTileProps) => 
       href={href}
       className={cx("block h-full border-2 rule p-5 hover:surface-strong", alignEnd && "sm:text-right")}
     >
-      {eyebrow && <span className="text-base italic">{eyebrow}</span>}
+      {eyebrow && <span className="text-base">{eyebrow}</span>}
       <span className={cx("block", eyebrow && "mt-1", text.tileTitle)}>{title}</span>
     </Link>
   );

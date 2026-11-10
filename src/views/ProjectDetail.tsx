@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Chrome from "@/components/chrome/Chrome";
+import { imageLabels } from "@/content/imageLabels";
 import { projectPage } from "@/content/projectPage";
 import type { Locale } from "@/content/types";
 import { findProject, sectionLink } from "@/lib/routes";
@@ -23,9 +24,9 @@ const ProjectDetail = ({ locale, slug }: ProjectDetailProps) => {
 
   return (
     <Chrome locale={locale} page={{ kind: "project", index }}>
-      <ProjectHero project={project} />
+      <ProjectHero locale={locale} project={project} />
       <ProjectDetails locale={locale} project={project} index={index} />
-      <ProjectGallery title={t.gallery} images={project.gallery} />
+      <ProjectGallery title={t.gallery} images={project.gallery} kindLabels={imageLabels[locale].kinds} />
       <Cta title={t.ctaTitle} text={t.ctaText} button={sectionLink(locale, t.ctaButton)} />
       <ProjectNavigation locale={locale} index={index} />
     </Chrome>

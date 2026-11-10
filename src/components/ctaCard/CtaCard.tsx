@@ -28,7 +28,7 @@ const CtaCard = ({ number, title, subtitle, href }: CtaCardProps) => {
         <h3 className="text-[22px] leading-none font-bold tracking-[-0.035em] md:text-[26px]">
           {title}
         </h3>
-        <p className="text-[15px] leading-snug italic underline underline-offset-4 md:text-[17px]">
+        <p className="text-[15px] leading-snug underline underline-offset-4 md:text-[17px]">
           {subtitle}
         </p>
       </div>

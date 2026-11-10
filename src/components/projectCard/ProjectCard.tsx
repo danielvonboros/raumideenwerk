@@ -23,7 +23,7 @@ const ProjectCard = ({ project, href }: ProjectCardProps) => {
         <span className="text-[28px] leading-none font-bold tracking-[-0.04em] md:text-[34px]">
           {project.number}
         </span>
-        <span className="spine text-[15px] italic">{project.year}</span>
+        <span className="spine text-[15px]">{project.year}</span>
       </div>
 
       <div className="relative overflow-hidden">
@@ -41,7 +41,7 @@ const ProjectCard = ({ project, href }: ProjectCardProps) => {
         <h3 className="text-[22px] leading-none font-bold tracking-[-0.035em] md:text-[26px]">
           {project.title}
         </h3>
-        <p className="text-[15px] leading-snug italic md:text-[17px]">{project.subtitle}</p>
+        <p className="text-[15px] leading-snug md:text-[17px]">{project.subtitle}</p>
       </div>
 
       <div className="relative overflow-hidden">

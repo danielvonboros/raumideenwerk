@@ -6,7 +6,7 @@ interface QuoteProps {
 const Quote = ({ text, author }: QuoteProps) => {
   return (
     <figure className="flex flex-col gap-[18px]">
-      <span aria-hidden="true" className="text-[72px] leading-[0.6] font-bold text-yellow">
+      <span aria-hidden="true" className="text-[72px] leading-[0.6] font-black text-petrol dark:text-yellow">
         „
       </span>
       <blockquote className="text-lg leading-[1.5]">{text}</blockquote>

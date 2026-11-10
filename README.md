@@ -6,7 +6,7 @@ Website for raumideenwerk, interior architecture and space planning for small fl
 
 ### Description
 
-Portfolio and service site for Daniel von Boros, architect in Berlin. The homepage presents projects, services, process, packages, FAQ and contact. Every project and every service has its own page, plus imprint and privacy policy.
+Portfolio and service site for Daniel von Boros, architect in Berlin. The homepage tells the story in the order a visitor decides: a before and after of a real room, the lines from the posters, the problems, the projects, services, process, packages with client voices, about, FAQ and contact. Every project and every service has its own page, plus imprint and privacy policy.
 
 German is the primary language at `/`, English lives under `/en/`. Every page exists in both languages with the same structure, and both versions are linked to each other via hreflang. Every page is prerendered to HTML at build time, so search engines and AI assistants can read it without running JavaScript.
 
@@ -30,7 +30,7 @@ src/
   assets/       logos and icons, icons registered in assets/icons/index.tsx
   components/   reusable building blocks, one folder each
   content/      all copy, one file per section, German and English side by side
-  lib/          routes, metadata, structured data and the cx class helper
+  lib/          routes, metadata, structured data, slider labels and the cx class helper
   sections/     page sections, one folder each, composed from components
   theme/        global CSS with design tokens, frame colours, text styles
   views/        Home, ProjectDetail, ServiceDetail and Legal, composed from sections
@@ -41,8 +41,10 @@ public/         images, robots and llms files, .htaccess and the contact form ba
 
 Sections in page order:
 
-- Homepage: Hero, Projects, Services, PainPoints, Process, Packages, About, Testimonials, SeoServices, Faq, Contact.
+- Homepage: Hero, CampaignLines, PainPoints, Projects, Services, Process, Packages, Testimonials, About, Faq, Contact.
 - Project page: ProjectHero, ProjectDetails, ProjectGallery, Cta, ProjectNavigation.
+
+Testimonials sit directly below Packages without a coloured background, so the client voices read as part of the price decision. The homepage FAQ also carries the text of the former SEO box (spatial concepts for growing families, interior advice).
 - Service page: ServiceHero, ServiceDetails, ServiceProjects, Faq, Cta, ServiceNavigation.
 - Legal page: LegalDocument.
 
@@ -52,6 +54,7 @@ Reusable components:
 
 | Component        | Purpose                                                                 |
 | ---------------- | ----------------------------------------------------------------------- |
+| `BeforeAfter`    | Before and after slider, handle shaped like the logo frame              |
 | `Carousel`       | Horizontal card row with previous and next buttons                      |
 | `Chrome`         | Skip link, header, main and footer around every page                    |
 | `ContactForm`    | Form with captcha and honeypot, posts to `/api/contact.php`             |
@@ -61,14 +64,16 @@ Reusable components:
 | `FactList`       | Label and value list, `project` and `contact` variants                  |
 | `FaqList`        | Questions and answers in two columns                                    |
 | `Footer`         | Logo, contact, Instagram, address and legal links                       |
-| `FrameHero`      | Coloured frame with number, spine, image and title for detail pages     |
-| `Gallery`        | Two-column image gallery                                                |
+| `FrameHero`      | Coloured frame with number, spine, image or slider and title            |
+| `Gallery`        | Two-column image gallery with a label per image                         |
 | `Header`         | Sticky header with navigation, language switch, theme toggle and menu   |
 | `Icon`           | Renders an icon from `assets/icons` by name                             |
+| `ImageLabel`     | Small yellow label on an image, e.g. vorher or visualisierung           |
 | `InfoCard`       | Title and text, `plain`, `muted` and `highlight` variants               |
 | `LinkTile`       | Bordered link with optional eyebrow                                     |
 | `LinkifiedText`  | Turns URLs and email addresses in legal text into links                 |
 | `Logo`           | Wide logo, light and dark version                                       |
+| `Marquee`        | Moving band of short lines with a pause button                          |
 | `PricingCard`    | Package with price, features, add-ons and call to action                |
 | `ProjectCard`    | Project cover with number, year, title and two images                   |
 | `Quote`          | Testimonial with author                                                 |
@@ -103,6 +108,10 @@ Build prices for joinery work are not advertised, because projects differ too mu
 
 ### Images
 
+Every project image has a `kind` in `src/content/projects.ts`: `before` (photo of the room before), `drawing` (sketch over a photo), `render` (visualisation) or `photo` (photo of the finished piece). The gallery and the slider show it as a label, the words live in `src/content/imageLabels.ts`. All after images of the room projects are visualisations, only the sideboard is photographed. Mark a new image honestly, visitors rely on it.
+
+A project with a `before` image shows a slider instead of the cover on its page: before on the left, cover on the right. The homepage hero does the same with `comparison` in `src/content/hero.ts`; there the slider swings once after loading, unless the visitor prefers reduced motion. Before and after should be taken from the same spot and share the same `position`, otherwise the comparison jumps.
+
 The static export serves images exactly as they are in `public/`, because `images.unoptimized` is set. Export new photos as WebP with quality around 80 and at most about 1500 px on the long side, then a project image stays between 50 and 200 KB.
 
 ### Theme
@@ -110,6 +119,10 @@ The static export serves images exactly as they are in `public/`, because `image
 `src/theme/globals.css` holds the Tailwind tokens: the colours `yellow`, `ink`, `linen`, `petrol`, `sand`, `graphite`, `mist` and `depth`, and the surface variables that switch with dark mode, used through the utilities `rule`, `rule-accent`, `surface`, `surface-strong` and `muted`. The `spine` utility sets text vertically.
 
 `src/theme/browserColors.ts` holds the browser bar colour for light and dark mode (`theme-color`), the same linen and ink as the header. `src/lib/metadata.ts` passes it to Next.js as `rootViewport`.
+
+The moving band uses `animate-marquee` from `globals.css`. It stops on hover, with its pause button and when the visitor prefers reduced motion. Its lines live in `src/content/campaignLines.ts` and come from the posters.
+
+Type: the claim is set in weight 900, titles in 800, text in 400. Italic is not used, the font is loaded without it.
 
 `src/theme/frames.ts` maps the frame colours `yellow`, `ink` and `petrol` to background, text and button classes, and holds the card size. `src/theme/typography.ts` holds the recurring text styles (`text.*`) and link styles (`link.*`).
 

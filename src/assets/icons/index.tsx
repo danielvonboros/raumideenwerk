@@ -57,6 +57,20 @@ export const icons = {
       </>
     ),
   },
+  pause: {
+    viewBox: "0 0 24 24",
+    width: 20,
+    height: 20,
+    fill: "currentColor",
+    content: <path d="M6 4 H10 V20 H6 Z M14 4 H18 V20 H14 Z" />,
+  },
+  play: {
+    viewBox: "0 0 24 24",
+    width: 20,
+    height: 20,
+    fill: "currentColor",
+    content: <path d="M7 4 L20 12 L7 20 Z" />,
+  },
   tick: {
     viewBox: "0 0 16 24",
     width: 16,

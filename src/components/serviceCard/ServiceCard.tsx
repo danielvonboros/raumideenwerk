@@ -23,7 +23,7 @@ const ServiceCard = ({ number, title, text }: ServiceCardProps) => {
       </div>
 
       <div className="mr-4 mb-4 bg-linen px-6 py-6 md:mr-6 md:mb-6 md:px-8 md:py-7">
-        <p className="text-lg leading-[1.4] font-semibold tracking-[-0.01em] italic md:text-[23px]">
+        <p className="text-lg leading-[1.4] font-semibold tracking-[-0.01em] md:text-[23px]">
           {text}
         </p>
       </div>

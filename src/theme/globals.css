@@ -11,6 +11,14 @@
   --color-graphite: #4a515c;
   --color-mist: #d6d9de;
   --color-depth: #252c37;
+
+  --animate-marquee: marquee 48s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @theme inline {
