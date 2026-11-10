@@ -5,16 +5,19 @@ import { hero } from "@/content/hero";
 import { SECTION_IDS } from "@/content/site";
 import type { Locale } from "@/content/types";
 import { comparisonLabels } from "@/lib/comparisonLabels";
-import { sectionHref } from "@/lib/routes";
+import { sectionHref, type PageRef } from "@/lib/routes";
 import { link } from "@/theme/typography";
 
 interface HeroProps {
   locale: Locale;
+  claim?: string;
+  keywords?: string;
+  page?: PageRef;
 }
 
 const imageSizes = "(min-width: 768px) calc(100vw - 200px), calc(100vw - 64px)";
 
-const Hero = ({ locale }: HeroProps) => {
+const Hero = ({ locale, claim, keywords, page }: HeroProps) => {
   const c = hero[locale];
 
   return (
@@ -43,15 +46,15 @@ const Hero = ({ locale }: HeroProps) => {
       <div className="flex flex-col justify-center gap-6 px-5 py-10 md:gap-7 md:py-14 md:pr-14 md:pl-11">
         <h1 className="flex flex-col gap-4 font-normal">
           <span className="text-[46px] leading-[0.88] font-black tracking-[-0.06em] sm:text-[68px] lg:text-[112px]">
-            {c.claim}
+            {claim ?? c.claim}
           </span>
-          <span className="text-xl leading-tight tracking-[-0.015em] md:text-[30px]">{c.keywords}</span>
+          <span className="text-xl leading-tight tracking-[-0.015em] md:text-[30px]">{keywords ?? c.keywords}</span>
         </h1>
         <div className="flex flex-wrap items-center gap-x-7 gap-y-4">
-          <Link href={sectionHref(locale, c.primaryCta.section)} className={link.primary}>
+          <Link href={sectionHref(locale, c.primaryCta.section, page)} className={link.primary}>
             {c.primaryCta.label}
           </Link>
-          <Link href={sectionHref(locale, c.secondaryCta.section)} className={link.text}>
+          <Link href={sectionHref(locale, c.secondaryCta.section, page)} className={link.text}>
             {c.secondaryCta.label}
           </Link>
         </div>

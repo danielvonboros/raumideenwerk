@@ -2,7 +2,6 @@ import type { Locale, ServicePagesContent } from "./types";
 
 export const servicePages: Record<Locale, ServicePagesContent> = {
   de: {
-    title: "leistungen im detail",
     items: [
       {
         slug: "einbaumoebel-stauraum",
@@ -299,7 +298,6 @@ export const servicePages: Record<Locale, ServicePagesContent> = {
     ],
   },
   en: {
-    title: "services in detail",
     items: [
       {
         slug: "built-in-furniture-storage",

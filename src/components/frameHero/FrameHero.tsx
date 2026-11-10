@@ -7,7 +7,7 @@ import { text } from "@/theme/typography";
 
 interface FrameHeroProps {
   color: FrameColor;
-  number: string;
+  number?: string;
   spine: string;
   title: string;
   subtitle: string;
@@ -28,10 +28,13 @@ const FrameHero = ({ color, number, spine, title, subtitle, image, detail, compa
       <div
         className={cx(
           detail ? "row-span-3" : "row-span-2",
-          "flex flex-col justify-between py-6 pl-4 md:py-10 md:pl-10",
+          "flex flex-col py-6 pl-4 md:py-10 md:pl-10",
+          number ? "justify-between" : "justify-end",
         )}
       >
-        <span className="text-[56px] leading-[0.8] font-bold tracking-[-0.06em] md:text-[110px]">{number}</span>
+        {number && (
+          <span className="text-[56px] leading-[0.8] font-bold tracking-[-0.06em] md:text-[110px]">{number}</span>
+        )}
         <span className="spine text-lg md:text-2xl">{spine}</span>
       </div>
 

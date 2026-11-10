@@ -6,7 +6,7 @@ Website for raumideenwerk, interior architecture and space planning for small fl
 
 ### Description
 
-Portfolio and service site for Daniel von Boros, architect in Berlin. The homepage tells the story in the order a visitor decides: a before and after of a real room, the lines from the posters, the problems, the projects, services, process, packages with client voices, about, FAQ and contact. Every project and every service has its own page, plus imprint and privacy policy.
+Portfolio and service site for Daniel von Boros, architect in Berlin. The homepage tells the story in the order a visitor decides: a before and after of a real room, the lines from the posters, a problem chooser that leads to the matching services and projects, the projects, process, packages with client voices, about, FAQ and contact. Every project and every service has its own page, plus imprint and privacy policy, and there are landing pages for the print material.
 
 German is the primary language at `/`, English lives under `/en/`. Every page exists in both languages with the same structure, and both versions are linked to each other via hreflang. Every page is prerendered to HTML at build time, so search engines and AI assistants can read it without running JavaScript.
 
@@ -33,7 +33,7 @@ src/
   lib/          routes, metadata, structured data, slider labels and the cx class helper
   sections/     page sections, one folder each, composed from components
   theme/        global CSS with design tokens, frame colours, text styles
-  views/        Home, ProjectDetail, ServiceDetail and Legal, composed from sections
+  views/        Home, Campaign, ProjectDetail, ServiceDetail and Legal, composed from sections
 public/         images, robots and llms files, .htaccess and the contact form backend
 ```
 
@@ -41,7 +41,8 @@ public/         images, robots and llms files, .htaccess and the contact form ba
 
 Sections in page order:
 
-- Homepage: Hero, CampaignLines, PainPoints, Projects, Services, Process, Packages, Testimonials, About, Faq, Contact.
+- Homepage: Hero, CampaignLines, ProblemChooser, Projects, Process, Packages, Testimonials, About, Faq, Contact.
+- Landing page for print: Hero, CampaignLines, ProblemChooser, Projects, Packages, Testimonials, Contact.
 - Project page: ProjectHero, ProjectDetails, ProjectGallery, Cta, ProjectNavigation.
 
 Testimonials sit directly below Packages without a coloured background, so the client voices read as part of the price decision. The homepage FAQ also carries the text of the former SEO box (spatial concepts for growing families, interior advice).
@@ -64,26 +65,26 @@ Reusable components:
 | `FactList`       | Label and value list, `project` and `contact` variants                  |
 | `FaqList`        | Questions and answers in two columns                                    |
 | `Footer`         | Logo, contact, Instagram, address and legal links                       |
-| `FrameHero`      | Coloured frame with number, spine, image or slider and title            |
+| `FrameHero`      | Coloured frame with optional number, spine, image or slider and title   |
 | `Gallery`        | Two-column image gallery with a label per image                         |
 | `Header`         | Sticky header with navigation, language switch, theme toggle and menu   |
 | `Icon`           | Renders an icon from `assets/icons` by name                             |
 | `ImageLabel`     | Small yellow label on an image, e.g. vorher or visualisierung           |
-| `InfoCard`       | Title and text, `plain`, `muted` and `highlight` variants               |
+| `InfoCard`       | Title and text                                                          |
 | `LinkTile`       | Bordered link with optional eyebrow                                     |
 | `LinkifiedText`  | Turns URLs and email addresses in legal text into links                 |
 | `Logo`           | Wide logo, light and dark version                                       |
 | `Marquee`        | Moving band of short lines with a pause button                          |
 | `PricingCard`    | Package with price, features, add-ons and call to action                |
-| `ProjectCard`    | Project cover with number, year, title and two images                   |
-| `Quote`          | Testimonial with author                                                 |
+| `ProjectCard`    | Project cover with year, title and two images                           |
+| `Quote`          | Testimonial with author and a line about the job                        |
 | `ScrollRow`      | Snapping horizontal scroll container                                    |
 | `Section`        | Section frame with spacing and `plain`, `ink` and `petrol` tones        |
 | `SectionHeader`  | Section title with subtitle                                             |
-| `ServiceCard`    | Numbered yellow service card                                            |
 | `SkipLink`       | Keyboard link that jumps past the navigation                            |
 | `StepCard`       | Numbered process step on the timeline                                   |
 | `StructuredData` | Renders a JSON-LD script                                                |
+| `Tabs`           | Accessible tabs, used by the problem chooser                            |
 | `ThemeToggle`    | Switch between light and dark mode                                      |
 
 ### Content and routing
@@ -94,6 +95,15 @@ German and English slugs differ. The position in the list connects the two versi
 
 - New project: add it to `de.items` and `en.items` in `src/content/projects.ts` at the same position. The page, sitemap entry and language alternates follow automatically.
 - New service page: the same in `src/content/servicePages.ts`. Its `projects` field references projects by their position.
+- The problem chooser in `src/content/problemChooser.ts` also references services and projects by position. Check it when you add, remove or reorder projects or services.
+
+Projects have no numbers any more. The year stands in the left column of the card and the frame.
+
+### Landing pages for print
+
+`/plakat/`, `/flyer/` and `/sticker/` (English: `/en/poster/`, `/en/flyer/`, `/en/sticker/`) are short versions of the homepage for people who come from a QR code. Each one opens with the headline of its print piece, set in `src/content/campaigns.ts`. They are marked `noindex` and are not in the sitemap, so they never compete with the homepage in search results. Links on them stay on the page, e.g. the button jumps to the contact form on the same page.
+
+The QR codes of the next print run point to these addresses instead of the homepage. How often each one is opened can be read from the access logs on the server, without cookies or a banner. The headlines for flyer and sticker are placeholders until they match the printed text.
 
 Build prices for joinery work are not advertised, because projects differ too much. The only exception is the note that simple raised levels start at around €2,000. Planning prices come from the packages.
 

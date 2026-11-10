@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
+import { campaigns } from "@/content/campaigns";
 import { legal } from "@/content/legal";
 import { keywords, meta } from "@/content/meta";
 import { site } from "@/content/site";
-import type { Locale } from "@/content/types";
+import type { CampaignKey, Locale } from "@/content/types";
 import { browserColors } from "@/theme/browserColors";
 import { absoluteUrl, alternatesFor, findProject, findService, pathFor, type PageRef } from "./routes";
 
@@ -89,6 +90,13 @@ export const serviceMetadata = (locale: Locale, slug: string): Metadata => {
     },
   };
 };
+
+export const campaignMetadata = (locale: Locale, key: CampaignKey): Metadata => ({
+  title: campaigns[locale][key].metaTitle,
+  description: campaigns[locale][key].description,
+  alternates: alternates(locale, { kind: "campaign", key }),
+  robots: { index: false, follow: true },
+});
 
 export const legalMetadata = (locale: Locale, kind: "imprint" | "privacy"): Metadata => ({
   title: legal[locale].meta[kind].title,

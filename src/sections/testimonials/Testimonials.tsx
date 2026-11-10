@@ -19,7 +19,7 @@ const Testimonials = ({ locale }: TestimonialsProps) => {
         </h2>
         <div className="grid items-start gap-10 md:grid-cols-3">
           {c.items.map((item) => (
-            <Quote key={item.author} text={item.text} author={item.author} />
+            <Quote key={item.author} text={item.text} author={item.author} context={item.context} />
           ))}
         </div>
       </div>

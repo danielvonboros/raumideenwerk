@@ -7,10 +7,9 @@ import Contact from "@/sections/contact/Contact";
 import Faq from "@/sections/faq/Faq";
 import Hero from "@/sections/hero/Hero";
 import Packages from "@/sections/packages/Packages";
-import PainPoints from "@/sections/painPoints/PainPoints";
+import ProblemChooser from "@/sections/problemChooser/ProblemChooser";
 import Process from "@/sections/process/Process";
 import Projects from "@/sections/projects/Projects";
-import Services from "@/sections/services/Services";
 import Testimonials from "@/sections/testimonials/Testimonials";
 
 interface HomeProps {
@@ -22,9 +21,8 @@ const Home = ({ locale }: HomeProps) => {
     <Chrome locale={locale} page={{ kind: "home" }}>
       <Hero locale={locale} />
       <CampaignLines locale={locale} />
-      <PainPoints locale={locale} />
+      <ProblemChooser locale={locale} />
       <Projects locale={locale} />
-      <Services locale={locale} />
       <Process locale={locale} />
       <Packages locale={locale} />
       <Testimonials locale={locale} />

@@ -18,7 +18,6 @@ const ProjectHero = ({ locale, project }: ProjectHeroProps) => {
   return (
     <FrameHero
       color={project.color}
-      number={project.number}
       spine={project.year}
       title={project.title}
       subtitle={project.subtitle}

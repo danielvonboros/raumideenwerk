@@ -81,7 +81,6 @@ export interface HeroContent {
 
 export interface Project {
   slug: string;
-  number: string;
   year: string;
   color: FrameColor;
   title: string;
@@ -103,14 +102,8 @@ export interface ProjectsContent {
   subtitle: string;
   prevLabel: string;
   nextLabel: string;
-  ctaCard: { number: string; title: string; subtitle: string; section: SectionId };
+  ctaCard: { title: string; subtitle: string; section: SectionId };
   items: Project[];
-}
-
-export interface ServicesContent {
-  title: string;
-  subtitle: string;
-  items: TextItem[];
 }
 
 export interface ServicePage {
@@ -131,13 +124,34 @@ export interface ServicePage {
 }
 
 export interface ServicePagesContent {
-  title: string;
   items: ServicePage[];
 }
 
-export interface PainPointsContent {
+export interface Problem {
+  id: string;
+  label: string;
+  text: string;
+  services: number[];
+  projects: number[];
+}
+
+export interface ProblemChooserContent {
   title: string;
-  items: TextItem[];
+  subtitle: string;
+  tabsLabel: string;
+  servicesLabel: string;
+  projectsLabel: string;
+  problems: Problem[];
+}
+
+export type CampaignKey = "poster" | "flyer" | "sticker";
+
+export interface CampaignContent {
+  slug: string;
+  metaTitle: string;
+  description: string;
+  claim: string;
+  keywords: string;
 }
 
 export interface ProcessContent {
@@ -178,7 +192,7 @@ export interface AboutContent {
 
 export interface TestimonialsContent {
   title: string;
-  items: { text: string; author: string }[];
+  items: { text: string; author: string; context: string }[];
 }
 
 export interface FaqContent {

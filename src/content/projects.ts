@@ -8,7 +8,6 @@ export const projects: Record<Locale, ProjectsContent> = {
     prevLabel: "Vorherige Projekte",
     nextLabel: "Nächste Projekte",
     ctaCard: {
-      number: "07",
       title: "deine wohnung",
       subtitle: "erstgespräch anfragen",
       section: SECTION_IDS.contact,
@@ -16,7 +15,6 @@ export const projects: Record<Locale, ProjectsContent> = {
     items: [
       {
         slug: "raumtransformation-mit-stauraum",
-        number: "01",
         year: "2025",
         color: "yellow",
         title: "raumtransformation mit stauraum",
@@ -65,7 +63,6 @@ export const projects: Record<Locale, ProjectsContent> = {
       },
       {
         slug: "minimalistisches-sideboard",
-        number: "02",
         year: "2024",
         color: "ink",
         title: "minimalistisches sideboard",
@@ -107,7 +104,6 @@ export const projects: Record<Locale, ProjectsContent> = {
       },
       {
         slug: "raumteiler-und-empore-fuer-bett",
-        number: "03",
         year: "2025",
         color: "petrol",
         title: "raumteiler und empore für bett",
@@ -155,7 +151,6 @@ export const projects: Record<Locale, ProjectsContent> = {
       },
       {
         slug: "hochbett-kleiderschrank-wohnwand",
-        number: "04",
         year: "2025",
         color: "yellow",
         title: "einbaumöbel für kleine apartments",
@@ -200,7 +195,6 @@ export const projects: Record<Locale, ProjectsContent> = {
       },
       {
         slug: "neue-nutzung-fuer-10-qm-zimmer",
-        number: "05",
         year: "2026",
         color: "ink",
         title: "neue nutzung für 10 m²",
@@ -251,7 +245,6 @@ export const projects: Record<Locale, ProjectsContent> = {
       },
       {
         slug: "podestbett-fuer-kleine-wohnungen",
-        number: "06",
         year: "2025",
         color: "petrol",
         title: "podestbett für kleine wohnungen",
@@ -318,7 +311,6 @@ export const projects: Record<Locale, ProjectsContent> = {
     prevLabel: "Previous projects",
     nextLabel: "Next projects",
     ctaCard: {
-      number: "07",
       title: "your flat",
       subtitle: "request a first call",
       section: SECTION_IDS.contact,
@@ -326,7 +318,6 @@ export const projects: Record<Locale, ProjectsContent> = {
     items: [
       {
         slug: "room-transformation-with-storage",
-        number: "01",
         year: "2025",
         color: "yellow",
         title: "room transformation with storage",
@@ -375,7 +366,6 @@ export const projects: Record<Locale, ProjectsContent> = {
       },
       {
         slug: "minimalist-sideboard",
-        number: "02",
         year: "2024",
         color: "ink",
         title: "minimalist sideboard",
@@ -417,7 +407,6 @@ export const projects: Record<Locale, ProjectsContent> = {
       },
       {
         slug: "room-divider-with-bed-platform",
-        number: "03",
         year: "2025",
         color: "petrol",
         title: "room divider with bed platform",
@@ -465,7 +454,6 @@ export const projects: Record<Locale, ProjectsContent> = {
       },
       {
         slug: "loft-bed-with-wardrobe-and-media-wall",
-        number: "04",
         year: "2025",
         color: "yellow",
         title: "built-in furniture for small flats",
@@ -510,7 +498,6 @@ export const projects: Record<Locale, ProjectsContent> = {
       },
       {
         slug: "new-use-for-a-10-sqm-room",
-        number: "05",
         year: "2026",
         color: "ink",
         title: "a new use for 10 m²",
@@ -561,7 +548,6 @@ export const projects: Record<Locale, ProjectsContent> = {
       },
       {
         slug: "platform-bed-for-small-flats",
-        number: "06",
         year: "2025",
         color: "petrol",
         title: "platform bed for small flats",
