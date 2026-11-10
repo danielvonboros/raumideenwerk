@@ -6,7 +6,7 @@ export const hero: Record<Locale, HeroContent> = {
     spine: ["raumideenwerk", "berlin"],
     claim: "mehr raum ohne umzug.",
     keywords: "innenarchitektur und raumplanung für kleine wohnungen in berlin",
-    primaryCta: { section: SECTION_IDS.contact, label: "erstgespräch buchen" },
+    primaryCta: { section: SECTION_IDS.contact, label: "erstgespräch anfragen" },
     secondaryCta: { section: SECTION_IDS.projects, label: "projekte ansehen" },
     imageTop: {
       src: "/room/room11/podestbett_stauraum_homeoffice_raumkonzept_farbkonzept.webp",
@@ -23,7 +23,7 @@ export const hero: Record<Locale, HeroContent> = {
     spine: ["raumideenwerk", "berlin"],
     claim: "more room, no move.",
     keywords: "interior architecture and space planning for small flats in berlin",
-    primaryCta: { section: SECTION_IDS.contact, label: "book a first call" },
+    primaryCta: { section: SECTION_IDS.contact, label: "request a first call" },
     secondaryCta: { section: SECTION_IDS.projects, label: "see the projects" },
     imageTop: {
       src: "/room/room11/podestbett_stauraum_homeoffice_raumkonzept_farbkonzept.webp",

@@ -10,7 +10,7 @@ export const projects: Record<Locale, ProjectsContent> = {
     ctaCard: {
       number: "07",
       title: "deine wohnung",
-      subtitle: "erstgespräch buchen",
+      subtitle: "erstgespräch anfragen",
       section: SECTION_IDS.contact,
     },
     items: [
@@ -260,7 +260,7 @@ export const projects: Record<Locale, ProjectsContent> = {
     ctaCard: {
       number: "07",
       title: "your flat",
-      subtitle: "book a first call",
+      subtitle: "request a first call",
       section: SECTION_IDS.contact,
     },
     items: [

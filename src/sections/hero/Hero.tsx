@@ -20,11 +20,11 @@ const Hero = ({ locale }: HeroProps) => {
       id={SECTION_IDS.start}
       className="grid grid-cols-[64px_minmax(0,1fr)] grid-rows-[minmax(220px,34svh)_auto_minmax(150px,22svh)] bg-yellow text-ink md:grid-cols-[200px_minmax(0,1fr)] md:grid-rows-[320px_auto_200px]"
     >
-      <div className="row-span-3 flex items-end gap-1 pb-6 pl-3 md:pb-10 md:pl-10">
-        <span className="spine text-[34px] leading-none font-bold tracking-[-0.035em] md:text-[56px]">
+      <div className="row-span-3 flex flex-col-reverse items-start gap-2.5 pb-6 pl-3 md:flex-row md:items-end md:gap-1 md:pb-10 md:pl-10">
+        <span className="spine text-[34px] leading-none font-bold tracking-[-0.035em] whitespace-nowrap md:text-[56px]">
           {c.spine[0]}
         </span>
-        <span className="spine text-[34px] leading-none tracking-[-0.02em] italic md:text-[56px]">
+        <span className="spine text-[34px] leading-none tracking-[-0.02em] whitespace-nowrap italic md:text-[56px]">
           {c.spine[1]}
         </span>
       </div>

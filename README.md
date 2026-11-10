@@ -98,10 +98,18 @@ Build prices for joinery work are not advertised, because projects differ too mu
 - `src/lib/schema.ts` creates the structured data: LocalBusiness, Person and OfferCatalog on every page, with the data in `src/content/schema.ts`; Service on every service page; FAQPage wherever the Faq section is shown.
 - `sitemap.xml` and `robots.txt` are generated from `src/app/sitemap.ts` and `src/app/robots.ts`.
 - `public/llms.txt` is maintained by hand. Update it when services or projects change.
+- Share images: the homepage and the legal pages use `public/og-image-de.jpg` and `public/og-image-en.jpg` (1200 × 630, claim and project photo), set in `shareImage` in `src/content/meta.ts`. Project and service pages use their cover image. The German share image is also the image of the LocalBusiness data.
+- `src/app/apple-icon.png` (180 × 180) is the icon for the home screen on phones. Next.js links it on every page.
+
+### Images
+
+The static export serves images exactly as they are in `public/`, because `images.unoptimized` is set. Export new photos as WebP with quality around 80 and at most about 1500 px on the long side, then a project image stays between 50 and 200 KB.
 
 ### Theme
 
 `src/theme/globals.css` holds the Tailwind tokens: the colours `yellow`, `ink`, `linen`, `petrol`, `sand`, `graphite`, `mist` and `depth`, and the surface variables that switch with dark mode, used through the utilities `rule`, `rule-accent`, `surface`, `surface-strong` and `muted`. The `spine` utility sets text vertically.
+
+`src/theme/browserColors.ts` holds the browser bar colour for light and dark mode (`theme-color`), the same linen and ink as the header. `src/lib/metadata.ts` passes it to Next.js as `rootViewport`.
 
 `src/theme/frames.ts` maps the frame colours `yellow`, `ink` and `petrol` to background, text and button classes, and holds the card size. `src/theme/typography.ts` holds the recurring text styles (`text.*`) and link styles (`link.*`).
 

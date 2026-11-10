@@ -2,6 +2,7 @@ import InfoCard from "@/components/infoCard/InfoCard";
 import Section from "@/components/section/Section";
 import { seoServices } from "@/content/seoServices";
 import type { Locale } from "@/content/types";
+import { text } from "@/theme/typography";
 
 interface SeoServicesProps {
   locale: Locale;
@@ -12,11 +13,8 @@ const SeoServices = ({ locale }: SeoServicesProps) => {
 
   return (
     <Section labelledBy="leistungsuebersicht-titel">
-      <div className="flex flex-col gap-7 border-2 border-dashed rule p-6 md:p-10">
-        <h2
-          id="leistungsuebersicht-titel"
-          className="text-3xl leading-none font-bold tracking-[-0.035em] md:text-[44px]"
-        >
+      <div className="flex flex-col gap-7 border-t-2 rule pt-8 md:pt-10">
+        <h2 id="leistungsuebersicht-titel" className={`max-w-[32ch] ${text.groupTitle}`}>
           {c.title}
         </h2>
         <div className="grid gap-8 md:grid-cols-3">

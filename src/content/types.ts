@@ -46,6 +46,7 @@ export interface MetaContent {
   title: string;
   description: string;
   ogTitle: string;
+  shareImage: ImageRef;
 }
 
 export interface HeroContent {
