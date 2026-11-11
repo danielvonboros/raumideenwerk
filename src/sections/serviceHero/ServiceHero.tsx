@@ -3,15 +3,13 @@ import type { ServicePage } from "@/content/types";
 
 interface ServiceHeroProps {
   service: ServicePage;
-  number: string;
   spine: string;
 }
 
-const ServiceHero = ({ service, number, spine }: ServiceHeroProps) => {
+const ServiceHero = ({ service, spine }: ServiceHeroProps) => {
   return (
     <FrameHero
       color={service.color}
-      number={number}
       spine={spine}
       title={service.title}
       subtitle={service.subtitle}

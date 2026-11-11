@@ -7,7 +7,6 @@ import { text } from "@/theme/typography";
 
 interface FrameHeroProps {
   color: FrameColor;
-  number?: string;
   spine: string;
   title: string;
   subtitle: string;
@@ -20,7 +19,7 @@ const imageSizes = "(min-width: 768px) calc(100vw - 180px), calc(100vw - 64px)";
 
 const imageFrame = "relative aspect-[3/2] overflow-hidden md:aspect-[16/7]";
 
-const FrameHero = ({ color, number, spine, title, subtitle, image, detail, comparison }: FrameHeroProps) => {
+const FrameHero = ({ color, spine, title, subtitle, image, detail, comparison }: FrameHeroProps) => {
   return (
     <section
       className={cx("grid grid-cols-[64px_minmax(0,1fr)] md:grid-cols-[180px_minmax(0,1fr)]", frameClasses[color])}
@@ -28,13 +27,9 @@ const FrameHero = ({ color, number, spine, title, subtitle, image, detail, compa
       <div
         className={cx(
           detail ? "row-span-3" : "row-span-2",
-          "flex flex-col py-6 pl-4 md:py-10 md:pl-10",
-          number ? "justify-between" : "justify-end",
+          "flex flex-col justify-end py-6 pl-4 md:py-10 md:pl-10",
         )}
       >
-        {number && (
-          <span className="text-[56px] leading-[0.8] font-bold tracking-[-0.06em] md:text-[110px]">{number}</span>
-        )}
         <span className="spine text-lg md:text-2xl">{spine}</span>
       </div>
 

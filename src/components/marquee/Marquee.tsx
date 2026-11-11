@@ -15,7 +15,7 @@ const Marquee = ({ lines, pauseLabel, playLabel }: MarqueeProps) => {
   const [paused, setPaused] = useState(false);
 
   return (
-    <div className="group relative overflow-hidden border-y-[3px] border-yellow bg-ink py-5 text-yellow md:py-6">
+    <div className="group relative overflow-hidden border-y-[3px] border-yellow bg-navy py-5 text-yellow md:py-6">
       <div
         className={cx(
           "flex w-max animate-marquee group-hover:[animation-play-state:paused] motion-reduce:animate-none",
@@ -29,7 +29,7 @@ const Marquee = ({ lines, pauseLabel, playLabel }: MarqueeProps) => {
         type="button"
         onClick={() => setPaused((value) => !value)}
         aria-label={paused ? playLabel : pauseLabel}
-        className="absolute inset-y-0 right-0 flex w-14 items-center justify-center border-l-[3px] border-yellow bg-ink text-yellow hover:bg-depth motion-reduce:hidden"
+        className="absolute inset-y-0 right-0 flex w-14 items-center justify-center border-l-[3px] border-yellow bg-navy text-yellow hover:bg-petrol motion-reduce:hidden"
       >
         <Icon name={paused ? "play" : "pause"} />
       </button>

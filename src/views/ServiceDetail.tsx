@@ -27,7 +27,7 @@ const ServiceDetail = ({ locale, slug }: ServiceDetailProps) => {
   return (
     <Chrome locale={locale} page={{ kind: "service", index }}>
       <StructuredData data={serviceSchema(locale, index)} />
-      <ServiceHero service={service} number={String(index + 1).padStart(2, "0")} spine={t.spine} />
+      <ServiceHero service={service} spine={t.spine} />
       <ServiceDetails locale={locale} service={service} />
       <ServiceProjects locale={locale} title={t.projects} projectIndexes={service.projects} />
       <Faq title={t.faq} subtitle={service.label} items={service.faq} />

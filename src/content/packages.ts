@@ -45,7 +45,7 @@ export const packages: Record<Locale, PackagesContent> = {
           "Vermittlung an Partnertischlerei",
         ],
         cta: "raum transformieren",
-        color: "ink",
+        color: "navy",
       },
       {
         name: "vollendung",
@@ -115,7 +115,7 @@ export const packages: Record<Locale, PackagesContent> = {
           "Introduction to my partner joinery",
         ],
         cta: "transform the room",
-        color: "ink",
+        color: "navy",
       },
       {
         name: "completion",

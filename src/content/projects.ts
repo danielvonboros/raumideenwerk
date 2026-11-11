@@ -64,7 +64,7 @@ export const projects: Record<Locale, ProjectsContent> = {
       {
         slug: "minimalistisches-sideboard",
         year: "2024",
-        color: "ink",
+        color: "navy",
         title: "minimalistisches sideboard",
         subtitle: "elegante und funktionale aufbewahrung für moderne wohnräume",
         metaTitle: "Minimalistisches Sideboard aus Akazienholz",
@@ -196,7 +196,7 @@ export const projects: Record<Locale, ProjectsContent> = {
       {
         slug: "neue-nutzung-fuer-10-qm-zimmer",
         year: "2026",
-        color: "ink",
+        color: "navy",
         title: "neue nutzung für 10 m²",
         subtitle: "arbeitszimmer, gästezimmer und stauraum in einem raum",
         metaTitle: "Neue Nutzung für ein 10-m²-Zimmer",
@@ -367,7 +367,7 @@ export const projects: Record<Locale, ProjectsContent> = {
       {
         slug: "minimalist-sideboard",
         year: "2024",
-        color: "ink",
+        color: "navy",
         title: "minimalist sideboard",
         subtitle: "elegant, functional storage for modern living spaces",
         metaTitle: "Minimalist Acacia Sideboard",
@@ -499,7 +499,7 @@ export const projects: Record<Locale, ProjectsContent> = {
       {
         slug: "new-use-for-a-10-sqm-room",
         year: "2026",
-        color: "ink",
+        color: "navy",
         title: "a new use for 10 m²",
         subtitle: "study, guest room and storage in a single room",
         metaTitle: "A New Use for a 10 m² Room",

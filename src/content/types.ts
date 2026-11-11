@@ -4,7 +4,7 @@ export type Locale = "de" | "en";
 
 export type SectionId = (typeof SECTION_IDS)[keyof typeof SECTION_IDS];
 
-export type FrameColor = "yellow" | "ink" | "petrol";
+export type FrameColor = "yellow" | "navy" | "petrol";
 
 export type ImageKind = "before" | "photo" | "drawing" | "render";
 

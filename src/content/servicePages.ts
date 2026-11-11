@@ -119,7 +119,7 @@ export const servicePages: Record<Locale, ServicePagesContent> = {
       },
       {
         slug: "hochebene-hochbett",
-        color: "ink",
+        color: "navy",
         label: "hochebene & hochbett",
         title: "hochebene und hochbett in berlin",
         subtitle: "die raumhöhe als zusätzliche fläche nutzen",
@@ -415,7 +415,7 @@ export const servicePages: Record<Locale, ServicePagesContent> = {
       },
       {
         slug: "raised-level-loft-bed",
-        color: "ink",
+        color: "navy",
         label: "raised level & loft bed",
         title: "raised levels and loft beds in berlin",
         subtitle: "turning ceiling height into extra floor space",

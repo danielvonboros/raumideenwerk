@@ -65,7 +65,7 @@ Reusable components:
 | `FactList`       | Label and value list, `project` and `contact` variants                  |
 | `FaqList`        | Questions and answers in two columns                                    |
 | `Footer`         | Logo, contact, Instagram, address and legal links                       |
-| `FrameHero`      | Coloured frame with optional number, spine, image or slider and title   |
+| `FrameHero`      | Coloured frame with spine, image or slider and title                    |
 | `Gallery`        | Two-column image gallery with a label per image                         |
 | `Header`         | Sticky header with navigation, language switch, theme toggle and menu   |
 | `Icon`           | Renders an icon from `assets/icons` by name                             |
@@ -79,7 +79,7 @@ Reusable components:
 | `ProjectCard`    | Project cover with year, title and two images                           |
 | `Quote`          | Testimonial with author and a line about the job                        |
 | `ScrollRow`      | Snapping horizontal scroll container                                    |
-| `Section`        | Section frame with spacing and `plain`, `ink` and `petrol` tones        |
+| `Section`        | Section frame with spacing and `plain`, `navy` and `petrol` tones       |
 | `SectionHeader`  | Section title with subtitle                                             |
 | `SkipLink`       | Keyboard link that jumps past the navigation                            |
 | `StepCard`       | Numbered process step on the timeline                                   |
@@ -97,7 +97,7 @@ German and English slugs differ. The position in the list connects the two versi
 - New service page: the same in `src/content/servicePages.ts`. Its `projects` field references projects by their position.
 - The problem chooser in `src/content/problemChooser.ts` also references services and projects by position. Check it when you add, remove or reorder projects or services.
 
-Projects have no numbers any more. The year stands in the left column of the card and the frame.
+Projects and service pages have no numbers any more. On project cards and project pages the year stands in the left column, on service pages only the spine.
 
 ### Landing pages for print
 
@@ -126,7 +126,17 @@ The static export serves images exactly as they are in `public/`, because `image
 
 ### Theme
 
-`src/theme/globals.css` holds the Tailwind tokens: the colours `yellow`, `ink`, `linen`, `petrol`, `sand`, `graphite`, `mist` and `depth`, and the surface variables that switch with dark mode, used through the utilities `rule`, `rule-accent`, `surface`, `surface-strong` and `muted`. The `spine` utility sets text vertically.
+`src/theme/globals.css` holds the Tailwind tokens: the colours `yellow`, `ink`, `linen`, `navy`, `petrol`, `sand`, `graphite`, `mist` and `depth`, and the surface variables that switch with dark mode, used through the utilities `rule`, `rule-accent`, `surface`, `surface-strong` and `muted`. The `spine` utility sets text vertically.
+
+The colours have fixed roles, the same as in print and on Instagram:
+
+| Colour   | Value     | Role                                                                  |
+| -------- | --------- | --------------------------------------------------------------------- |
+| `yellow` | `#f6ed20` | Main colour: hero, contact, image labels, signal                      |
+| `navy`   | `#101828` | Second colour: dark surfaces such as the band, dark frames and footer |
+| `petrol` | `#3f5b60` | Third colour: petrol frames, hover, focus ring, quote marks           |
+| `ink`    | `#1b212a` | Text, lines and buttons; page background in dark mode                 |
+| `linen`  | `#f6f2eb` | Page background in light mode                                         |
 
 `src/theme/browserColors.ts` holds the browser bar colour for light and dark mode (`theme-color`), the same linen and ink as the header. `src/lib/metadata.ts` passes it to Next.js as `rootViewport`.
 
@@ -134,7 +144,7 @@ The moving band uses `animate-marquee` from `globals.css`. It stops on hover, wi
 
 Type: the claim is set in weight 900, titles in 800, text in 400. Italic is not used, the font is loaded without it.
 
-`src/theme/frames.ts` maps the frame colours `yellow`, `ink` and `petrol` to background, text and button classes, and holds the card size. `src/theme/typography.ts` holds the recurring text styles (`text.*`) and link styles (`link.*`).
+`src/theme/frames.ts` maps the frame colours `yellow`, `navy` and `petrol` to background, text and button classes, and holds the card size. `src/theme/typography.ts` holds the recurring text styles (`text.*`) and link styles (`link.*`).
 
 Dark mode is the class `dark` on `<html>`. `themeScript` sets it before the first paint, from `localStorage` or the system setting, and `ThemeToggle` switches it.
 
