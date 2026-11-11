@@ -6,7 +6,7 @@ Website for raumideenwerk, interior architecture and space planning for small fl
 
 ### Description
 
-Portfolio and service site for Daniel von Boros, architect in Berlin. The homepage presents projects, services, process, packages, FAQ and contact. Every project and every service has its own page, plus imprint and privacy policy.
+Portfolio and service site for Daniel von Boros, architect in Berlin. The homepage tells the story in the order a visitor decides: a before and after of a real room, the lines from the posters, a problem chooser that leads to the matching services and projects, the projects, process, packages with client voices, about, FAQ and contact. Every project and every service has its own page, plus imprint and privacy policy, and there are landing pages for the print material.
 
 German is the primary language at `/`, English lives under `/en/`. Every page exists in both languages with the same structure, and both versions are linked to each other via hreflang. Every page is prerendered to HTML at build time, so search engines and AI assistants can read it without running JavaScript.
 
@@ -30,10 +30,10 @@ src/
   assets/       logos and icons, icons registered in assets/icons/index.tsx
   components/   reusable building blocks, one folder each
   content/      all copy, one file per section, German and English side by side
-  lib/          routes, metadata, structured data and the cx class helper
+  lib/          routes, metadata, structured data, slider labels and the cx class helper
   sections/     page sections, one folder each, composed from components
   theme/        global CSS with design tokens, frame colours, text styles
-  views/        Home, ProjectDetail, ServiceDetail and Legal, composed from sections
+  views/        Home, Campaign, ProjectDetail, ServiceDetail and Legal, composed from sections
 public/         images, robots and llms files, .htaccess and the contact form backend
 ```
 
@@ -41,8 +41,11 @@ public/         images, robots and llms files, .htaccess and the contact form ba
 
 Sections in page order:
 
-- Homepage: Hero, Projects, Services, PainPoints, Process, Packages, About, Testimonials, SeoServices, Faq, Contact.
+- Homepage: Hero, CampaignLines, ProblemChooser, Projects, Process, Packages, Testimonials, About, Faq, Contact.
+- Landing page for print: Hero, CampaignLines, ProblemChooser, Projects, Packages, Testimonials, Contact.
 - Project page: ProjectHero, ProjectDetails, ProjectGallery, Cta, ProjectNavigation.
+
+Testimonials sit directly below Packages without a coloured background, so the client voices read as part of the price decision. The homepage FAQ also carries the text of the former SEO box (spatial concepts for growing families, interior advice).
 - Service page: ServiceHero, ServiceDetails, ServiceProjects, Faq, Cta, ServiceNavigation.
 - Legal page: LegalDocument.
 
@@ -52,6 +55,7 @@ Reusable components:
 
 | Component        | Purpose                                                                 |
 | ---------------- | ----------------------------------------------------------------------- |
+| `BeforeAfter`    | Before and after slider, handle shaped like the logo frame              |
 | `Carousel`       | Horizontal card row with previous and next buttons                      |
 | `Chrome`         | Skip link, header, main and footer around every page                    |
 | `ContactForm`    | Form with captcha and honeypot, posts to `/api/contact.php`             |
@@ -61,24 +65,26 @@ Reusable components:
 | `FactList`       | Label and value list, `project` and `contact` variants                  |
 | `FaqList`        | Questions and answers in two columns                                    |
 | `Footer`         | Logo, contact, Instagram, address and legal links                       |
-| `FrameHero`      | Coloured frame with number, spine, image and title for detail pages     |
-| `Gallery`        | Two-column image gallery                                                |
+| `FrameHero`      | Coloured frame with spine, image or slider and title                    |
+| `Gallery`        | Two-column image gallery with a label per image                         |
 | `Header`         | Sticky header with navigation, language switch, theme toggle and menu   |
 | `Icon`           | Renders an icon from `assets/icons` by name                             |
-| `InfoCard`       | Title and text, `plain`, `muted` and `highlight` variants               |
+| `ImageLabel`     | Small yellow label on an image, e.g. vorher or visualisierung           |
+| `InfoCard`       | Title and text                                                          |
 | `LinkTile`       | Bordered link with optional eyebrow                                     |
 | `LinkifiedText`  | Turns URLs and email addresses in legal text into links                 |
 | `Logo`           | Wide logo, light and dark version                                       |
+| `Marquee`        | Moving band of short lines with a pause button                          |
 | `PricingCard`    | Package with price, features, add-ons and call to action                |
-| `ProjectCard`    | Project cover with number, year, title and two images                   |
-| `Quote`          | Testimonial with author                                                 |
+| `ProjectCard`    | Project cover with year, title and two images                           |
+| `Quote`          | Testimonial with author and a line about the job                        |
 | `ScrollRow`      | Snapping horizontal scroll container                                    |
-| `Section`        | Section frame with spacing and `plain`, `ink` and `petrol` tones        |
+| `Section`        | Section frame with spacing and `plain`, `navy` and `petrol` tones       |
 | `SectionHeader`  | Section title with subtitle                                             |
-| `ServiceCard`    | Numbered yellow service card                                            |
 | `SkipLink`       | Keyboard link that jumps past the navigation                            |
 | `StepCard`       | Numbered process step on the timeline                                   |
 | `StructuredData` | Renders a JSON-LD script                                                |
+| `Tabs`           | Accessible tabs, used by the problem chooser                            |
 | `ThemeToggle`    | Switch between light and dark mode                                      |
 
 ### Content and routing
@@ -89,6 +95,15 @@ German and English slugs differ. The position in the list connects the two versi
 
 - New project: add it to `de.items` and `en.items` in `src/content/projects.ts` at the same position. The page, sitemap entry and language alternates follow automatically.
 - New service page: the same in `src/content/servicePages.ts`. Its `projects` field references projects by their position.
+- The problem chooser in `src/content/problemChooser.ts` also references services and projects by position. Check it when you add, remove or reorder projects or services.
+
+Projects and service pages have no numbers any more. On project cards and project pages the year stands in the left column, on service pages only the spine.
+
+### Landing pages for print
+
+`/plakat/`, `/flyer/` and `/sticker/` (English: `/en/poster/`, `/en/flyer/`, `/en/sticker/`) are short versions of the homepage for people who come from a QR code. Each one opens with the headline of its print piece, set in `src/content/campaigns.ts`. They are marked `noindex` and are not in the sitemap, so they never compete with the homepage in search results. Links on them stay on the page, e.g. the button jumps to the contact form on the same page.
+
+The QR codes of the next print run point to these addresses instead of the homepage. How often each one is opened can be read from the access logs on the server, without cookies or a banner. The headlines for flyer and sticker are placeholders until they match the printed text.
 
 Build prices for joinery work are not advertised, because projects differ too much. The only exception is the note that simple raised levels start at around €2,000. Planning prices come from the packages.
 
@@ -98,12 +113,38 @@ Build prices for joinery work are not advertised, because projects differ too mu
 - `src/lib/schema.ts` creates the structured data: LocalBusiness, Person and OfferCatalog on every page, with the data in `src/content/schema.ts`; Service on every service page; FAQPage wherever the Faq section is shown.
 - `sitemap.xml` and `robots.txt` are generated from `src/app/sitemap.ts` and `src/app/robots.ts`.
 - `public/llms.txt` is maintained by hand. Update it when services or projects change.
+- Share images: the homepage and the legal pages use `public/og-image-de.jpg` and `public/og-image-en.jpg` (1200 × 630, claim and project photo), set in `shareImage` in `src/content/meta.ts`. Project and service pages use their cover image. The German share image is also the image of the LocalBusiness data.
+- `src/app/apple-icon.png` (180 × 180) is the icon for the home screen on phones. Next.js links it on every page.
+
+### Images
+
+Every project image has a `kind` in `src/content/projects.ts`: `before` (photo of the room before), `drawing` (sketch over a photo), `render` (visualisation) or `photo` (photo of the finished piece). The gallery and the slider show it as a label, the words live in `src/content/imageLabels.ts`. All after images of the room projects are visualisations, only the sideboard is photographed. Mark a new image honestly, visitors rely on it.
+
+A project with a `before` image shows a slider instead of the cover on its page: before on the left, cover on the right. The homepage hero does the same with `comparison` in `src/content/hero.ts`; there the slider swings once after loading, unless the visitor prefers reduced motion. Before and after should be taken from the same spot and share the same `position`, otherwise the comparison jumps.
+
+The static export serves images exactly as they are in `public/`, because `images.unoptimized` is set. Export new photos as WebP with quality around 80 and at most about 1500 px on the long side, then a project image stays between 50 and 200 KB.
 
 ### Theme
 
-`src/theme/globals.css` holds the Tailwind tokens: the colours `yellow`, `ink`, `linen`, `petrol`, `sand`, `graphite`, `mist` and `depth`, and the surface variables that switch with dark mode, used through the utilities `rule`, `rule-accent`, `surface`, `surface-strong` and `muted`. The `spine` utility sets text vertically.
+`src/theme/globals.css` holds the Tailwind tokens: the colours `yellow`, `ink`, `linen`, `navy`, `petrol`, `sand`, `graphite`, `mist` and `depth`, and the surface variables that switch with dark mode, used through the utilities `rule`, `rule-accent`, `surface`, `surface-strong` and `muted`. The `spine` utility sets text vertically.
 
-`src/theme/frames.ts` maps the frame colours `yellow`, `ink` and `petrol` to background, text and button classes, and holds the card size. `src/theme/typography.ts` holds the recurring text styles (`text.*`) and link styles (`link.*`).
+The colours have fixed roles, the same as in print and on Instagram:
+
+| Colour   | Value     | Role                                                                  |
+| -------- | --------- | --------------------------------------------------------------------- |
+| `yellow` | `#f6ed20` | Main colour: hero, contact, image labels, signal                      |
+| `navy`   | `#101828` | Second colour: dark surfaces such as the band, dark frames and footer |
+| `petrol` | `#3f5b60` | Third colour: petrol frames, hover, focus ring, quote marks           |
+| `ink`    | `#1b212a` | Text, lines and buttons; page background in dark mode                 |
+| `linen`  | `#f6f2eb` | Page background in light mode                                         |
+
+`src/theme/browserColors.ts` holds the browser bar colour for light and dark mode (`theme-color`), the same linen and ink as the header. `src/lib/metadata.ts` passes it to Next.js as `rootViewport`.
+
+The moving band uses `animate-marquee` from `globals.css`. It stops on hover, with its pause button and when the visitor prefers reduced motion. Its lines live in `src/content/campaignLines.ts` and come from the posters.
+
+Type: the claim is set in weight 900, titles in 800, text in 400. Italic is not used, the font is loaded without it.
+
+`src/theme/frames.ts` maps the frame colours `yellow`, `navy` and `petrol` to background, text and button classes, and holds the card size. `src/theme/typography.ts` holds the recurring text styles (`text.*`) and link styles (`link.*`).
 
 Dark mode is the class `dark` on `<html>`. `themeScript` sets it before the first paint, from `localStorage` or the system setting, and `ThemeToggle` switches it.
 

@@ -52,7 +52,7 @@ const ProjectDetails = ({ locale, project, index }: ProjectDetailsProps) => {
         {project.goal && (
           <div>
             <h2 className={text.blockTitle}>{t.goal}</h2>
-            <p className="mt-3 text-xl leading-snug italic md:text-2xl">{project.goal}</p>
+            <p className="mt-3 text-xl leading-snug md:text-2xl">{project.goal}</p>
           </div>
         )}
         <div>

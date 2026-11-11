@@ -2,7 +2,7 @@ export const business = {
   description:
     "Innenarchitektur und Raumplanung für kleine Wohnungen in Berlin. Spezialisiert auf intelligente Raumkonzepte, Zonierung, Stauraumlösungen und individuelle Möbelplanung.",
   logo: "/logo.svg",
-  image: { src: "/website.webp", width: 1200, height: 630 },
+  image: { src: "/og-image-de.jpg", width: 1200, height: 630 },
   areaServed: "Berlin",
   priceRange: "€€",
   currency: "EUR",

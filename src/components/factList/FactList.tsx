@@ -28,7 +28,7 @@ const FactList = ({ items, variant }: FactListProps) => {
     <dl className={styles.list}>
       {items.map((item) => (
         <Fragment key={item.label}>
-          <dt className="italic">{item.label}</dt>
+          <dt className="font-semibold">{item.label}</dt>
           <dd className={styles.value}>{item.value}</dd>
         </Fragment>
       ))}

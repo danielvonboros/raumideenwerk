@@ -37,8 +37,8 @@ const Header = ({
         <Link href={homeHref} aria-label={homeLabel} className="shrink-0">
           <Logo alt={homeLabel} priority className="h-9 w-auto md:h-11" />
         </Link>
-        <nav aria-label={navigationLabel} className="hidden lg:block">
-          <ul className="flex gap-8 text-lg font-medium">
+        <nav aria-label={navigationLabel} className="hidden xl:block">
+          <ul className="flex gap-8 text-lg font-medium whitespace-nowrap">
             {nav.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-petrol dark:hover:text-yellow">
@@ -60,7 +60,7 @@ const Header = ({
           <ThemeToggle label={theme.label} toDark={theme.toDark} toLight={theme.toLight} />
           <Link
             href={cta.href}
-            className="hidden bg-ink px-5 py-3.5 text-[17px] font-semibold text-linen hover:bg-petrol sm:inline-block dark:bg-yellow dark:text-ink dark:hover:bg-linen"
+            className="hidden bg-ink px-5 py-3.5 text-[17px] font-semibold whitespace-nowrap text-linen hover:bg-petrol sm:inline-block dark:bg-yellow dark:text-ink dark:hover:bg-linen"
           >
             {cta.label}
           </Link>
@@ -70,7 +70,7 @@ const Header = ({
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? menu.close : menu.open}
-            className="flex size-11 items-center justify-center border-2 border-ink lg:hidden dark:border-linen"
+            className="flex size-11 items-center justify-center border-2 border-ink xl:hidden dark:border-linen"
           >
             <Icon name={open ? "close" : "menu"} />
           </button>
@@ -81,7 +81,7 @@ const Header = ({
         <nav
           id="mobile-menu"
           aria-label={navigationLabel}
-          className="border-t-2 border-ink px-5 pb-8 lg:hidden dark:border-linen"
+          className="border-t-2 border-ink px-5 pb-8 xl:hidden dark:border-linen"
         >
           <ul className="flex flex-col">
             {nav.map((item) => (

@@ -15,7 +15,7 @@ const PricingCard = ({ item, popularLabel, addOnsLabel, href }: PricingCardProps
     <article className={cx("flex flex-col", frameClasses[item.color])}>
       <div className="flex flex-col gap-1.5 px-7 pt-7 pb-6">
         <div className="flex items-center justify-between gap-3">
-          <p className="text-lg leading-tight italic">{item.kind}</p>
+          <p className="text-lg leading-tight">{item.kind}</p>
           {item.popular && (
             <span className="bg-ink px-2.5 pt-[5px] pb-[7px] text-sm leading-none font-semibold text-linen">
               {popularLabel}
@@ -39,7 +39,7 @@ const PricingCard = ({ item, popularLabel, addOnsLabel, href }: PricingCardProps
         </ul>
         {item.addOns && (
           <div className="flex flex-col gap-1.5 text-base leading-[1.35]">
-            <p className="italic">{addOnsLabel}</p>
+            <p className="font-semibold">{addOnsLabel}</p>
             {item.addOns.map((addOn) => (
               <p key={addOn.name}>
                 {addOn.name}, {addOn.price}

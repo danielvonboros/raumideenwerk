@@ -14,7 +14,7 @@ const LegalDocument = ({ doc }: LegalDocumentProps) => {
     <Section as="div">
       <article className="flex max-w-[72ch] flex-col">
         <h1 className={`${text.sectionTitle} lowercase`}>{doc.title}</h1>
-        {doc.lastUpdated && <p className="mt-4 text-lg italic muted">{doc.lastUpdated}</p>}
+        {doc.lastUpdated && <p className="mt-4 text-lg muted">{doc.lastUpdated}</p>}
 
         {doc.sections.map((section) => (
           <section key={section.heading} className="mt-12 border-t-2 rule pt-7">

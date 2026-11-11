@@ -4,13 +4,14 @@ import SectionHeader from "@/components/sectionHeader/SectionHeader";
 import { packages } from "@/content/packages";
 import { SECTION_IDS } from "@/content/site";
 import type { Locale } from "@/content/types";
-import { sectionHref } from "@/lib/routes";
+import { sectionHref, type PageRef } from "@/lib/routes";
 
 interface PackagesProps {
   locale: Locale;
+  page?: PageRef;
 }
 
-const Packages = ({ locale }: PackagesProps) => {
+const Packages = ({ locale, page }: PackagesProps) => {
   const c = packages[locale];
 
   return (
@@ -24,7 +25,7 @@ const Packages = ({ locale }: PackagesProps) => {
             item={item}
             popularLabel={c.popularLabel}
             addOnsLabel={c.addOnsLabel}
-            href={sectionHref(locale, SECTION_IDS.contact)}
+            href={sectionHref(locale, SECTION_IDS.contact, page)}
           />
         ))}
       </div>

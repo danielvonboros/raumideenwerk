@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { cx } from "@/lib/cx";
 
-type SectionTone = "plain" | "ink" | "petrol";
+type SectionTone = "plain" | "navy" | "petrol";
 type SectionSpacing = "full" | "bleed" | "bottom" | "bottomBleed";
 
 interface SectionProps {
@@ -17,7 +17,7 @@ interface SectionProps {
 
 const tones: Record<SectionTone, string> = {
   plain: "",
-  ink: "bg-ink text-linen",
+  navy: "bg-navy text-linen",
   petrol: "bg-petrol text-linen",
 };
 

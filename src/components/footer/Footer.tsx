@@ -13,7 +13,7 @@ const Footer = ({ locale }: FooterProps) => {
   const c = footer[locale];
 
   return (
-    <footer className="grid gap-10 bg-ink px-5 pt-12 pb-11 text-linen sm:grid-cols-2 md:px-14 lg:grid-cols-4">
+    <footer className="grid gap-10 bg-navy px-5 pt-12 pb-11 text-linen sm:grid-cols-2 md:px-14 lg:grid-cols-4">
       <Link href={pathFor(locale, { kind: "home" })} aria-label={c.homeLabel} className="w-fit">
         <Logo alt={site.name} variant="linen" className="h-10 w-auto" />
       </Link>

@@ -6,13 +6,14 @@ import SectionHeader from "@/components/sectionHeader/SectionHeader";
 import { projects } from "@/content/projects";
 import { SECTION_IDS } from "@/content/site";
 import type { Locale } from "@/content/types";
-import { pathFor, sectionHref } from "@/lib/routes";
+import { pathFor, sectionHref, type PageRef } from "@/lib/routes";
 
 interface ProjectsProps {
   locale: Locale;
+  page?: PageRef;
 }
 
-const Projects = ({ locale }: ProjectsProps) => {
+const Projects = ({ locale, page }: ProjectsProps) => {
   const c = projects[locale];
 
   return (
@@ -26,10 +27,9 @@ const Projects = ({ locale }: ProjectsProps) => {
           <ProjectCard key={project.slug} project={project} href={pathFor(locale, { kind: "project", index })} />
         ))}
         <CtaCard
-          number={c.ctaCard.number}
           title={c.ctaCard.title}
           subtitle={c.ctaCard.subtitle}
-          href={sectionHref(locale, c.ctaCard.section)}
+          href={sectionHref(locale, c.ctaCard.section, page)}
         />
       </Carousel>
     </Section>

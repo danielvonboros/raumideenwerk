@@ -14,7 +14,7 @@ export const servicePage: Record<Locale, ServicePageContent> = {
     more: "weitere leistungen",
     ctaTitle: "lass uns über deine wohnung sprechen",
     ctaText: "Im Erstgespräch klären wir, welche Lösung zu deinem Raum und deinem Alltag passt.",
-    ctaButton: { section: SECTION_IDS.contact, label: "erstgespräch buchen" },
+    ctaButton: { section: SECTION_IDS.contact, label: "erstgespräch anfragen" },
   },
   en: {
     back: "all services",
@@ -28,6 +28,6 @@ export const servicePage: Record<Locale, ServicePageContent> = {
     more: "more services",
     ctaTitle: "let's talk about your flat",
     ctaText: "In the first call we work out which solution fits your room and your daily life.",
-    ctaButton: { section: SECTION_IDS.contact, label: "book a first call" },
+    ctaButton: { section: SECTION_IDS.contact, label: "request a first call" },
   },
 };

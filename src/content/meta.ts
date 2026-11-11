@@ -55,11 +55,19 @@ export const meta: Record<Locale, MetaContent> = {
     description:
       "Innenarchitektur und Raumplanung für kleine Wohnungen in Berlin. Clevere Raumkonzepte, Stauraumlösungen und individuelle Möbelplanung – für mehr Platz ohne Umzug.",
     ogTitle: "raumideenwerk — Innenarchitektur und Raumplanung in Berlin",
+    shareImage: {
+      src: "/og-image-de.jpg",
+      alt: "mehr raum ohne umzug. Gelbes Bild mit Claim und Podestbett mit Stauraum",
+    },
   },
   en: {
     title: "Interior Architecture in Berlin for Small Flats | raumideenwerk",
     description:
       "Interior architecture and space planning for small flats in Berlin. Clever spatial concepts, storage solutions and bespoke furniture — more room without moving.",
     ogTitle: "raumideenwerk — Interior Architecture and Space Planning in Berlin",
+    shareImage: {
+      src: "/og-image-en.jpg",
+      alt: "more room, no move. Yellow image with the claim and a platform bed with storage",
+    },
   },
 };

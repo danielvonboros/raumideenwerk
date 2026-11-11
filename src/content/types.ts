@@ -4,12 +4,32 @@ export type Locale = "de" | "en";
 
 export type SectionId = (typeof SECTION_IDS)[keyof typeof SECTION_IDS];
 
-export type FrameColor = "yellow" | "ink" | "petrol";
+export type FrameColor = "yellow" | "navy" | "petrol";
+
+export type ImageKind = "before" | "photo" | "drawing" | "render";
 
 export interface ImageRef {
   src: string;
   alt: string;
+  kind?: ImageKind;
   position?: string;
+}
+
+export interface Comparison {
+  before: ImageRef;
+  after: ImageRef;
+}
+
+export interface ImageLabelsContent {
+  kinds: Record<ImageKind, string>;
+  compare: string;
+  handle: string;
+}
+
+export interface CampaignLinesContent {
+  lines: string[];
+  pause: string;
+  play: string;
 }
 
 export interface NavLink {
@@ -46,6 +66,7 @@ export interface MetaContent {
   title: string;
   description: string;
   ogTitle: string;
+  shareImage: ImageRef;
 }
 
 export interface HeroContent {
@@ -54,13 +75,12 @@ export interface HeroContent {
   keywords: string;
   primaryCta: SectionLink;
   secondaryCta: SectionLink;
-  imageTop: ImageRef;
+  comparison: Comparison;
   imageBottom: ImageRef;
 }
 
 export interface Project {
   slug: string;
-  number: string;
   year: string;
   color: FrameColor;
   title: string;
@@ -73,6 +93,7 @@ export interface Project {
   dimensions: string;
   cover: ImageRef;
   detail: ImageRef;
+  before?: ImageRef;
   gallery: ImageRef[];
 }
 
@@ -81,14 +102,8 @@ export interface ProjectsContent {
   subtitle: string;
   prevLabel: string;
   nextLabel: string;
-  ctaCard: { number: string; title: string; subtitle: string; section: SectionId };
+  ctaCard: { title: string; subtitle: string; section: SectionId };
   items: Project[];
-}
-
-export interface ServicesContent {
-  title: string;
-  subtitle: string;
-  items: TextItem[];
 }
 
 export interface ServicePage {
@@ -109,13 +124,34 @@ export interface ServicePage {
 }
 
 export interface ServicePagesContent {
-  title: string;
   items: ServicePage[];
 }
 
-export interface PainPointsContent {
+export interface Problem {
+  id: string;
+  label: string;
+  text: string;
+  services: number[];
+  projects: number[];
+}
+
+export interface ProblemChooserContent {
   title: string;
-  items: TextItem[];
+  subtitle: string;
+  tabsLabel: string;
+  servicesLabel: string;
+  projectsLabel: string;
+  problems: Problem[];
+}
+
+export type CampaignKey = "poster" | "flyer" | "sticker";
+
+export interface CampaignContent {
+  slug: string;
+  metaTitle: string;
+  description: string;
+  claim: string;
+  keywords: string;
 }
 
 export interface ProcessContent {
@@ -156,12 +192,7 @@ export interface AboutContent {
 
 export interface TestimonialsContent {
   title: string;
-  items: { text: string; author: string }[];
-}
-
-export interface SeoServicesContent {
-  title: string;
-  items: TextItem[];
+  items: { text: string; author: string; context: string }[];
 }
 
 export interface FaqContent {

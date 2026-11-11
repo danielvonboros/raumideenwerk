@@ -23,12 +23,12 @@ const ProjectNavigation = ({ locale, index }: ProjectNavigationProps) => {
       <LinkTile
         href={pathFor(locale, { kind: "project", index: previousIndex })}
         eyebrow={t.prev}
-        title={`${previous.number} ${previous.title}`}
+        title={previous.title}
       />
       <LinkTile
         href={pathFor(locale, { kind: "project", index: nextIndex })}
         eyebrow={t.next}
-        title={`${next.number} ${next.title}`}
+        title={next.title}
         alignEnd
       />
     </Section>

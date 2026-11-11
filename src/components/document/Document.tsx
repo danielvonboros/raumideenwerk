@@ -9,7 +9,6 @@ import "@/theme/globals.css";
 const hanken = Hanken_Grotesk({
   variable: "--font-hanken",
   subsets: ["latin"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 

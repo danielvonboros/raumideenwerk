@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { campaigns } from "@/content/campaigns";
 import { legal } from "@/content/legal";
 import { keywords, meta } from "@/content/meta";
 import { site } from "@/content/site";
-import type { Locale } from "@/content/types";
+import type { CampaignKey, Locale } from "@/content/types";
+import { browserColors } from "@/theme/browserColors";
 import { absoluteUrl, alternatesFor, findProject, findService, pathFor, type PageRef } from "./routes";
 
 const ogLocale: Record<Locale, string> = { de: "de_DE", en: "en_GB" };
@@ -30,15 +32,23 @@ export const rootMetadata = (locale: Locale): Metadata => {
       siteName: site.name,
       locale: ogLocale[locale],
       type: "website",
+      images: [{ url: m.shareImage.src, width: 1200, height: 630, alt: m.shareImage.alt }],
     },
     twitter: {
       card: "summary_large_image",
       title: m.ogTitle,
       description: m.description,
-      images: [absoluteUrl("/website.webp")],
+      images: [absoluteUrl(m.shareImage.src)],
     },
     robots: { index: true, follow: true },
   };
+};
+
+export const rootViewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: browserColors.light },
+    { media: "(prefers-color-scheme: dark)", color: browserColors.dark },
+  ],
 };
 
 export const homeMetadata = (locale: Locale): Metadata => ({
@@ -80,6 +90,13 @@ export const serviceMetadata = (locale: Locale, slug: string): Metadata => {
     },
   };
 };
+
+export const campaignMetadata = (locale: Locale, key: CampaignKey): Metadata => ({
+  title: campaigns[locale][key].metaTitle,
+  description: campaigns[locale][key].description,
+  alternates: alternates(locale, { kind: "campaign", key }),
+  robots: { index: false, follow: true },
+});
 
 export const legalMetadata = (locale: Locale, kind: "imprint" | "privacy"): Metadata => ({
   title: legal[locale].meta[kind].title,

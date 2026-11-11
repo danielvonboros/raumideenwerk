@@ -49,7 +49,7 @@ export const shell: Record<Locale, ShellContent> = {
       { section: SECTION_IDS.about, label: "über mich" },
       { section: SECTION_IDS.contact, label: "kontakt" },
     ],
-    cta: { section: SECTION_IDS.contact, label: "erstgespräch buchen" },
+    cta: { section: SECTION_IDS.contact, label: "erstgespräch anfragen" },
     menu: { open: "Menü öffnen", close: "Menü schließen" },
     themeToggle: {
       label: "Dunkelmodus",
@@ -69,7 +69,7 @@ export const shell: Record<Locale, ShellContent> = {
       { section: SECTION_IDS.about, label: "about" },
       { section: SECTION_IDS.contact, label: "contact" },
     ],
-    cta: { section: SECTION_IDS.contact, label: "book a first call" },
+    cta: { section: SECTION_IDS.contact, label: "request a first call" },
     menu: { open: "Open menu", close: "Close menu" },
     themeToggle: {
       label: "Dark mode",

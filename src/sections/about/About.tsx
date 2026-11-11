@@ -18,7 +18,7 @@ const About = ({ locale }: AboutProps) => {
       labelledBy="ueber-mich-titel"
       className="grid items-start gap-10 lg:grid-cols-[440px_minmax(0,1fr)] lg:gap-20"
     >
-      <div className="grid h-[440px] max-w-[440px] grid-cols-[56px_minmax(0,1fr)] bg-ink text-linen md:h-[500px] md:grid-cols-[64px_minmax(0,1fr)]">
+      <div className="grid h-[440px] max-w-[440px] grid-cols-[56px_minmax(0,1fr)] bg-navy text-linen md:h-[500px] md:grid-cols-[64px_minmax(0,1fr)]">
         <div className="flex items-end pb-5 pl-4 md:pl-[18px]">
           <span className="spine text-[20px] leading-none font-bold tracking-[-0.02em] md:text-[22px]">
             {c.spine}

@@ -1,7 +1,8 @@
+import { campaigns } from "@/content/campaigns";
 import { projects } from "@/content/projects";
 import { servicePages } from "@/content/servicePages";
 import { site } from "@/content/site";
-import type { Locale, NavLink, SectionId, SectionLink } from "@/content/types";
+import type { CampaignKey, Locale, NavLink, SectionId, SectionLink } from "@/content/types";
 
 interface Segments {
   root: string;
@@ -33,7 +34,8 @@ export type PageRef =
   | { kind: "imprint" }
   | { kind: "privacy" }
   | { kind: "project"; index: number }
-  | { kind: "service"; index: number };
+  | { kind: "service"; index: number }
+  | { kind: "campaign"; key: CampaignKey };
 
 export const pathFor = (locale: Locale, page: PageRef): string => {
   const s = segments[locale];
@@ -48,11 +50,13 @@ export const pathFor = (locale: Locale, page: PageRef): string => {
       return `${s.root}${s.projects}/${projects[locale].items[page.index].slug}/`;
     case "service":
       return `${s.root}${s.services}/${servicePages[locale].items[page.index].slug}/`;
+    case "campaign":
+      return `${s.root}${campaigns[locale][page.key].slug}/`;
   }
 };
 
-export const sectionHref = (locale: Locale, section: SectionId) =>
-  `${pathFor(locale, { kind: "home" })}#${section}`;
+export const sectionHref = (locale: Locale, section: SectionId, page: PageRef = { kind: "home" }) =>
+  `${pathFor(locale, page)}#${section}`;
 
 export const sectionLink = (locale: Locale, link: SectionLink): NavLink => ({
   href: sectionHref(locale, link.section),
